@@ -4,6 +4,7 @@ import "./App.css";
 
 function App() {
   return <div>goose</div>;
+  return <div>ducky</div>;
 }
 
 export default App;

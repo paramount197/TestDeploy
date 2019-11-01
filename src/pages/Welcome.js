@@ -1,10 +1,10 @@
 import React from "react";
 import Button from "../block/Button";
-
+import Header from "../block/Header"
 function Welcome() {
   return (
     <>
-      <h1>Welcome page</h1>
+      <Header />
       <p>Welcome to our amazing TDP calendar page</p>
       <h2>Please enter your name</h2>
       <input></input>

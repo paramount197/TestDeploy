@@ -3,7 +3,7 @@ import logo from "./logo.svg";
 import "./App.css";
 
 function App() {
-  return <div>goose</div>;
+  return <div>David's a stunner</div>;
 }
 
 export default App;

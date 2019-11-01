@@ -1,6 +1,7 @@
 import React from "react";
 import Button from "../block/Button";
-import Header from "../block/Header"
+import Header from "../block/Header";
+
 function Welcome() {
   return (
     <>

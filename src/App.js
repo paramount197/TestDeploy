@@ -10,7 +10,7 @@ function App() {
   var pageNumber = 0;
   var date = new Date();
   var getdate = date.toLocaleString();
-  console.log(getdate);
+  
   return (
     <>
       <Button name="David" />
@@ -19,9 +19,9 @@ function App() {
       <Button name="George" />
       <Button name={getdate}/>
       <div className="buttonDiv">
-      <Button name="SIGN IN" />
-      <Button name="REGISTER" />
-      <Button name="USER-GUIDE" />
+          <Button name="SIGN IN" />
+          <Button name="REGISTER" />
+          <Button name="USER-GUIDE" />
       </div>
       {/*Ifstatement below to only show welcome page if pageNumber is 0*/}
       {pageNumber === 0 && <Welcome />}

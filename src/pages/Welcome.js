@@ -1,7 +1,7 @@
 import React from "react";
 import Button from "../block/Button";
 import Intro from "../block/Intro";
-import EventList from "../block/List";
+import ListItem from "../block/ListItem";
 
 function Welcome() {
   return (
@@ -12,8 +12,12 @@ function Welcome() {
       <h2>Please enter your name</h2>
       <input></input>
       <Button name="submit" />
-      <EventList eventName="Open Forum" eventDate="1st of January" />
-      <EventList eventName="WellBeing" eventDate="1st of December" />
+      <div className="eventList">
+        <ul>
+          <ListItem eventName="Open Forum" eventDate="1st of January" />
+          <ListItem eventName="WellBeing" eventDate="1st of December" />
+        </ul>
+      </div>
     </>
   );
 }

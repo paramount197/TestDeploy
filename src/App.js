@@ -10,12 +10,11 @@ function App() {
   var pageNumber = 0;
   return (
     <>
-      <Button name="David" />
-      <Button name="Arbind" />
-      <Button name="Omar" />
-      <Button name="George" />
       {/*Ifstatement below to only show welcome page if pageNumber is 0*/}
       {pageNumber === 0 && <Welcome />}
+
+    
+
     </>
   );
 }

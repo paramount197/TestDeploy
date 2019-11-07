@@ -8,6 +8,9 @@ function App() {
   // Change pageNumber to a number for you to work on and ONLY see your page.
   // D 1, A 2, O 3, G 4
   var pageNumber = 0;
+  var date = new Date();
+  var getdate = date.toLocaleString();
+  
   return (
     <>
       {/*Ifstatement below to only show welcome page if pageNumber is 0*/}

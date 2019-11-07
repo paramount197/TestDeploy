@@ -1,22 +1,43 @@
 import React from "react";
-import Button from "../block/Button";
 import Intro from "../block/Intro";
-import ListItem from "../block/ListItem";
+import Events from "../block/Events";
+
+// This is an array of objects that currently holds the event details.
+// This will eventually be provided via the eventBrite API
+// create dropdown for cohort
+let tdpEventsList = [
+  {
+    name: "Open Forum",
+    date: "01/12/2019",
+    location: "Nationwide house",
+    programme: ["Accelerator", "IP"],
+    cohort: ["Sept 2018"]
+  },
+  {
+    name: "Christmas Party",
+    date: "01/01/2019",
+    location: "Hilton",
+    programme: ["Accelerator", "IP"],
+    cohort: ["Sept 2018", "May 2019", "Sept 2019", "May 2020"]
+  },
+  {
+    name: "Wellbeing",
+    date: "01/12/2020",
+    location: "Wake house",
+    programme: ["Accelerator", "IP"],
+    cohort: ["Sept 2019"]
+  }
+];
+
+var cohortToggle = "May 2019";
 
 function Welcome() {
   return (
     <>
       <Intro />
-      <h1>Welcome page</h1>
-      <p>Welcome to our amazing TDP calendar page</p>
-      <h2>Please enter your name</h2>
-      <input></input>
-      <Button name="submit" />
       <div className="eventList">
-        <ul>
-          <ListItem eventName="Open Forum" eventDate="1st of January" />
-          <ListItem eventName="WellBeing" eventDate="1st of December" />
-        </ul>
+        <Events eventsDetail={tdpEventsList} cohortIntake={cohortToggle} />
+        {/* Above passes the tdpEventsList array to the Events component as a single object */}
       </div>
     </>
   );

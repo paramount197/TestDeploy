@@ -13,18 +13,11 @@ function App() {
   
   return (
     <>
-      <Button name="David" />
-      <Button name="Arbind" />
-      <Button name="Omar" />
-      <Button name="George" />
-      <Button name={getdate}/>
-      <div className="buttonDiv">
-          <Button name="SIGN IN" />
-          <Button name="REGISTER" />
-          <Button name="USER-GUIDE" />
-      </div>
       {/*Ifstatement below to only show welcome page if pageNumber is 0*/}
       {pageNumber === 0 && <Welcome />}
+
+    
+
     </>
   );
 }

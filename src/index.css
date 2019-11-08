@@ -10,5 +10,14 @@ code {
 
 li {
   padding: 20px;
-  color: rgb(237, 28, 36);
+  color: white;
+} 
+
+button{
+
+  display: inline-block;
+  width: auto;
+  height: 20px;
+  color: black;
+
 }

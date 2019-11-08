@@ -2,6 +2,7 @@ import React from "react";
 import Header from "../block/Header";
 import Intro from "../block/Intro";
 import Events from "../block/Events";
+import Button from "../block/Button";
 
 // This is an array of objects that currently holds the event details.
 // This will eventually be provided via the eventBrite API
@@ -30,7 +31,7 @@ let tdpEventsList = [
   }
 ];
 
-var cohortToggle = "May 2019";
+var cohortToggle = "Sept 2019";
 
 function Welcome() {
   return (
@@ -41,6 +42,8 @@ function Welcome() {
         <Events eventsDetail={tdpEventsList} cohortIntake={cohortToggle} />
         {/* Above passes the tdpEventsList array to the Events component as a single object */}
       </div>
+  
+    
     </>
   );
 }

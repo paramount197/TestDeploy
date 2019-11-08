@@ -24,12 +24,9 @@ function App() {
       {/*Ifstatement below to only show welcome page if pageNumber is 0*/}
       <Button name={getdate}/>
       {/* <div style={divStyle}>SIGN IN</div>; */}
-      <div className="buttonDiv">
-          <Button name="SIGN IN" />
-          <Button name="REGISTER" />
-          <Button name="USER-GUIDE" />
-      </div>
+     
       {pageNumber === 0 && <Welcome />}
+     
       
     
 

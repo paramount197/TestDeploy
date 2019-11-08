@@ -38,6 +38,12 @@ function Welcome() {
     <>
       <Header header="TDP Events Page"/>
       <Intro />
+      <div className="buttonDiv">
+          <Button name="SIGN IN" />
+          <Button name="REGISTER" />
+          <Button name="USER-GUIDE" />
+      </div>
+     
       <div className="eventList">
         <Events eventsDetail={tdpEventsList} cohortIntake={cohortToggle} />
         {/* Above passes the tdpEventsList array to the Events component as a single object */}

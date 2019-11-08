@@ -1,4 +1,5 @@
 import React from "react";
+import Header from "../block/Header";
 import Intro from "../block/Intro";
 import Events from "../block/Events";
 
@@ -34,6 +35,7 @@ var cohortToggle = "May 2019";
 function Welcome() {
   return (
     <>
+      <Header header="TDP Events Page"/>
       <Intro />
       <div className="eventList">
         <Events eventsDetail={tdpEventsList} cohortIntake={cohortToggle} />

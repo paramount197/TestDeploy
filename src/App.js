@@ -3,6 +3,7 @@ import logo from "./logo.svg";
 import "./App.css";
 import Button from "./block/Button";
 import Welcome from "./pages/Welcome";
+import Header from "./block/Header";
 
 function App() {
   // Change pageNumber to a number for you to work on and ONLY see your page.

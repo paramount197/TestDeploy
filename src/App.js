@@ -9,15 +9,16 @@ function App() {
   // Change pageNumber to a number for you to work on and ONLY see your page.
   // D 1, A 2, O 3, G 4
   var pageNumber = 0;
+  var date = new Date();
+  var getdate = date.toLocaleString();
+  
   return (
     <>
-    <Header />
-      <Button name="David" />
-      <Button name="Arbind" />
-      <Button name="Omar" />
-      <Button name="George" />
       {/*Ifstatement below to only show welcome page if pageNumber is 0*/}
       {pageNumber === 0 && <Welcome />}
+
+    
+
     </>
   );
 }

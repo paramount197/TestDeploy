@@ -42,14 +42,11 @@ function Welcome() {
           <Button name="SIGN IN" />
           <Button name="REGISTER" />
           <Button name="USER-GUIDE" />
-      </div>
-     
+      </div>  
       <div className="eventList">
         <Events eventsDetail={tdpEventsList} cohortIntake={cohortToggle} />
         {/* Above passes the tdpEventsList array to the Events component as a single object */}
       </div>
-  
-    
     </>
   );
 }

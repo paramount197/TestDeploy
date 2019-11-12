@@ -26,3 +26,12 @@ body {
   margin: auto;
   padding-top: 100px;
 }
+
+img {
+  border: 10px solid #101111;
+  position: absolute;
+  top: 8px;
+  left: 16px;
+  font-size: 10px;
+  width: 30%;
+}

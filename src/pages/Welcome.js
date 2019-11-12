@@ -2,6 +2,7 @@ import React from "react";
 import Header from "../block/Header";
 import Intro from "../block/Intro";
 import Events from "../block/Events";
+import Image from "../block/Image";
 
 // This is an array of objects that currently holds the event details.
 // This will eventually be provided via the eventBrite API
@@ -36,7 +37,7 @@ function Welcome() {
   return (
     <>
       <Header header="TDP Events Page"/>
-      <Intro />
+      <Intro/>
       <div className="eventList">
         <Events eventsDetail={tdpEventsList} cohortIntake={cohortToggle} />
         {/* Above passes the tdpEventsList array to the Events component as a single object */}
@@ -45,4 +46,5 @@ function Welcome() {
   );
 }
 
+ 
 export default Welcome;

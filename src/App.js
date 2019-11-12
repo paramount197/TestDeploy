@@ -1,5 +1,6 @@
 import React from "react";
 import logo from "./logo.svg";
+import logo1 from "./Images/Nationwidelogo.jpeg"
 import "./App.css";
 import Button from "./block/Button";
 import Welcome from "./pages/Welcome";
@@ -13,13 +14,11 @@ function App() {
   var getdate = date.toLocaleString();
   
   return (
-    <>
+   <> 
       {/*Ifstatement below to only show welcome page if pageNumber is 0*/}
       {pageNumber === 0 && <Welcome />}
-
-    
-
-    </>
+      <img src={logo1} /> 
+  </>
   );
 }
 

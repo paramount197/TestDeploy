@@ -36,6 +36,7 @@ var cohortToggle = "Sept 2019";
 function Welcome() {
   return (
     <>
+    <h1>-----Welcome.js-------</h1>
       <Header header="TDP Events Page"/>
       <Intro />
       <div className="buttonDiv">

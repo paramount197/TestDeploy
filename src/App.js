@@ -8,7 +8,6 @@ function App() {
  
   return (
     <>
-    <h1>------App.js-----</h1>
       <Button name={getdate}/>
      </>
   );

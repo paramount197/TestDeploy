@@ -20,9 +20,9 @@ const routing = (
             </ul>
         </div>
         <Switch>
-        <Route exact path="/" component={App} />
-        <Route path="/welcome" component={Welcome} />
-        <Route component={NotFound} />
+            <Route exact path="/" component={App} />
+            <Route path="/welcome" component={Welcome} />
+            <Route component={NotFound} />
         </Switch>
     </Router>
     );

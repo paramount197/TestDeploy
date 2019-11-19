@@ -1,40 +1,47 @@
 import React from "react";
 import Header from "../block/Header";
-import Button from "../block/Button";
 import Intro from "../block/Intro";
 import Dropdown from "../block/Dropdown";
+import Input from "../block/Input";
+import "../styling/input.css";
+import "../styling/registration.css";
 
-const intakeProgramme = {
-  intake: [
-    "September 2018",
-    "May 2019",
-    "September 2019",
-    "May 2020",
-    "September 2020",
-    "All"
-  ],
-  programme: ["Accelerator", "IP", "Degree Apprenticeship"]
-};
-
-// Questions
-// Would you pass header name hear or from app.js as props
+const intake = [
+  "September 2018",
+  "May 2019",
+  "September 2019",
+  "May 2020",
+  "September 2020"
+];
+const programme = ["Accelerator", "IP", "Degree Apprenticeship"];
 
 //Actions
 // pass intro text as props
-// Review input fields in React
-// Create the input fields
-// create Button
-// if time try and store the data in local storage and show it om new page
 
 const Registration = props => {
   return (
     <>
-      <Header header="Registration page" />;
-      <Intro />
-      <form>
-        <Dropdown intakeProgrammeDetails={intakeProgramme} />
+      <Header header="Registration page" />
+      <Intro intro="Please create an account" />
+      <form name="Registration" onSubmit>
+        <Input label="First Name" type="text" name="fname" />
+        <Input label="Last Name" type="text" name="lname" />
+        <Input label="Email Address" type="email" name="lname" />
+        <Input label="Phone Number" type="tel" name="phone" />
+        <div className="intake">
+          <label>TDP Intake</label>
+          <select>
+            <Dropdown intakeProgrammeDetails={intake} />
+          </select>
+        </div>
+        <div className="programme">
+          <label>TDP Programme</label>
+          <select>
+            <Dropdown intakeProgrammeDetails={programme} />
+          </select>
+        </div>
+        <Input type="submit" value="Submit" />
       </form>
-      <Button />
     </>
   );
 };

@@ -1,0 +1,17 @@
+select {
+    display: inline-block;
+    margin-bottom: 15px;
+    margin-top: 15px;
+}
+
+.intake label {
+    display: inline-block;
+    /* padding-right: 30px; */
+    width: 150px;
+}
+
+.programme label {
+    /* padding-right: 30px; */
+    display: inline-block;
+    width: 150px;
+}

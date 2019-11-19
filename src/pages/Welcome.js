@@ -37,7 +37,7 @@ function Welcome() {
   return (
     <>
       <Header header="TDP Events Page" />
-      <Intro />
+      <Intro intro="Welcome to our TDP Event booking" />
       <div className="buttonDiv">
         <Button name="SIGN IN" />
         <Button name="REGISTER" />

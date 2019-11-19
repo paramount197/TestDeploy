@@ -1,7 +1,7 @@
 import React from "react";
 
-function Intro() {
-  return <p>Welcome to our TDP Event booking </p>;
+function Intro(props) {
+  return <p>{props.intro}</p>;
 }
 
 export default Intro;

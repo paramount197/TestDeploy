@@ -16,7 +16,7 @@ function App() {
       <Button name={getdate} />
       {/*Ifstatement below to only show welcome page if pageNumber is 0*/}
       {(pageNumber === 0 && <Welcome />) ||
-      (pageNumber === 1 && <Registration />)}
+        (pageNumber === 1 && <Registration />)}
     </>
   );
 }

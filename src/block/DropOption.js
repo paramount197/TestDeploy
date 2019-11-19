@@ -1,7 +1,7 @@
-import React from "react-dom";
+import React from "react";
 
-const dropOption = props => {
-  return <option value={props.intake}>{props.intake}</option>;
+const DropOption = props => {
+  return <option value={props.intakeValue}>{props.intakeText}</option>;
 };
 
-export default dropOption;
+export default DropOption;

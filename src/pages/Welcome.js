@@ -31,18 +31,18 @@ let tdpEventsList = [
   }
 ];
 
-var cohortToggle = "Sept 2019";
+var cohortToggle = "May 2020";
 
 function Welcome() {
   return (
     <>
-      <Header header="TDP Events Page"/>
+      <Header header="TDP Events Page" />
       <Intro />
       <div className="buttonDiv">
-          <Button name="SIGN IN" />
-          <Button name="REGISTER" />
-          <Button name="USER-GUIDE" />
-      </div>  
+        <Button name="SIGN IN" />
+        <Button name="REGISTER" />
+        <Button name="USER-GUIDE" />
+      </div>
       <div className="eventList">
         <Events eventsDetail={tdpEventsList} cohortIntake={cohortToggle} />
         {/* Above passes the tdpEventsList array to the Events component as a single object */}

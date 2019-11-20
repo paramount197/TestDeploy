@@ -3,6 +3,7 @@ import Header from "../block/Header";
 import Intro from "../block/Intro";
 import Events from "../block/Events";
 import Button from "../block/Button";
+import { NavLink } from "react-router-dom";
 
 // This is an array of objects that currently holds the event details.
 // This will eventually be provided via the eventBrite API
@@ -40,6 +41,7 @@ function Welcome() {
       <Intro intro="Welcome to our TDP Event booking" />
       <div className="buttonDiv">
         <Button name="SIGN IN" />
+        <NavLink to="/registration">Sign In</NavLink>
         <Button name="REGISTER" />
         <Button name="USER-GUIDE" />
       </div>

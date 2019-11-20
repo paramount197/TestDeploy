@@ -5,7 +5,12 @@ const Input = props => {
   return (
     <label className="input">
       {props.label}
-      <input type={props.type} name={props.name} value={props.value} />
+      <input
+        type={props.type}
+        name={props.name}
+        value={props.value}
+        pattern={props.pattern}
+      />
     </label>
   );
 };

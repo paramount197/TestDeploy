@@ -26,8 +26,14 @@ const Registration = props => {
       <form name="Registration" onSubmit>
         <Input label="First Name" type="text" name="fname" />
         <Input label="Last Name" type="text" name="lname" />
-        <Input label="Email Address" type="email" name="lname" />
-        <Input label="Phone Number" type="tel" name="phone" />
+        <Input label="Email Address" type="email" name="email" />
+        <Input
+          label="Phone Number"
+          type="tel"
+          name="phone"
+          pattern=" [0-9]{11}"
+          required
+        />
         <div className="intake">
           <label>TDP Intake</label>
           <select>

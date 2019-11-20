@@ -14,25 +14,25 @@ let tdpEventsList = [
     date: "01/12/2019",
     location: "Nationwide house",
     programme: ["Accelerator", "IP"],
-    cohort: ["Sept 2018"]
+    cohort: ["September 2018"]
   },
   {
     name: "Christmas Party",
     date: "01/01/2019",
     location: "Hilton",
     programme: ["Accelerator", "IP"],
-    cohort: ["Sept 2018", "May 2019", "Sept 2019", "May 2020"]
+    cohort: ["September 2018", "May 2019", "September 2019", "May 2020"]
   },
   {
     name: "Wellbeing",
     date: "01/12/2020",
     location: "Wake house",
     programme: ["Accelerator", "IP"],
-    cohort: ["Sept 2019"]
+    cohort: ["September 2019"]
   }
 ];
 
-var cohortToggle = "May 2020";
+var cohortToggle = "September 2018";
 
 function Welcome() {
   return (

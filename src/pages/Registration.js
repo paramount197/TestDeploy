@@ -31,7 +31,7 @@ const Registration = props => {
           label="Phone Number"
           type="tel"
           name="phone"
-          pattern=" [0-9]{11}"
+          pattern="[0-9]{10-11}"
           required
         />
         <div className="intake">

@@ -6,6 +6,7 @@ import App from './App';
 import * as serviceWorker from './serviceWorker';
 import Welcome from './pages/Welcome';
 import NotFound from "./pages/NotFound";
+import SignIn from "./pages/SignIn"
 
 const routing = (
     <Router>
@@ -17,11 +18,15 @@ const routing = (
                 <li>
                     <Link to="/welcome"> Welcome </Link>
                 </li>
+                <li>
+                    <Link to="/SignIn"> SignIn</Link>
+                </li>
             </ul>
         </div>
         <Switch>
             <Route exact path="/" component={App} />
             <Route path="/welcome" component={Welcome} />
+            <Route Path="/SignIn" component={SignIn} />
             <Route component={NotFound} />
         </Switch>
     </Router>

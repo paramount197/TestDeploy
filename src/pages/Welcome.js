@@ -3,6 +3,7 @@ import Header from "../block/Header";
 import Intro from "../block/Intro";
 import Events from "../block/Events";
 import Button from "../block/Button";
+import SignIn from "./SignIn";
 
 // This is an array of objects that currently holds the event details.
 // This will eventually be provided via the eventBrite API
@@ -39,7 +40,7 @@ function Welcome() {
       <Header header="TDP Events Page"/>
       <Intro />
       <div className="buttonDiv">
-          <Button name="SIGN IN" />
+          <Button name="SIGN IN" onClick={SignIn}/>
           <Button name="REGISTER" />
           <Button name="USER-GUIDE" />
       </div>  

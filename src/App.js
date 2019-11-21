@@ -1,5 +1,7 @@
 import React from "react";
+import logo1 from "./Images/Nationwidelogo.jpeg"
 import "./App.css";
+import Image from "./block/Image";
 import Button from "./block/Button";
 
 function App() {
@@ -8,8 +10,9 @@ function App() {
  
   return (
     <>
+      <Image src={logo1} styleName="eventPageImage"/>
       <Button name={getdate}/>
-     </>
+    </>
   );
 }
 

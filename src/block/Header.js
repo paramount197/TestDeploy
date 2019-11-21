@@ -5,3 +5,5 @@ function Header(props) {
 }
 
 export default Header;
+
+//The above shows a Header component

@@ -10,7 +10,7 @@ function App() {
  
   return (
     <>
-      <Image src={logo1} />
+      <Image src={logo1} styleName="eventPageImage"/>
       <Button name={getdate}/>
     </>
   );

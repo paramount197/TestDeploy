@@ -1,6 +1,7 @@
 import React from "react";
 import "./App.css";
 import Button from "./block/Button";
+import Clock from "./block/Clock";
 
 function App() {
   var date = new Date();

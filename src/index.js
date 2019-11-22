@@ -7,7 +7,7 @@ import * as serviceWorker from "./serviceWorker";
 import Welcome from "./pages/Welcome";
 import NotFound from "./pages/NotFound";
 import Registration from "./pages/Registration";
-import logo1 from "./Images/Nationwidelogo.jpeg"
+import logo1 from "./images/Nationwidelogo.jpeg"
 import Image from "./block/Image";
 
 const routing = (

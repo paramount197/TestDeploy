@@ -13,7 +13,6 @@ function App() {
     <>
       <Image src={logo1} styleName="eventPageImage" />
       <Button name={getdate} />
-      <Clock />
     </>
   );
 }

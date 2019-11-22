@@ -41,8 +41,9 @@ function Welcome() {
       <Intro intro="Welcome to our TDP Event booking" />
       <div className="buttonDiv">
         <Button name="SIGN IN" />
-        <NavLink to="/registration">Sign In</NavLink>
-        <Button name="REGISTER" />
+        <NavLink to="/registration">
+          <Button name="REGISTER" />
+        </NavLink>
         <Button name="USER-GUIDE" />
       </div>
       <div className="eventList">

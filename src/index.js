@@ -7,29 +7,34 @@ import * as serviceWorker from "./serviceWorker";
 import Welcome from "./pages/Welcome";
 import NotFound from "./pages/NotFound";
 import Registration from "./pages/Registration";
+import logo1 from "./Images/Nationwidelogo.jpeg"
+import Image from "./block/Image";
 
 const routing = (
   <Router>
-    <div>
-      <ul>
-        <li>
-          <Link to="/">Home </Link>
-        </li>
-        <li>
-          <Link to="/welcome"> Welcome </Link>
-        </li>
-        <li>
-          <Link to="/registration">Registration</Link>
-        </li>
-      </ul>
-    </div>
-    <Switch>
-      <Route exact path="/" component={App} />
-      <Route path="/welcome" component={Welcome} />
-      <Route path="/registration" component={Registration} />
-      <Route component={NotFound} />
-    </Switch>
-  </Router>
+    <Link to="/">
+     <Image src={logo1} styleName="eventPageImage" />
+    </Link>
+     <div>
+       <ul>
+         <li>
+            <Link to="/">Home </Link>
+         </li>
+         <li>
+           <Link to="/welcome"> Welcome </Link>
+          </li>
+         <li>
+            <Link to="/registration">Registration</Link>
+          </li>
+       </ul>
+     </div>
+      <Switch>
+        <Route exact path="/" component={App} />
+       <Route path="/welcome" component={Welcome} />
+       <Route path="/registration" component={Registration} />
+       <Route component={NotFound} />
+     </Switch>
+   </Router>
 );
 
 ReactDOM.render(routing, document.getElementById("root"));

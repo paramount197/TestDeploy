@@ -3,6 +3,7 @@ import logo1 from "./images/Nationwidelogo.jpeg";
 import "./App.css";
 import Image from "./block/Image";
 import Button from "./block/Button";
+import Clock from "./block/Clock";
 
 function App() {
   var date = new Date();

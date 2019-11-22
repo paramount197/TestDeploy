@@ -23,6 +23,7 @@ const routing = (
         </li>
       </ul>
     </div>
+
     <Switch>
       <Route exact path="/" component={App} />
       <Route path="/welcome" component={Welcome} />

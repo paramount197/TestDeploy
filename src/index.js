@@ -7,7 +7,8 @@ import * as serviceWorker from "./serviceWorker";
 import Welcome from "./pages/Welcome";
 import NotFound from "./pages/NotFound";
 import Registration from "./pages/Registration";
-import logo1 from "./images/Nationwidelogo.jpeg"
+import UsersGuide from "./pages/UsersGuide";
+import logo1 from "./images/Nationwidelogo.jpeg";
 import Image from "./block/Image";
 
 const routing = (
@@ -26,12 +27,16 @@ const routing = (
          <li>
             <Link to="/registration">Registration</Link>
           </li>
+          <li>
+            <Link to="/usersguide">UsersGuide </Link>
+           </li>
        </ul>
      </div>
       <Switch>
-        <Route exact path="/" component={App} />
+       <Route exact path="/" component={App} />
        <Route path="/welcome" component={Welcome} />
        <Route path="/registration" component={Registration} />
+       <Route path="/usersguide" component={UsersGuide} />
        <Route component={NotFound} />
      </Switch>
    </Router>

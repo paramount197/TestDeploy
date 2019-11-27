@@ -3,6 +3,7 @@ import logo1 from "./Images/Nationwidelogo.jpeg"
 import "./App.css";
 import Image from "./block/Image";
 import Button from "./block/Button";
+import Clock from "./block/Clock";
 
 function App() {
   var date = new Date();
@@ -10,6 +11,7 @@ function App() {
  
   return (
     <>
+    <Clock />
       <Image src={logo1} styleName="eventPageImage"/>
       <Button name={getdate}/>
     </>

@@ -10,6 +10,9 @@ const Input = props => {
         name={props.name}
         value={props.value}
         pattern={props.pattern}
+        required={props.required}
+        placeholder={props.placeholder}
+        className={props.styleName}
       />
     </label>
   );

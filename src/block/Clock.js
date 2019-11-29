@@ -1,5 +1,4 @@
 import React, { Component } from "react";
-import { getDefaultWatermarks } from "istanbul-lib-report";
 
 class Clock extends Component {
   state = {

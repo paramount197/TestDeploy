@@ -4,7 +4,6 @@ import { Route, Link, BrowserRouter as Router, Switch } from "react-router-dom";
 import "./index.css";
 import App from "./App";
 import * as serviceWorker from "./serviceWorker";
-import Welcome from "./pages/Welcome";
 import Registration from "./pages/Registration";
 import NotFound from "./pages/NotFound";
 import Image from "./block/Image";
@@ -26,9 +25,6 @@ const routing = (
           <Link to="/">Home</Link>
         </li>
         <li>
-          <Link to="/welcome">Welcome</Link>
-        </li>
-        <li>
           <Link to="/registration">Registration</Link>
         </li>
         <li>
@@ -38,7 +34,6 @@ const routing = (
     </div>
     <Switch>
       <Route exact path="/" component={App} />
-      <Route path="/welcome" component={Welcome} />
       <Route path="/registration" component={Registration} />
       <Route component={NotFound} />
     </Switch>

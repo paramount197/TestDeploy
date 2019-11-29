@@ -1,8 +1,12 @@
 import React from "react";
 import ListItem from "./ListItem";
 
-//further tasks:
-//separate data file, remove object from Welcome.js
+// old way of doing below for context
+// for(i = 0; i < props.eventsDetail.length; i++){
+//     if(props.eventsDetail[i].cohort.includes(props.cohortIntake)){
+//         //do stuff
+//     }
+// }
 
 const Events = props => {
   return props.eventsDetail.map(
@@ -16,12 +20,5 @@ const Events = props => {
       )
   );
 };
-
-// old way of doing above for context
-// for(i = 0; i < props.eventsDetail.length; i++){
-//     if(props.eventsDetail[i].cohort.includes(props.cohortIntake)){
-//         //do stuff
-//     }
-// }
 
 export default Events;

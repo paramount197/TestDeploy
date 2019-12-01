@@ -6,31 +6,8 @@ import Events from "./block/Events";
 import Button from "./block/Button";
 import { NavLink } from "react-router-dom";
 
-let tdpEventsList = [
-  {
-    name: "Open Forum",
-    date: "01/12/2019",
-    location: "Nationwide house",
-    programme: ["Accelerator", "IP"],
-    cohort: ["September 2018"]
-  },
-  {
-    name: "Christmas Party",
-    date: "01/01/2019",
-    location: "Hilton",
-    programme: ["Accelerator", "IP"],
-    cohort: ["September 2018", "May 2019", "September 2019", "May 2020"]
-  },
-  {
-    name: "Wellbeing",
-    date: "01/12/2020",
-    location: "Wake house",
-    programme: ["Accelerator", "IP"],
-    cohort: ["September 2019"]
-  }
-];
-
-var cohortToggle = "September 2018";
+const tdpData = require("./data/data.json");
+//imports all data from a json file rather than 
 
 function App() {
   return (
@@ -45,7 +22,10 @@ function App() {
         <Button name="USER-GUIDE" />
       </div>
       <div className="eventList">
-        <Events eventsDetail={tdpEventsList} cohortIntake={cohortToggle} />
+        <Events
+          eventsDetail={tdpData.tdpEventsList}
+          cohortIntake={tdpData.cohortToggle}
+        />
         {/* Above passes the tdpEventsList array to the Events component as a single object */}
       </div>
     </>

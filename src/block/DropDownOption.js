@@ -1,7 +1,7 @@
 import React from "react";
 
-const DropOption = props => {
+const DropDownOption = props => {
   return <option value={props.intakeValue}>{props.intakeText}</option>;
 };
 
-export default DropOption;
+export default DropDownOption;

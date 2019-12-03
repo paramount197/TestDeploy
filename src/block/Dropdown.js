@@ -1,11 +1,9 @@
 import React from "react";
-import DropOption from "./DropOption";
-
-//how could I add a please select option?
+import DropDownOption from "./DropDownOption";
 
 const Dropdown = props => {
   return props.intakeProgrammeDetails.map(option => (
-    <DropOption intakeValue={option} intakeText={option} />
+    <DropDownOption intakeValue={option} intakeText={option} />
   ));
 };
 

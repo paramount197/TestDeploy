@@ -5,7 +5,7 @@ import Dropdown from "../block/Dropdown";
 import Input from "../block/Input";
 import "../styling/registration.css";
 
-const tdpData = require("../data/data.json");
+const tdpData = require("../data/tdpData.json");
 
 const Registration = () => {
   return (

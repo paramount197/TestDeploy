@@ -6,8 +6,10 @@ import Events from "./block/Events";
 import Button from "./block/Button";
 import { NavLink } from "react-router-dom";
 
-const tdpData = require("./data/data.json");
-//imports all data from a json file rather than 
+const events = require("./data/events.json");
+//imports all the data from a json file accessible everywhere
+//rather than objects/array that are stored and repeated
+//in various components
 
 function App() {
   return (
@@ -23,8 +25,8 @@ function App() {
       </div>
       <div className="eventList">
         <Events
-          eventsDetail={tdpData.tdpEventsList}
-          cohortIntake={tdpData.cohortToggle}
+          eventsDetail={events.tdpEventsList}
+          cohortIntake={events.cohortToggle}
         />
         {/* Above passes the tdpEventsList array to the Events component as a single object */}
       </div>

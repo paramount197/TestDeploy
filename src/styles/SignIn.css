@@ -1,6 +1,5 @@
 
-  
-  h1 {
+h1 {
     font-family: 'Dosis', "merienda-one";
     text-align: center;
     font-size: 3em;
@@ -8,8 +7,7 @@
     font-weight: 100;
   }
   
-  .row {
-    
+.row { 
     background-size: cover;
     width: 420px;
     height: 450px;
@@ -17,13 +15,9 @@
     margin: auto;
     border-top: 7px solid #e42148;
   }
-  
-  /* .form-p {
-    padding: 5px;
-  } */
-  
-  input[type="text"],
-  input[type="password"] {
+
+input.username,
+input.password {
     display: block;
     width: 85%;
     border: none;
@@ -45,7 +39,7 @@
     font-family: 'Dosis', sans-serif;
   }
   
-  input[type="submit"] {
+  input.submit {
     font-size: 1em;
     background-color: #e42148;
     color: #fff;
@@ -53,7 +47,6 @@
     height: 50px;
     outline: none;
     border: none;
-    /*cursor: pointer;*/
     margin: 3em 0;
     -webkit-transition: 0.5s all;
     -ms-transition: 0.5s all;
@@ -62,7 +55,7 @@
     letter-spacing: 1px;
   }
   
-  input[type="submit"]:hover {
+  input.submit:hover {
     background-color: #1abc9c;
     -webkit-tranform: translateY(9px);
     -ms-tranform: translateY(9px);

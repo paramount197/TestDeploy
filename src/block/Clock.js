@@ -11,8 +11,7 @@ class Clock extends Component {
             () => this.setState(
                 {time: new Date()} 
                 ), 
-                  1000
-                  
+                  1000           
             );
     }
 
@@ -22,7 +21,7 @@ class Clock extends Component {
     }
 
     render(){
-    return <p>{this.state.time.toLocaleTimeString()}</p>
+        return <p>{this.state.time.toLocaleTimeString()}</p>
 
     }
 }

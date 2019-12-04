@@ -5,15 +5,7 @@ import Dropdown from "../block/Dropdown";
 import Input from "../block/Input";
 import "../styling/registration.css";
 
-const intake = [
-  "September 2018",
-  "May 2019",
-  "September 2019",
-  "May 2020",
-  "September 2020"
-];
-
-const programme = ["Accelerator", "IP", "Degree Apprenticeship"];
+const tdpData = require("../data/tdpData.json");
 
 const Registration = () => {
   return (
@@ -38,13 +30,13 @@ const Registration = () => {
         <div className="intake">
           <label>TDP Intake</label>
           <select>
-            <Dropdown intakeProgrammeDetails={intake} />
+            <Dropdown intakeProgrammeDetails={tdpData.tdpDetails.intake} />
           </select>
         </div>
         <div className="programme">
           <label>TDP Programme</label>
           <select>
-            <Dropdown intakeProgrammeDetails={programme} />
+            <Dropdown intakeProgrammeDetails={tdpData.tdpDetails.programme} />
           </select>
         </div>
         <Input type="submit" value="Submit" />

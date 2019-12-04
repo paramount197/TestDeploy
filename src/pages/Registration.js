@@ -56,10 +56,10 @@ const Registration = () => {
           </select>
       </div>
         <Input type="submit" value="Submit" styleName="submit" />
-      </form>
-    </div>
-        </div>
-        </div>
+          </form>
+      </div>
+      </div>
+     </div>
     </>
   );
 };

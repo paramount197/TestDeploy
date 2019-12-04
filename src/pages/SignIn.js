@@ -16,7 +16,7 @@ function SignIn(props) {
                         <Input styleName="password" type="password" placeholder="Password" name="Password" required /> 
                         <Input styleName="submit" type="submit" value="Submit"/>
                      </form>
-                     <p><a href="#">Forget your password ?</a></p>
+                     <p><a href="#">Forgot your password?</a></p>
                   </div>
                 </div>
           </div>

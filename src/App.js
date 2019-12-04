@@ -38,13 +38,13 @@ function App() {
       <Header header="TDP Events Page" />
       <Intro intro="Welcome to our TDP Event booking" />
       <div className="buttonDiv">
-      <NavLink to="/signin">
-        <Button name="SIGN IN" />
+        <NavLink to="/signin">
+          <Button name="SIGN IN" />
         </NavLink>
         <NavLink to="/registration">
           <Button name="REGISTER" />
         </NavLink>
-        <Button name="USER-GUIDE" />
+          <Button name="USER-GUIDE" />
       </div>
       <div className="eventList">
         <Events eventsDetail={tdpEventsList} cohortIntake={cohortToggle} />

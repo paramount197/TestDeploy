@@ -15,16 +15,13 @@ class Clock extends Component {
             );
     }
 
-
     componentWillMount(){
         clearInterval(this.timerID);
     }
 
     render(){
         return <p>{this.state.time.toLocaleTimeString()}</p>
-
     }
 }
-
 
 export default Clock;

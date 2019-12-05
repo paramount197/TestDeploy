@@ -44,7 +44,9 @@ function Welcome() {
         <NavLink to="/registration">
           <Button name="REGISTER" />
         </NavLink>
-        <Button name="USER-GUIDE" />
+        <NavLink to="/usersguide">
+          <Button name="USER-GUIDE" />
+        </NavLink>
       </div>
       <div className="eventList">
         <Events eventsDetail={tdpEventsList} cohortIntake={cohortToggle} />

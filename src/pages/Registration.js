@@ -19,11 +19,10 @@ const Registration = () => {
   return (
     <>
       <Header header="Registration page" />
-      
       <div className="main">
         <div className="row">
           <div className="form-p">
-          <Intro intro="Please enter the details" />
+            <Intro intro="Please enter the details" />
             <form name="Registration" onSubmit>
               <Input styleName="registration" type="text" placeholder="First-Name*" name="fname" required />
               <Input styleName="registration" type="text" placeholder="Last-Name*" name="lname" required />
@@ -39,27 +38,26 @@ const Registration = () => {
                 //^\+?(?:\d\s?){10,11}$ - more complicated regex but I don't
                 //understand it fully, full explanation on teams
               />
-      <br/>
-      <br/>
-                    
-      <div className="intake">
-        <label>TDP Intake</label>
-          <select>
-           <Dropdown intakeProgrammeDetails={intake} />
-         </select>
+              <br/>
+              <br/>                   
+              <div className="intake">
+                  <label>TDP Intake</label>
+                  <select>
+                     <Dropdown intakeProgrammeDetails={intake} />
+                  </select>
+              </div>
+              <br/>
+              <div className="programme">
+                  <label>TDP Programme</label>
+                  <select>
+                      <Dropdown intakeProgrammeDetails={programme} />
+                  </select>
+              </div>
+              <Input type="submit" value="Submit" styleName="submit" />
+            </form>
+          </div>
+        </div>
       </div>
-      <br/>
-      <div className="programme">
-        <label>TDP Programme</label>
-          <select>
-            <Dropdown intakeProgrammeDetails={programme} />
-          </select>
-      </div>
-        <Input type="submit" value="Submit" styleName="submit" />
-          </form>
-      </div>
-      </div>
-     </div>
     </>
   );
 };

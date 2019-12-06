@@ -29,27 +29,27 @@ const Registration = () => {
               <Input styleName="registration" type="text" placeholder="Last-Name*" name="lname" required />
               <Input styleName="registration" type="email" placeholder="Email-Address*" name="email" required />
               <Input
-               styleName="registration"
+                styleName="registration"
                 type="tel"
                 name="phone"
                 required
                 placeholder="Enter number*"
                 styleName="registration"
                 pattern="\d{10,11}"
-                //^\+?(?:\d\s?){10,11}$ - more complicated regex but I don't
-                //understand it fully, full explanation on teams
-              />                             
+              //^\+?(?:\d\s?){10,11}$ - more complicated regex but I don't
+              //understand it fully, full explanation on teams
+              />
               <div className="intake">
-                  <label>TDP Intake</label>
-                  <select>
-                     <Dropdown intakeProgrammeDetails={intake} />
-                  </select>
+                <label>TDP Intake</label>
+                <select>
+                  <Dropdown intakeProgrammeDetails={intake} />
+                </select>
               </div>
               <div className="programme">
-                  <label>TDP Programme</label>
-                  <select>
-                      <Dropdown intakeProgrammeDetails={programme} />
-                  </select>
+                <label>TDP Programme</label>
+                <select>
+                  <Dropdown intakeProgrammeDetails={programme} />
+                </select>
               </div>
               <Submit />
             </form>

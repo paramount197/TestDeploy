@@ -8,18 +8,18 @@ import Submit from "../block/Submit";
 function SignIn(props) {
     return (
         <>
-            <Header header="Welcome Back!" />
+            <Header header="Welcome Back" />
             <div class="main">
                 <div class="row">
                     <div class="form-p">
-                        <form action="#" method="post">
+                        <form>
                             <Input type="text" placeholder="Username" name="Username" required />
                             <Input type="password" placeholder="Password" name="Password" required />
                             <NavLink to='/profile'>
                                 <Submit />
                             </NavLink>
                         </form>
-                        <p><a href="#">Forgot your password?</a></p>
+                        <p>Forgot your password?</p>
                     </div>
                 </div>
             </div>

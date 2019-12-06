@@ -1,6 +1,5 @@
 import React from "react";
 import '../styles/SignIn.css';
-import Button from "../block/Button";
 import Header from "../block/Header";
 import Input from "../block/Input";
 import { NavLink } from "react-router-dom";
@@ -16,7 +15,9 @@ function SignIn(props) {
                         <form action="#" method="post">
                             <Input type="text" placeholder="Username" name="Username" required />
                             <Input type="password" placeholder="Password" name="Password" required />
-                            <Submit />
+                            <NavLink to='/profile'>
+                                <Submit />
+                            </NavLink>
                         </form>
                         <p><a href="#">Forgot your password?</a></p>
                     </div>

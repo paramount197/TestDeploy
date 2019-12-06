@@ -2,7 +2,7 @@ import React from "react";
 import Header from "../block/Header";
 import Button from "../block/Button";
 
-function LoginLanding() {
+function Profile() {
     return (
         <>
             <Header header="Welcome back human!!!" />
@@ -17,4 +17,4 @@ function LoginLanding() {
     );
 }
 
-export default LoginLanding;
+export default Profile;

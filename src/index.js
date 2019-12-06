@@ -8,7 +8,7 @@ import Registration from "./pages/Registration";
 import NotFound from "./pages/NotFound";
 import Image from "./block/Image";
 import SignIn from "./pages/SignIn";
-import LoginLanding from "./pages/LoginLanding";
+import Profile from "./pages/Profile";
 import Clock from "./block/Clock";
 import Nationwidelogo from "./images/Nationwidelogo.jpeg";
 
@@ -41,7 +41,7 @@ const routing = (
       <Route exact path="/" component={App} />
       <Route path="/registration" component={Registration} />
       <Route path="/signin" component={SignIn} />
-      <Route path="/LoginLanding" component={LoginLanding} />
+      <Route path="/profile" component={Profile} />
       <Route component={NotFound} />
     </Switch>
   </Router>

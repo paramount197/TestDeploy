@@ -26,9 +26,6 @@ const routing = (
           <Link to="/">Home</Link>
         </li>
         <li>
-          <Link to="/welcome">Welcome</Link>
-        </li>
-        <li>
           <Link to="/registration">Registration</Link>
         </li>
         <li>
@@ -41,7 +38,6 @@ const routing = (
     </div>
     <Switch>
       <Route exact path="/" component={App} />
-      <Route path="/welcome" component={Welcome} />
       <Route path="/registration" component={Registration} />
       <Route path="/usersguide" component={UsersGuide} />
       <Route component={NotFound} />

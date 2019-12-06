@@ -1,13 +1,12 @@
 import React from "react";
 
-function Submit(){
-
+function Submit() {
     return (
         <input
             type="submit"
             value="Submit"
             className="submit"
-        />     
+        />
     );
 }
 

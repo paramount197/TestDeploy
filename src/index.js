@@ -26,11 +26,11 @@ const routing = (
         <li>
           <Link to="/">Home</Link>
         </li>
-        <li> 
+        <li>
           <Link to="/registration">Registration</Link>
         </li>
         <li>
-          <Link to="/signin">Login</Link>
+          <Link to="/signin">Sign-in</Link>
         </li>
         <li>
           <Clock />

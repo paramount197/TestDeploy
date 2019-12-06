@@ -44,7 +44,7 @@ function App() {
         <NavLink to="/registration">
           <Button name="REGISTER" />
         </NavLink>
-        <NavLink to= "/LoginLanding">
+        <NavLink to="/LoginLanding">
           <Button name="LoginLanding" />
         </NavLink>
         <Button name="USER-GUIDE" />

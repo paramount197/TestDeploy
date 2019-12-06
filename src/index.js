@@ -9,13 +9,13 @@ import UsersGuide from "./pages/UsersGuide";
 import NotFound from "./pages/NotFound";
 import Image from "./block/Image";
 import Clock from "./block/Clock";
-import Nationwidelogo from "./images/Nationwidelogo.jpeg";
+import NewNationwideLogo from "./images/NewNationwideLogo.jpeg";
 
 const routing = (
   <Router>
     <Link to="/">
       <Image
-        src={Nationwidelogo}
+        src={NewNationwideLogo}
         styleName="eventPageImage"
         alt="Nationwide logo"
       />
@@ -24,9 +24,6 @@ const routing = (
       <ul>
         <li>
           <Link to="/">Home</Link>
-        </li>
-        <li>
-          <Link to="/welcome">Welcome</Link>
         </li>
         <li>
           <Link to="/registration">Registration</Link>
@@ -41,7 +38,6 @@ const routing = (
     </div>
     <Switch>
       <Route exact path="/" component={App} />
-      <Route path="/welcome" component={Welcome} />
       <Route path="/registration" component={Registration} />
       <Route path="/usersguide" component={UsersGuide} />
       <Route component={NotFound} />

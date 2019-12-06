@@ -35,7 +35,7 @@ var cohortToggle = "September 2018";
 function App() {
   return (
     <>
-      <Header header="TDP Events Page" />
+      <Header header="TDP Events" />
       <Intro intro="Welcome to our TDP Event booking" />
       <div className="buttonDiv">
         <NavLink to="/signin">

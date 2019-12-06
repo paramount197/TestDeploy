@@ -36,7 +36,7 @@ const routing = (
        <Route exact path="/" component={App} />
        <Route path="/welcome" component={Welcome} />
        <Route path="/registration" component={Registration} />
-       <Route path="/usersguide" component={UsersGuide} />
+       <Route path="/usersguide" component={UsersGuide} />ls
        <Route component={NotFound} />
      </Switch>
    </Router>

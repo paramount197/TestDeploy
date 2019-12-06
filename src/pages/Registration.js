@@ -3,7 +3,8 @@ import Header from "../block/Header";
 import Intro from "../block/Intro";
 import Dropdown from "../block/Dropdown";
 import Input from "../block/Input";
-import "../styling/registration.css";
+import "../styles/registration.css";
+import Submit from "../block/Submit";
 
 const intake = [
   "September 2018",
@@ -37,23 +38,20 @@ const Registration = () => {
                 pattern="\d{10,11}"
                 //^\+?(?:\d\s?){10,11}$ - more complicated regex but I don't
                 //understand it fully, full explanation on teams
-              />
-              <br/>
-              <br/>                   
+              />                             
               <div className="intake">
                   <label>TDP Intake</label>
                   <select>
                      <Dropdown intakeProgrammeDetails={intake} />
                   </select>
               </div>
-              <br/>
               <div className="programme">
                   <label>TDP Programme</label>
                   <select>
                       <Dropdown intakeProgrammeDetails={programme} />
                   </select>
               </div>
-              <Input type="submit" value="Submit" styleName="submit" />
+              <Submit />
             </form>
           </div>
         </div>

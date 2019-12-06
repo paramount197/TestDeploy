@@ -44,7 +44,10 @@ function App() {
         <NavLink to="/registration">
           <Button name="REGISTER" />
         </NavLink>
-          <Button name="USER-GUIDE" />
+        <NavLink to= "/LoginLanding">
+          <Button name="LoginLanding" />
+        </NavLink>
+        <Button name="USER-GUIDE" />
       </div>
       <div className="eventList">
         <Events eventsDetail={tdpEventsList} cohortIntake={cohortToggle} />

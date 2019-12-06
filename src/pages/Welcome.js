@@ -3,6 +3,7 @@ import Header from "../block/Header";
 import Intro from "../block/Intro";
 import Events from "../block/Events";
 import Button from "../block/Button";
+import LoginLanding from "../pages/LoginLanding"
 //import SignIn from "./SignIn";
 import { NavLink } from "react-router-dom";
 
@@ -48,9 +49,11 @@ function Welcome() {
           <Button name="REGISTER" />
         </NavLink>
         
-          
-       
         <Button name="USER-GUIDE" />
+
+        <NavLink to= "/LoginLanding">
+          <Button name="LoginLanding" />
+        </NavLink>
       </div>
       <div className="eventList">
         <Events eventsDetail={tdpEventsList} cohortIntake={cohortToggle} />

@@ -20,33 +20,33 @@ const routing = (
         alt="Nationwide logo"
       />
     </Link>
-     <div>
-       <ul>
-         <li>
-            <Link to="/">Home </Link>
-         </li>
-         <li>
-           <Link to="/welcome"> Welcome </Link>
-          </li>
-         <li>
-            <Link to="/registration">Registration</Link>
-          </li>
-          <li>
-            <Link to="/usersguide">UsersGuide </Link>
-           </li>
-           <li>
+    <div>
+      <ul>
+        <li>
+          <Link to="/">Home </Link>
+        </li>
+        <li>
+          <Link to="/welcome"> Welcome </Link>
+        </li>
+        <li>
+          <Link to="/registration">Registration</Link>
+        </li>
+        <li>
+          <Link to="/usersguide">UsersGuide </Link>
+        </li>
+        <li>
           <Clock />
         </li>
-       </ul>
-     </div>
-      <Switch>
-       <Route exact path="/" component={App} />
-       <Route path="/welcome" component={Welcome} />
-       <Route path="/registration" component={Registration} />
-       <Route path="/usersguide" component={UsersGuide} />
-       <Route component={NotFound} />
-     </Switch>
-   </Router>
+      </ul>
+    </div>
+    <Switch>
+      <Route exact path="/" component={App} />
+      <Route path="/welcome" component={Welcome} />
+      <Route path="/registration" component={Registration} />
+      <Route path="/usersguide" component={UsersGuide} />
+      <Route component={NotFound} />
+    </Switch>
+  </Router>
 );
 
 ReactDOM.render(routing, document.getElementById("root"));

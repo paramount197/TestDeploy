@@ -6,7 +6,7 @@ function Profile() {
         <>
             <Header header="Welcome back human!!!" />
             <div className="notice">
-                <h2> Compulsory events </h2>
+                <h2> Core events </h2>
                 <li> Quaterley forum </li>
                 <li> Christmas meal </li>
             </div>

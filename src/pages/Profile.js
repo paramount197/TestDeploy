@@ -1,6 +1,5 @@
 import React from "react";
 import Header from "../block/Header";
-import Button from "../block/Button";
 
 function Profile() {
     return (
@@ -10,8 +9,6 @@ function Profile() {
                 <h2> Compulsory events </h2>
                 <li> Quaterley forum </li>
                 <li> Christmas meal </li>
-                <Button name="Booked Events" />
-                <Button name="Upcoming Events" />
             </div>
         </>
     );

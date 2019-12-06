@@ -5,6 +5,7 @@ import "./index.css";
 import App from "./App";
 import * as serviceWorker from "./serviceWorker";
 import Registration from "./pages/Registration";
+import UsersGuide from "./pages/UsersGuide";
 import NotFound from "./pages/NotFound";
 import Image from "./block/Image";
 import Clock from "./block/Clock";
@@ -25,7 +26,13 @@ const routing = (
           <Link to="/">Home</Link>
         </li>
         <li>
+          <Link to="/welcome">Welcome</Link>
+        </li>
+        <li>
           <Link to="/registration">Registration</Link>
+        </li>
+        <li>
+          <Link to="/usersguide">UsersGuide</Link>
         </li>
         <li>
           <Clock />
@@ -34,7 +41,9 @@ const routing = (
     </div>
     <Switch>
       <Route exact path="/" component={App} />
+      <Route path="/welcome" component={Welcome} />
       <Route path="/registration" component={Registration} />
+      <Route path="/usersguide" component={UsersGuide} />
       <Route component={NotFound} />
     </Switch>
   </Router>

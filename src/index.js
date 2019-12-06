@@ -4,17 +4,21 @@ import { Route, Link, BrowserRouter as Router, Switch } from "react-router-dom";
 import "./index.css";
 import App from "./App";
 import * as serviceWorker from "./serviceWorker";
-import Welcome from "./pages/Welcome";
-import NotFound from "./pages/NotFound";
 import Registration from "./pages/Registration";
 import UsersGuide from "./pages/UsersGuide";
-import logo1 from "./images/Nationwidelogo.jpeg";
+import NotFound from "./pages/NotFound";
 import Image from "./block/Image";
+import Clock from "./block/Clock";
+import Nationwidelogo from "./images/Nationwidelogo.jpeg";
 
 const routing = (
   <Router>
     <Link to="/">
-     <Image src={logo1} styleName="eventPageImage" />
+      <Image
+        src={Nationwidelogo}
+        styleName="eventPageImage"
+        alt="Nationwide logo"
+      />
     </Link>
      <div>
        <ul>
@@ -30,6 +34,9 @@ const routing = (
           <li>
             <Link to="/usersguide">UsersGuide </Link>
            </li>
+           <li>
+          <Clock />
+        </li>
        </ul>
      </div>
       <Switch>

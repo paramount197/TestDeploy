@@ -14,10 +14,12 @@ const events = require("./data/events.json");
 function App() {
   return (
     <>
-      <Header header="TDP Events Page" />
+      <Header header="TDP Events" />
       <Intro intro="Welcome to our TDP Event booking" />
       <div className="buttonDiv">
-        <Button name="SIGN IN" />
+        <NavLink to="/signin">
+          <Button name="SIGN IN" />
+        </NavLink>
         <NavLink to="/registration">
           <Button name="REGISTER" />
         </NavLink>

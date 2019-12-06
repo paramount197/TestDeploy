@@ -1,0 +1,54 @@
+  p {
+    font-size: 1em; 
+    margin-left: 30px; 
+    color: #fff;
+    font-family: 'Dosis', sans-serif;
+  }
+
+  .row { 
+    background-size: cover;
+    width: 420px;
+    height: 450px;
+    padding: 10px;
+    margin: auto;
+    border-top: 7px solid #e42148;
+  }
+
+  .intake,
+  .programme {
+    font-size: 1em; 
+    margin-left: 30px; 
+    color: #fff;
+    font-family: 'Dosis', sans-serif;
+    padding: 20px;
+  }
+
+  .intake.label {
+    margin-left: 1em;
+    text-align: left;
+  }
+
+   label {
+    text-align: left;
+  }
+
+  .form-p {
+    padding: 5px;
+    margin-top: 5px;
+    font-size: 1.1em;
+    color: #fff;
+    letter-spacing: 3px;
+    text-align: center;
+  }
+  
+  .form-p a {
+    color: #fff;
+    text-decoration: none;
+    -webkit-transition: .5s all;
+    -ms-transition: .5s all;
+    transition: .5s all;
+  }
+  
+  .form-p a:hover {
+    color: #1abc9c;
+  }

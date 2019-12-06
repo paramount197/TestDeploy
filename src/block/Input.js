@@ -1,11 +1,11 @@
 import React from "react";
-import "../styling/input.css";
+import "../styles/input.css";
 
 const Input = props => {
   return (
     <label className="input">
       {props.label}
-      <input
+      <input className='input'
         type={props.type}
         name={props.name}
         value={props.value}

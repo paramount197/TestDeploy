@@ -1,7 +1,8 @@
 import React from "react";
+import Header from "../block/Header";
 
 function NotFound() {
-  return <h1> 404 Error: page not found</h1>;
+  return <Header header="404 Error: page not found" />;
 }
 
 export default NotFound;

@@ -8,6 +8,8 @@ import Registration from "./pages/Registration";
 import UsersGuide from "./pages/UsersGuide";
 import NotFound from "./pages/NotFound";
 import Image from "./block/Image";
+import SignIn from "./pages/SignIn";
+import Profile from "./pages/Profile";
 import Clock from "./block/Clock";
 import NewNationwideLogo from "./images/NewNationwideLogo.jpeg";
 
@@ -29,6 +31,9 @@ const routing = (
           <Link to="/registration">Registration</Link>
         </li>
         <li>
+          <Link to="/signin">Sign-in</Link>
+        </li>
+        <li>
           <Link to="/usersguide">UsersGuide</Link>
         </li>
         <li>
@@ -39,6 +44,8 @@ const routing = (
     <Switch>
       <Route exact path="/" component={App} />
       <Route path="/registration" component={Registration} />
+      <Route path="/signin" component={SignIn} />
+      <Route path="/profile" component={Profile} />
       <Route path="/usersguide" component={UsersGuide} />
       <Route component={NotFound} />
     </Switch>

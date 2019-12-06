@@ -5,6 +5,7 @@ import "./index.css";
 import App from "./App";
 import * as serviceWorker from "./serviceWorker";
 import Registration from "./pages/Registration";
+import UsersGuide from "./pages/UsersGuide";
 import NotFound from "./pages/NotFound";
 import Image from "./block/Image";
 import SignIn from "./pages/SignIn";
@@ -33,6 +34,9 @@ const routing = (
           <Link to="/signin">Sign-in</Link>
         </li>
         <li>
+          <Link to="/usersguide">UsersGuide</Link>
+        </li>
+        <li>
           <Clock />
         </li>
       </ul>
@@ -42,6 +46,7 @@ const routing = (
       <Route path="/registration" component={Registration} />
       <Route path="/signin" component={SignIn} />
       <Route path="/profile" component={Profile} />
+      <Route path="/usersguide" component={UsersGuide} />
       <Route component={NotFound} />
     </Switch>
   </Router>

@@ -6,15 +6,7 @@ import Input from "../block/Input";
 import "../styles/registration.css";
 import Submit from "../block/Submit";
 
-const intake = [
-  "September 2018",
-  "May 2019",
-  "September 2019",
-  "May 2020",
-  "September 2020"
-];
-
-const programme = ["Accelerator", "IP", "Degree Apprenticeship"];
+const tdpData = require("../data/tdpData.json");
 
 const Registration = () => {
   return (

@@ -11,13 +11,13 @@ import Image from "./block/Image";
 import SignIn from "./pages/SignIn";
 import Profile from "./pages/Profile";
 import Clock from "./block/Clock";
-import Nationwidelogo from "./images/Nationwidelogo.jpeg";
+import NewNationwideLogo from "./images/NewNationwideLogo.jpeg";
 
 const routing = (
   <Router>
     <Link to="/">
       <Image
-        src={Nationwidelogo}
+        src={NewNationwideLogo}
         styleName="eventPageImage"
         alt="Nationwide logo"
       />

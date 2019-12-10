@@ -12,44 +12,48 @@ import SignIn from "./pages/SignIn";
 import Profile from "./pages/Profile";
 import Clock from "./block/Clock";
 import NewNationwideLogo from "./images/NewNationwideLogo.jpeg";
+import Footer from "../src/block/Footer";
 
 const routing = (
-  <Router>
-    <Link to="/">
-      <Image
-        src={NewNationwideLogo}
-        styleName="eventPageImage"
-        alt="Nationwide logo"
-      />
-    </Link>
-    <div>
-      <ul>
-        <li>
-          <Link to="/">Home</Link>
-        </li>
-        <li>
-          <Link to="/registration">Registration</Link>
-        </li>
-        <li>
-          <Link to="/signin">Sign-in</Link>
-        </li>
-        <li>
-          <Link to="/usersguide">UsersGuide</Link>
-        </li>
-        <li>
-          <Clock />
-        </li>
-      </ul>
-    </div>
-    <Switch>
-      <Route exact path="/" component={App} />
-      <Route path="/registration" component={Registration} />
-      <Route path="/signin" component={SignIn} />
-      <Route path="/profile" component={Profile} />
-      <Route path="/usersguide" component={UsersGuide} />
-      <Route component={NotFound} />
-    </Switch>
-  </Router>
+  <>
+    <Router>
+      <Link to="/">
+        <Image
+          src={NewNationwideLogo}
+          styleName="eventPageImage"
+          alt="Nationwide logo"
+        />
+      </Link>
+      <div>
+        <ul>
+          <li>
+            <Link to="/">Home</Link>
+          </li>
+          <li>
+            <Link to="/registration">Registration</Link>
+          </li>
+          <li>
+            <Link to="/signin">Sign-in</Link>
+          </li>
+          <li>
+            <Link to="/usersguide">UsersGuide</Link>
+          </li>
+          <li>
+            <Clock />
+          </li>
+        </ul>
+      </div>
+      <Switch>
+        <Route exact path="/" component={App} />
+        <Route path="/registration" component={Registration} />
+        <Route path="/signin" component={SignIn} />
+        <Route path="/profile" component={Profile} />
+        <Route path="/usersguide" component={UsersGuide} />
+        <Route component={NotFound} />
+      </Switch>
+    </Router>
+    <Footer />
+  </>
 );
 
 ReactDOM.render(routing, document.getElementById("root"));

@@ -1,17 +1,17 @@
 body {
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
+  font-family: sans-serif;
+  /* TASK - import NBS font */
   -webkit-font-smoothing: antialiased;
+  /* Smooth the font on the level of the pixel, as opposed to the subpixel. 
+  Switching from subpixel rendering to antialiasing for light text on dark backgrounds makes it look lighter. */
   -moz-osx-font-smoothing: grayscale;
 }
 
 code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New", monospace;
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
+    monospace;
 }
-
-li {
-  padding: 20px;
-  color: white;
-}
+/* Font for code? */
 
 ul {
   width: 75%;
@@ -38,7 +38,7 @@ li a {
 li a:hover {
   background-color: #111;
 }
-
+/* styles the header bar, should this be a separate component? */
 button {
   display: inline-block;
   width: auto;
@@ -49,7 +49,7 @@ button {
 .buttonDiv {
   height: auto;
   width: auto;
-  background-color: rgb(0, 74, 143);
+  /* background-color: rgb(0, 74, 143); */
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -66,7 +66,8 @@ p {
   color: white;
 }
 
-html, body {
+html,
+body {
   height: 100%;
   font-family: sans-serif;
 }

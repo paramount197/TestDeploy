@@ -1,5 +1,4 @@
-html,
-body {
+html, body {
   height: 100%;
   font-family: sans-serif;
 }
@@ -29,9 +28,9 @@ body {
 } */
 
 code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
-    monospace;
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New", monospace;
 }
+
 /* Font for code? */
 
 ul {
@@ -40,7 +39,7 @@ ul {
   margin: 0;
   padding: 0;
   overflow: hidden;
-  background-color: rgb(87, 82, 82);
+  background-color: crimson;
   float: right;
 }
 
@@ -57,9 +56,11 @@ li a {
 }
 
 li a:hover {
-  background-color: #111;
+  background-color: yellow;
 }
+
 /* styles the header bar, should this be a separate component? */
+
 button {
   display: inline-block;
   width: auto;

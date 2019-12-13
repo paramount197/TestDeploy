@@ -56,7 +56,7 @@ li a {
 }
 
 li a:hover {
-  background-color: yellow;
+  background-color: black;
 }
 
 /* styles the header bar, should this be a separate component? */
@@ -78,11 +78,4 @@ button {
   justify-content: center;
   font-size: 10px;
   /* color: blue; */
-}
-
-.footer {
-  flex-shrink: 0;
-  text-align: center;
-  background-color: tomato;
-  color: white;
 }

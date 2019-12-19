@@ -1,4 +1,5 @@
-html, body {
+html,
+body {
   height: 100%;
   font-family: sans-serif;
 }
@@ -28,7 +29,8 @@ body {
 } */
 
 code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New", monospace;
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
+    monospace;
 }
 
 /* Font for code? */
@@ -61,21 +63,12 @@ li a:hover {
 
 /* styles the header bar, should this be a separate component? */
 
-button {
-  display: inline-block;
-  width: auto;
-  height: 20px;
-  color: black;
-}
-
 .buttonDiv {
   height: auto;
   width: auto;
-  /* background-color: rgb(0, 74, 143); */
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   font-size: 10px;
-  /* color: blue; */
 }

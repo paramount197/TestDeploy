@@ -1,0 +1,10 @@
+.buttonDiv {
+  height: 100px;
+  width: 150px;
+  margin: 10px auto;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-around;
+}

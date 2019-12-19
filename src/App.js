@@ -23,7 +23,7 @@ function App() {
         <NavLink to="/registration">
           <Button name="REGISTER" className="homeButton" />
         </NavLink>
-        <Button name="USER-GUIDE" className="homeButton" />
+        <Button name="USER-GUIDE" className="homeButton userGuide" />
       </div>
       <div className="eventList">
         <Events

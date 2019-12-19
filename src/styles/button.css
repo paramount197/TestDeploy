@@ -1,6 +1,18 @@
 .homeButton {
-  display: inline-block;
-  width: auto;
   height: 20px;
-  color: black;
+  color: #fff;
+  border-radius: 5px;
+  background-color: #e42148;
+  border: none;
+}
+.homeButton:hover {
+  background: black;
+  letter-spacing: 1px;
+  -webkit-box-shadow: black;
+  -moz-box-shadow: black;
+  box-shadow: black;
+  transition: all 0.5s ease 0s;
+}
+.userGuide {
+  margin-bottom: 30px;
 }

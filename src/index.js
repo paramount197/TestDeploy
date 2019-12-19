@@ -17,14 +17,15 @@ import Footer from "../src/block/Footer";
 const routing = (
   <>
     <Router>
-      <Link to="/">
-        <Image
-          src={NewNationwideLogo}
-          styleName="eventPageImage"
-          alt="Nationwide logo"
-        />
-      </Link>
-      <div>
+      <div className="header">
+        <Link to="/">
+          <Image
+            src={NewNationwideLogo}
+            styleName="eventPageImage"
+            alt="Nationwide logo"
+          />
+        </Link>
+
         <ul>
           <li>
             <Link to="/">Home</Link>

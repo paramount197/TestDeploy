@@ -31,13 +31,16 @@ code {
 /* Font for code? */
 
 /* below styles the header bar, should this be a separate component? */
+
+.header {
+  background-color: crimson;
+}
 ul {
-  width: 75%;
+  height: 70px;
   list-style-type: none;
   margin: 0;
-  padding: 0;
+  padding-right: 50px;
   overflow: hidden;
-  background-color: crimson;
   float: right;
 }
 

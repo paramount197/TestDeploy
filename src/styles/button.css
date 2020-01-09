@@ -1,18 +1,20 @@
 .homeButton {
   height: 20px;
-  color: #fff;
+  color: black;
   border-radius: 5px;
-  background-color: #e42148;
+  background-color: #3E5C76;
   border: none;
 }
+
 .homeButton:hover {
-  background: black;
-  letter-spacing: 1px;
+  background: green;
+  letter-spacing: 0.5px;
   -webkit-box-shadow: black;
   -moz-box-shadow: black;
   box-shadow: black;
-  transition: all 0.5s ease 0s;
+  transition: all 0.3s ease 0s;
 }
+
 .userGuide {
   margin-bottom: 30px;
 }

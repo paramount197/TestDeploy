@@ -7,6 +7,15 @@
   padding: 0;
 }
 
+.footer a {
+  text-decoration: none;
+  color: black;
+}
+
+.footer a:hover {
+  text-decoration: underline;
+}
+
 .footer p {
   margin: 0;
 }

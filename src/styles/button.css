@@ -7,12 +7,7 @@
 }
 
 .homeButton:hover {
-  background: green;
-  letter-spacing: 0.5px;
-  -webkit-box-shadow: black;
-  -moz-box-shadow: black;
-  box-shadow: black;
-  transition: all 0.3s ease 0s;
+  text-decoration: underline;
 }
 
 .userGuide {

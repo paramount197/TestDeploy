@@ -7,13 +7,11 @@ html,
 body {
   height: 100%;
   font-family: "Poppins", sans-serif;
-  color: ;
+  color: black;
 }
 
 body {
   -webkit-font-smoothing: antialiased;
-  /* Smooth the font on the level of the pixel, as opposed to the subpixel. 
-  Switching from subpixel rendering to antialiasing for light text on dark backgrounds makes it look lighter. */
   -moz-osx-font-smoothing: grayscale;
   margin: 0;
   padding: 0;
@@ -28,13 +26,10 @@ body {
   height: 100%;
 }
 
-/* Font for code? */
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
 }
-
-/* below styles the header bar,  this should be a separate component */
 
 .header {
   background-color: #002979;

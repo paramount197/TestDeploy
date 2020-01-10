@@ -34,12 +34,12 @@ const routing = (
             <Link to="/registration">Registration</Link>
           </li>
           <li>
-            <Link to="/signin">Sign-in</Link>
+            <Link to="/signin">Sign In</Link>
           </li>
           <li>
-            <Link to="/usersguide">UsersGuide</Link>
+            <Link to="/usersguide">User Guide</Link>
           </li>
-          <li>
+          <li className="clock">
             <Clock />
           </li>
         </ul>

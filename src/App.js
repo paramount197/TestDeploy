@@ -16,20 +16,27 @@ function App() {
     <>
       <Header header="TDP Events" />
       <Intro intro="Welcome to our TDP Event booking" />
-      <div className="buttonDiv">
-        <NavLink to="/signin">
-          <Button name="SIGN IN" className="homeButton" />
-        </NavLink>
-        <NavLink to="/registration">
-          <Button name="REGISTER" className="homeButton" />
-        </NavLink>
-        <Button name="USER-GUIDE" className="homeButton userGuide" />
-      </div>
-      <div className="eventList">
-        <Events
-          eventsDetail={events.tdpEventsList}
-          cohortIntake={events.cohortToggle}
-        />
+      
+        <div className="buttonDivCont">
+          <div className="buttonDiv">
+            <NavLink to="/signin">
+              <Button name="SIGN IN" className="homeButton" />
+            </NavLink>
+            <NavLink to="/registration">
+              <Button name="REGISTER" className="homeButton" />
+            </NavLink>
+            <NavLink to="/usersguide">
+              <Button name="USER GUIDE" className="homeButton userGuide" />
+            </NavLink>
+          </div>
+        
+        <div className="eventList">
+          <p className="eventTitle">Upcoming Events</p>
+          <Events
+            eventsDetail={events.tdpEventsList}
+            cohortIntake={events.cohortToggle}
+          />
+        </div>
       </div>
     </>
   );

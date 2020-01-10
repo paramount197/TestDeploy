@@ -1,10 +1,27 @@
 .buttonDiv {
-  height: 100px;
-  width: 150px;
   margin: 10px auto;
   display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
+  flex-direction: column;
+  flex-wrap: none;
   align-items: center;
-  justify-content: space-around;
+  justify-content: stretch;
+  justify-self: stretch;
+}
+
+.eventList {
+  max-width: 40%;
+  border: 1px solid black;
+  border-radius: 0.5em;
+  padding: 0 1em;
+  margin: auto;
+}
+
+.eventTitle {
+  text-align: left;
+}
+.event {
+  border: 1px solid black;
+  border-radius: 0.5em;
+  margin: 0 0 0.5em 0;
+  padding: 0.1em;
 }

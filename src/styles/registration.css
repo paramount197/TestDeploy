@@ -1,53 +1,37 @@
-  p {
-    font-size: 1em;
-    margin-left: 30px;
-    font-family: 'Dosis', sans-serif;
-    color: black;
-  }
+.clock p {
+  margin-left: 30px;
+}
 
-  .row {
-    background-size: cover;
-    width: 420px;
-    height: 450px;
-    padding: 10px;
-    margin: auto;
-    border-top: 7px solid #3E5C76;
-  }
+.row {
+  background-size: cover;
+  width: 420px;
+  height: 450px;
+  padding: 10px;
+  margin: auto;
+  border-top: 7px solid #3e5c76;
+}
 
-  .intake, .programme {
-    font-size: 1em;
-    margin-left: 30px;
-    font-family: 'Dosis', sans-serif;
-    padding: 20px;
-  }
+.intake,
+.programme {
+  margin-left: 30px;
+  padding: 20px;
+}
 
-  .intake.label {
-    margin-left: 1em;
-    text-align: left;
-  }
+.intake.label {
+  margin-left: 1em;
+  text-align: left;
+}
 
-  label {
-    text-align: left;
-  }
+label {
+  text-align: left;
+}
 
-  .form-p {
-    padding: 5px;
-    color: black;
-    margin-top: 5px;
-    font-size: 1.1em;
-    letter-spacing: 3px;
-    text-align: center;
-    color: black;
-  }
-
-  .form-p a {
-    text-decoration: none;
-    -webkit-transition: .5s all;
-    -ms-transition: .5s all;
-    transition: .5s all;
-    color: black;
-  }
-
-  .form-p a:hover {
-    color: #1abc9c;
-  }
+.form-p {
+  padding: 5px;
+  margin-top: 5px;
+  letter-spacing: 3px;
+  text-align: center;
+}
+.form-p a {
+  text-decoration: none;
+}

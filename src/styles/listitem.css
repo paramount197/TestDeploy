@@ -1,6 +1,5 @@
 .event {
   display: block;
   float: none;
-  padding: 20px;
-  color: black;
+  padding: .6em;
 }

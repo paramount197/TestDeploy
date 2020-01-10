@@ -1,18 +1,23 @@
-html, body {
+/* @font-face {
+  font-family: "NBSMedium";
+  src: url(https://www.findmyfont.com/fonts/font-preview?fset=JAW-Fonts&ffam=&fid=fe35f8d593c45633c6e7a41585a2b7c1&width=800&fsize=48&text=The%20quick%20brown%20fox%20jumps%20over%20the%20lazy%20dog&wrap=2);
+} */
+
+html,
+body {
   height: 100%;
-  font-family: sans-serif;
+  font-family: "Poppins", sans-serif;
+  color: ;
 }
 
 body {
-  font-family: sans-serif;
-  /* TASK - import NBS font */
   -webkit-font-smoothing: antialiased;
   /* Smooth the font on the level of the pixel, as opposed to the subpixel. 
   Switching from subpixel rendering to antialiasing for light text on dark backgrounds makes it look lighter. */
   -moz-osx-font-smoothing: grayscale;
   margin: 0;
   padding: 0;
-  background-color: #F9F8F8;
+  background-color: #f9f8f8;
   text-align: center;
   color: black;
 }
@@ -23,16 +28,16 @@ body {
   height: 100%;
 }
 
+/* Font for code? */
 code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New", monospace;
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
+    monospace;
 }
 
-/* Font for code? */
-
-/* below styles the header bar, should this be a separate component? */
+/* below styles the header bar,  this should be a separate component */
 
 .header {
-  background-color: #3E5C76;
+  background-color: #3e5c76;
 }
 
 ul {
@@ -56,5 +61,13 @@ li a {
 }
 
 li a:hover {
-  background-color: #F9F8F8;
+  text-decoration: underline;
+  background-color: rgba(255, 255, 255, 0.1);
+}
+.clock {
+  width: 60px;
+}
+
+.header p {
+  color: white;
 }

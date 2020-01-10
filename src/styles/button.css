@@ -1,13 +1,15 @@
 .homeButton {
-  height: 20px;
-  color: black;
-  border-radius: 5px;
-  background-color: #3E5C76;
-  border: none;
+  height: 30px;
+  width: 20em;
+  border-radius: 0.5em;
+  border: 0.1em solid black;
+  margin: 0.2em;
 }
 
 .homeButton:hover {
   text-decoration: underline;
+  cursor: grab;
+  box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.25);
 }
 
 .userGuide {

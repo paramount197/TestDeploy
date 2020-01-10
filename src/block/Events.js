@@ -13,6 +13,7 @@ const Events = props => {
     event =>
       event.cohort.includes(props.cohortIntake) && (
         <ListItem
+          className="event"
           eventName={event.name}
           eventDate={event.date}
           eventLocation={event.location}

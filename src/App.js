@@ -7,6 +7,8 @@ import Button from "./block/Button";
 import { NavLink } from "react-router-dom";
 import Get from "./Axios/Get";
 import Post from "./Axios/Post";
+import Getter from "./Axios/Getter";
+import Eventsjson from "./block/Eventsjson";
 
 const events = require("./data/events.json");
 //imports all the data from a json file accessible everywhere

@@ -7,7 +7,6 @@ import ListItem from "./ListItem";
 //         //do stuff
 //     }
 // }
-
 const Events = props => {
   return props.eventsDetail.map(
     event =>

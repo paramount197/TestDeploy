@@ -7,9 +7,10 @@ import * as serviceWorker from "./serviceWorker";
 import Registration from "./pages/Registration";
 import UsersGuide from "./pages/UsersGuide";
 import NotFound from "./pages/NotFound";
-import Image from "./block/Image";
 import SignIn from "./pages/SignIn";
 import Profile from "./pages/Profile";
+import ImageGallery from "./pages/ImageGallery";
+import Image from "./block/Image";
 import Clock from "./block/Clock";
 import NewNationwideLogo from "./images/NewNationwideLogo.jpeg";
 import Footer from "../src/block/Footer";
@@ -25,7 +26,6 @@ const routing = (
             alt="Nationwide logo"
           />
         </Link>
-
         <ul>
           <li>
             <Link to="/">Home</Link>
@@ -39,6 +39,9 @@ const routing = (
           <li>
             <Link to="/usersguide">User Guide</Link>
           </li>
+          <li>
+            <Link to="/imagegallery">Image Gallery</Link>
+          </li>
           <li className="clock">
             <Clock />
           </li>
@@ -50,6 +53,7 @@ const routing = (
         <Route path="/signin" component={SignIn} />
         <Route path="/profile" component={Profile} />
         <Route path="/usersguide" component={UsersGuide} />
+        <Route path="/imagegallery" component={ImageGallery} />
         <Route component={NotFound} />
       </Switch>
     </Router>

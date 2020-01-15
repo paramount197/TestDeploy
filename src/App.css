@@ -28,10 +28,12 @@
 }
 
 .axiosTest ul {
-  height: 150px;
+  height: auto;
   list-style-type: circle;
   float: none;
+  display: inline-block;
 }
+
 .axiosTest li {
   display: block;
   float: none;

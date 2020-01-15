@@ -6,6 +6,7 @@ import Events from "./block/Events";
 import Button from "./block/Button";
 import { NavLink } from "react-router-dom";
 import Get from "./Axios/Get";
+import Post from "./Axios/Post";
 
 const events = require("./data/events.json");
 //imports all the data from a json file accessible everywhere
@@ -17,6 +18,7 @@ function App() {
     <>
       <Header header="TDP Events" />
       <Intro intro="Welcome to our TDP Event booking" />
+      <Post />
       <div className="buttonDivCont">
         <div className="buttonDiv">
           <NavLink to="/signin">
@@ -39,9 +41,7 @@ function App() {
         </div>
       </div>
       <div className="axiosTest">
-        <ul>
-          <Get />
-        </ul>
+        <Get />
       </div>
     </>
   );

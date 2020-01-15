@@ -1,33 +1,31 @@
 import React from "react";
 import axios from "axios";
-import ListItem from "../block/ListItem";
 
 class Post extends React.Component {
-  //   postEv() {
-  //     let ev = {
-  //       name: "easter Party",
-  //       date: "01/01/2019"
-  //     };
-  //     console.log("jsdfsbk");
-
-  handleClick() {
+  handleClick = () => {
     console.log("clicked");
-    // axios
-    //   .post("http://localhost:3000/events", {
-    //     name: "test"
-    //   })
-
-    //   .then(function(response) {
-    //     console.log(response);
-    //   })
-    //   .catch(function(error) {
-    //     console.log(error);
-    //   });
-  }
+    axios
+      .post("http://localhost:3000/events", {
+        id: "6",
+        name: "auto test"
+      })
+      .then(res => {
+        console.log("this is the post response", res);
+        console.log("this is the post data", res.data);
+      });
+  };
 
   render() {
-    return <button onClick={this.handleClick}>post event</button>;
+    return <button onClick={this.handleClick}>Post event</button>;
   }
 }
+
+// get all Events, but only id values.
+
+// put intob Array
+
+// sort Array
+
+// new id = highest id + 1
 
 export default Post;

@@ -27,6 +27,8 @@ class App extends React.Component {
     });
   }
 
+  // REWRITE A Component that fills in app js with the whole events section
+
   render() {
     return (
       <>

@@ -1,7 +1,7 @@
 import React from "react";
 import '../styles/submit.css';
 
-function Submit() {
+function Submit(sub) {
     return (
         <input
             type="submit"

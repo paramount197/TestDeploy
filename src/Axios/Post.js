@@ -5,9 +5,13 @@ class Post extends React.Component {
   handleClick = () => {
     console.log("clicked");
     axios
-      .post("http://localhost:3000/events", {
-        id: "6",
-        name: "auto test"
+      .post("http://localhost:4000/events", {
+        id: 5,
+        name: "demo Arbind2",
+        date: "01/12/2020",
+        location: "Wakefield house",
+        programme: ["Accelerator", "IP"],
+        cohort: ["September 2019"]
       })
       .then(res => {
         console.log("this is the post response", res);

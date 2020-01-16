@@ -12,16 +12,12 @@ import Getter from "./Axios/Getter";
 import Eventsjson from "./block/Eventsjson";
 
 const events = require("./data/events.json");
-//imports all the data from a json file accessible everywhere
-//rather than objects/array that are stored and repeated
-//in various components
-
 class App extends React.Component {
   state = {
     events: []
   };
   componentDidMount() {
-    axios.get("http://localhost:3000/events").then(res => {
+    axios.get("http://localhost:4000/events").then(res => {
       console.log("this is the events app response", res);
       this.setState({ events: res.data });
     });
@@ -34,7 +30,6 @@ class App extends React.Component {
       <>
         <Header header="TDP Events" />
         <Intro intro="Welcome to our TDP Event booking" />
-        <Post />
         <div className="buttonDivCont">
           <div className="buttonDiv">
             <NavLink to="/signin">
@@ -51,19 +46,11 @@ class App extends React.Component {
           <div className="eventList">
             <p className="eventTitle">Upcoming Events</p>
             <Events
-              eventsDetail={events.tdpEventsList}
+              eventsDetail={this.state.events}
               cohortIntake={events.cohortToggle}
             />
+            <Post />
           </div>
-        </div>
-        <div className="axiosTest">
-          <ul>
-            {this.state.events.map(event => (
-              <li>{event.name}</li>
-            ))}
-          </ul>
-
-          <Get />
         </div>
       </>
     );

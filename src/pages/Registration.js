@@ -9,6 +9,12 @@ import Submit from "../block/Submit";
 const tdpData = require("../data/tdpData.json");
 
 const Registration = () => {
+
+  const sub =() => {
+    console.log("test")
+  }
+
+
   return (
     <>
       <Header header="Registration page" />
@@ -16,7 +22,7 @@ const Registration = () => {
         <div className="row">
           <div className="form-p">
             <Intro intro="Please enter the details" />
-            <form name="Registration" onSubmit>
+            <form name="Registration" onSubmit={sub}>
               <Input
                 type="text"
                 placeholder="First-Name*"

@@ -8,17 +8,17 @@ import ListItem from "./ListItem";
 //     }
 // }
 const Events = props => {
-  return props.eventsDetail.map(
-    event =>
-      event.cohort.includes(props.cohortIntake) && (
-        <ListItem
-          className="event"
-          eventName={event.name}
-          eventDate={event.date}
-          eventLocation={event.location}
-        />
-      )
-  );
+  return props.eventsDetail.map(event => (
+    // event.cohort.includes(props.cohortIntake) &&
+    <ListItem
+      className="event"
+      eventName={event.name}
+      text="on the"
+      eventDate={event.date}
+      text2="at"
+      eventLocation={event.location}
+    />
+  ));
 };
 
 export default Events;

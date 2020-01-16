@@ -1,6 +1,6 @@
 import React from "react";
 import axios from "axios";
-import ListItem from "../block/ListItem";
+// this is a working component to create a common get method
 
 class Get extends React.Component {
   state = {
@@ -9,11 +9,11 @@ class Get extends React.Component {
   };
 
   componentDidMount() {
-    axios.get("http://localhost:3000/users").then(res => {
+    axios.get("http://localhost:4000/users").then(res => {
       console.log("this is the user response", res);
       this.setState({ user: res.data });
     });
-    axios.get("http://localhost:3000/events").then(res2 => {
+    axios.get("http://localhost:4000/events").then(res2 => {
       console.log("this is the event response", res2);
       this.setState({ event: res2.data });
     });

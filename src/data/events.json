@@ -4,23 +4,58 @@
       "name": "Open Forum",
       "date": "01/12/2019",
       "location": "Nationwide house",
-      "programme": ["Accelerator", "IP"],
-      "cohort": ["September 2018"]
+      "programme": [
+        "Accelerator",
+        "IP"
+      ],
+      "cohort": [
+        "September 2018"
+      ]
     },
     {
       "name": "Christmas Party",
       "date": "01/01/2019",
       "location": "Hilton",
-      "programme": ["Accelerator", "IP"],
-      "cohort": ["September 2018", "May 2019", "September 2019", "May 2020"]
+      "programme": [
+        "Accelerator",
+        "IP"
+      ],
+      "cohort": [
+        "September 2018",
+        "May 2019",
+        "September 2019",
+        "May 2020"
+      ]
     },
     {
       "name": "Wellbeing",
       "date": "01/12/2020",
       "location": "Wakefield house",
-      "programme": ["Accelerator", "IP"],
-      "cohort": ["September 2019"]
+      "programme": [
+        "Accelerator",
+        "IP"
+      ],
+      "cohort": [
+        "September 2019"
+      ]
     }
   ],
-  "cohortToggle": "September 2019"
+  "cohortToggle": "September 2019",
+  "NonCoreEvents": [
+    {
+      "name": "Bingo nights -Socials",
+      "date": "23/01/2020",
+      "location": "Buzz Bingo Swindon",
+      "programme": [
+        "Accelerator",
+        "IP"
+      ],
+      "cohort": [
+        "September 2018",
+        "May 2019",
+        "September 2019",
+        "May 2020"
+      ]
+    }
+  ]
 }

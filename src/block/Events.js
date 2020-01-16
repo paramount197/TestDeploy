@@ -15,7 +15,9 @@ const Events = props => {
         <ListItem
           className="event"
           eventName={event.name}
+          text="on the"
           eventDate={event.date}
+          text2="at"
           eventLocation={event.location}
         />
       )

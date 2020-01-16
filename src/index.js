@@ -25,7 +25,6 @@ const routing = (
             alt="Nationwide logo"
           />
         </Link>
-
         <ul>
           <li>
             <Link to="/">Home</Link>

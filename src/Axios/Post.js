@@ -6,8 +6,8 @@ class Post extends React.Component {
     console.log("clicked");
     axios
       .post("http://localhost:4000/events", {
-        id: 5,
-        name: "demo Arbind2",
+        id: 4,
+        name: "Spint planning",
         date: "01/12/2020",
         location: "Wakefield house",
         programme: ["Accelerator", "IP"],
@@ -20,7 +20,7 @@ class Post extends React.Component {
   };
 
   render() {
-    return <button onClick={this.handleClick}>Post event</button>;
+    return <button onClick={this.handleClick}>Add event</button>;
   }
 }
 

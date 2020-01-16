@@ -8,8 +8,6 @@ import { NavLink } from "react-router-dom";
 import Get from "./Axios/Get";
 import Post from "./Axios/Post";
 import axios from "axios";
-import Getter from "./Axios/Getter";
-import Eventsjson from "./block/Eventsjson";
 
 const events = require("./data/events.json");
 class App extends React.Component {

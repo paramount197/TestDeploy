@@ -1,5 +1,6 @@
 import React from "react";
 import "../styles/image.css";
+import "../styles/gallery.css";
 
 function Image(props) {
   return (

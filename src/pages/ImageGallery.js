@@ -9,7 +9,7 @@ function ImageGallery() {
     return (
         <>
             <Header header="Image Gallery" />
-            <div className="row">
+            <div className="row" className="image">
                 <Image
                     src={Img1}
                     styleName="column"

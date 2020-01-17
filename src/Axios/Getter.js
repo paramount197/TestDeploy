@@ -1,6 +1,8 @@
 import React from "react";
 import axios from "axios";
 
+//this is a work in progress - it will be a generic Get Method
+
 const Getter = props => {
   let results;
 

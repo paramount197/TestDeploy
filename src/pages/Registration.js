@@ -41,6 +41,7 @@ class Registration extends React.Component {
       })
       .then(result => {
         console.log(result);
+        window.location.href = "http://localhost:3000/signin";
       });
   };
 

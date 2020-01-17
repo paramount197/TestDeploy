@@ -5,11 +5,13 @@ import Intro from "./block/Intro";
 import Events from "./block/Events";
 import Button from "./block/Button";
 import { NavLink } from "react-router-dom";
-import Get from "./Axios/Get";
 import Post from "./Axios/Post";
 import axios from "axios";
 
+// REWRITE A Component that fills in app js with the whole events section
+
 const events = require("./data/events.json");
+//this should be replaced by a get to JSON Server
 class App extends React.Component {
   state = {
     events: []
@@ -20,8 +22,6 @@ class App extends React.Component {
       this.setState({ events: res.data });
     });
   }
-
-  // REWRITE A Component that fills in app js with the whole events section
 
   render() {
     return (

@@ -16,6 +16,7 @@ class Registration extends React.Component {
       FirstName: "",
       LastName: "",
       id: "",
+      Password: "",
       PhoneNumber: "",
       Intake: "",
       Programme: ""
@@ -37,7 +38,8 @@ class Registration extends React.Component {
         LastName: this.state.LastName,
         PhoneNumber: this.state.PhoneNumber,
         Intake: this.state.Intake,
-        Programme: this.state.Programme
+        Programme: this.state.Programme,
+        password: this.state.Password
       })
       .then(result => {
         console.log(result);
@@ -73,6 +75,13 @@ class Registration extends React.Component {
                   type="email"
                   placeholder="Email Address*"
                   name="id"
+                  required
+                  onChange={this.onChange}
+                />
+                <Input
+                  type="password"
+                  placeholder="Password*"
+                  name="Password"
                   required
                   onChange={this.onChange}
                 />

@@ -32,9 +32,9 @@ class SignIn extends React.Component {
         );
         window.location.href = "http://localhost:3000/profile";
       } else {
-        alert(
-          "Please check you have entered your email and password correctly"
-        );
+        // alert(
+        //   "Please check you have entered your email and password correctly"
+        // );
       }
     });
   };

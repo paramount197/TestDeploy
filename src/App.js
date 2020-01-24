@@ -2,6 +2,7 @@ import React from "react";
 import "./App.css";
 import Header from "./block/Header";
 import Intro from "./block/Intro";
+import Blurb from "./block/Blurb";
 import Events from "./block/Events";
 import Button from "./block/Button";
 import { NavLink } from "react-router-dom";

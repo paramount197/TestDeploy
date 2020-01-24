@@ -46,7 +46,7 @@ class App extends React.Component {
             <p className="eventTitle">Upcoming Events</p>
             <Events
               eventsDetail={this.state.events}
-              cohortIntake={events.cohortToggle}
+              cohortIntake={this.state.events.cohort}
             />
             <Post />
           </div>

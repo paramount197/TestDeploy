@@ -9,7 +9,7 @@ import ListItem from "./ListItem";
 // }
 const Events = props => {
   return props.eventsDetail.map(event => (
-    // event.cohort.includes(props.cohortIntake) &&
+    //event.cohort.includes(props.cohortIntake) &&
     <ListItem
       className="event"
       eventName={event.name}

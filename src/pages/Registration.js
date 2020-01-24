@@ -39,7 +39,7 @@ class Registration extends React.Component {
         PhoneNumber: this.state.PhoneNumber,
         Intake: this.state.Intake,
         Programme: this.state.Programme,
-        password: this.state.Password
+        Password: this.state.Password
       })
       .then(result => {
         console.log(result);

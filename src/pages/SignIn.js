@@ -11,7 +11,7 @@ class SignIn extends React.Component {
     super();
     this.state = {
       id: "",
-      password: "",
+      Password: "",
       users: []
     };
   }
@@ -21,9 +21,10 @@ class SignIn extends React.Component {
 
   onSubmit = e => {
     e.preventDefault();
+    console.log(this.state);
     this.state.users.map(check => {
       if (
-        this.state.password === check.password &&
+        this.state.Password === check.Password &&
         this.state.id === check.id
       ) {
         console.log(
@@ -42,7 +43,7 @@ class SignIn extends React.Component {
     axios.get("http://localhost:4000/users").then(res => {
       console.log("this is the events app response", res);
       this.setState({ users: res.data });
-      console.log(this.state.users[1].password);
+      //console.log(this.state.users[1].password);
     });
   }
 
@@ -65,7 +66,7 @@ class SignIn extends React.Component {
                   <Input
                     type="password"
                     placeholder="Password"
-                    name="password"
+                    name="Password"
                     required
                     onChange={this.onChange}
                   />

@@ -10,6 +10,7 @@ import NotFound from "./pages/NotFound";
 import SignIn from "./pages/SignIn";
 import Profile from "./pages/Profile";
 import ImageGallery from "./pages/ImageGallery";
+import ForgotPassword from "./pages/ForgotPassword";
 import Image from "./block/Image";
 import Clock from "./block/Clock";
 import NewNationwideLogo from "./images/NewNationwideLogo.jpeg";
@@ -54,6 +55,7 @@ const routing = (
         <Route path="/profile" component={Profile} />
         <Route path="/usersguide" component={UsersGuide} />
         <Route path="/imagegallery" component={ImageGallery} />
+        <Route path="/forgotpassword" component={ForgotPassword} />
         <Route component={NotFound} />
       </Switch>
     </Router>

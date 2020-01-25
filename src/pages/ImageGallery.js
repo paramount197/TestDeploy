@@ -4,6 +4,7 @@ import Image from "../block/Image";
 import Img1 from "../images/Img1.jpeg";
 import Img2 from "../images/Img2.jpg";
 import Img3 from "../images/Img3.jpg";
+import Img4 from "../images/Img4.jpg";
 
 function ImageGallery() {
     return (
@@ -13,17 +14,22 @@ function ImageGallery() {
                 <Image
                     src={Img1}
                     styleName="column"
-                    alt="Test Image1"
+                    alt="TDP 2018 Chirstmas Meal"
                 />
                 <Image
                     src={Img2}
                     styleName="column"
-                    alt="Test Image2"
+                    alt="TDP 2018 Christmas Meal"
                 />
                 <Image
                     src={Img3}
                     styleName="column"
-                    alt="Test Image3"
+                    alt="Friday learning group dinner"
+                />
+                <Image
+                    src={Img4}
+                    styleName="column"
+                    alt="Rock climbing social"
                 />
             </div>
         </>

@@ -17,8 +17,12 @@ function ForgotPassword(props) {
             <div class="main">
                 <div class="row">
                     <div class="form-p">
-                        <Intro intro="Please select the appropriate security question and fill out the answer bellow" />
-                        <div className="securityQuestions">
+                        <Intro intro="Please enter your email address and answer your chosen security question below" />
+                        <form>
+                            <Input type="text" placeholder="Enter Email Address" name="Email Address" required />
+                        </form>
+                        <div
+                            className="securityQuestions">
                             <label>Security Question</label>
                             <select>
                                 <Dropdown

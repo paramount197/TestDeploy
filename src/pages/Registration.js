@@ -7,6 +7,7 @@ import "../styles/registration.css";
 import Submit from "../block/Submit";
 
 const tdpData = require("../data/tdpData.json");
+const securityQuestions = require("../data/securityQuestions.json");
 
 const Registration = () => {
   return (
@@ -44,6 +45,18 @@ const Registration = () => {
               //^\+?(?:\d\s?){10,11}$ - more complicated regex but I don't
               //understand it fully, full explanation on teams
               />
+              <div
+                className="securityQuestions">
+                <label>Security Question</label>
+                <select>
+                  <Dropdown
+                    intakeProgrammeDetails={securityQuestions.securityQuestion.Questions}
+                  />
+                </select>
+                <form>
+                  <Input type="text" placeholder="Write Answer Here" name="Answer" required />
+                </form>
+              </div>
               <div className="intake">
                 <label>TDP Intake</label>
                 <select>

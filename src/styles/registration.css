@@ -12,7 +12,8 @@
 }
 
 .intake,
-.programme {
+.programme,
+.securityQuestions{
   margin-left: 30px;
   padding: 20px;
 }

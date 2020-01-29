@@ -11,7 +11,7 @@ class SignIn extends React.Component {
     super();
     this.state = {
       id: "",
-      Password: "",
+      password: "",
       users: []
     };
   }
@@ -24,7 +24,9 @@ class SignIn extends React.Component {
     console.log(this.state);
     this.state.users.map(check => {
       if (
-        this.state.Password === check.Password &&
+        //need to fix this loop, should not be a map
+        //should use .includes!
+        this.state.password === check.password &&
         this.state.id === check.id
       ) {
         console.log(
@@ -33,15 +35,15 @@ class SignIn extends React.Component {
         );
         window.location.href = "http://localhost:3000/profile";
       } else {
-        // alert(
-        //   "Please check you have entered your email and password correctly"
-        // );
+        alert(
+          "Please check you have entered your email and password correctly"
+        );
       }
     });
   };
   componentDidMount() {
     axios.get("http://localhost:4000/users").then(res => {
-      console.log("this is the events app response", res);
+      console.log("on load getting the logins", res);
       this.setState({ users: res.data });
       //console.log(this.state.users[1].password);
     });
@@ -66,7 +68,7 @@ class SignIn extends React.Component {
                   <Input
                     type="password"
                     placeholder="Password"
-                    name="Password"
+                    name="password"
                     required
                     onChange={this.onChange}
                   />

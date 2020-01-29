@@ -13,13 +13,13 @@ class Registration extends React.Component {
   constructor() {
     super();
     this.state = {
-      FirstName: "",
-      LastName: "",
+      firstName: "",
+      lastName: "",
       id: "",
-      Password: "",
-      PhoneNumber: "",
-      Intake: "",
-      Programme: ""
+      password: "",
+      phoneNumber: "",
+      intake: "",
+      programme: ""
     };
   }
   onChange = e => {
@@ -29,17 +29,16 @@ class Registration extends React.Component {
 
   onSubmit = e => {
     e.preventDefault();
-    //const { FirstName, lname, email } = this.state;
+    //const { firstName, lname, email } = this.state;
 
     axios
       .post("http://localhost:4000/users", {
         id: this.state.id,
-        FirstName: this.state.FirstName,
-        LastName: this.state.LastName,
-        PhoneNumber: this.state.PhoneNumber,
-        Intake: this.state.Intake,
-        Programme: this.state.Programme,
-        Password: this.state.Password
+        firstName: this.state.firstName,
+        lastName: this.state.lastName,
+        password: this.state.password,
+        phoneNumber: this.state.phoneNumber,
+        intake: this.state.intake
       })
       .then(result => {
         console.log(result);
@@ -60,14 +59,14 @@ class Registration extends React.Component {
                 <Input
                   type="text"
                   placeholder="First Name*"
-                  name="FirstName"
+                  name="firstName"
                   required
                   onChange={this.onChange}
                 />
                 <Input
                   type="text"
                   placeholder="Last Name*"
-                  name="LastName"
+                  name="lastName"
                   required
                   onChange={this.onChange}
                 />
@@ -81,13 +80,13 @@ class Registration extends React.Component {
                 <Input
                   type="password"
                   placeholder="Password*"
-                  name="Password"
+                  name="password"
                   required
                   onChange={this.onChange}
                 />
                 <Input
                   type="tel"
-                  name="PhoneNumber"
+                  name="phoneNumber"
                   required
                   placeholder="Enter number*"
                   onChange={this.onChange}
@@ -96,16 +95,16 @@ class Registration extends React.Component {
                   //understand it fully, full explanation on teams
                 />
                 <div className="intake">
-                  <label>TDP Intake</label>
-                  <select name="Intake" onChange={this.onChange}>
+                  <label>TDP intake</label>
+                  <select name="intake" onChange={this.onChange}>
                     <Dropdown
                       intakeProgrammeDetails={tdpData.tdpDetails.intake}
                     />
                   </select>
                 </div>
                 <div className="programme">
-                  <label>TDP Programme</label>
-                  <select name="Programme" onChange={this.onChange}>
+                  <label>TDP programme</label>
+                  <select name="programme" onChange={this.onChange}>
                     <Dropdown
                       intakeProgrammeDetails={tdpData.tdpDetails.programme}
                     />

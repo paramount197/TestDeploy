@@ -2,17 +2,12 @@ import React from "react";
 import "./App.css";
 import Header from "./block/Header";
 import Intro from "./block/Intro";
-import Blurb from "./block/Blurb";
 import Events from "./block/Events";
 import Button from "./block/Button";
 import { NavLink } from "react-router-dom";
 import Post from "./Axios/Post";
 import axios from "axios";
-
-// REWRITE A Component that fills in app js with the whole events section
-
-const events = require("./data/events.json");
-//this should be replaced by a get to JSON Server
+import Get from "./Axios/Methods";
 class App extends React.Component {
   state = {
     events: []
@@ -22,6 +17,7 @@ class App extends React.Component {
       console.log("this is the events app response", res);
       this.setState({ events: res.data });
     });
+    //this.setState({events: Get.get})
   }
 
   render() {
@@ -44,10 +40,7 @@ class App extends React.Component {
 
           <div className="eventList">
             <p className="eventTitle">Upcoming Events</p>
-            <Events
-              eventsDetail={this.state.events}
-              cohortIntake={this.state.events.cohort}
-            />
+            <Events eventsDetail={this.state.events} />
             <Post />
           </div>
         </div>

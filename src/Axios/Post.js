@@ -11,13 +11,13 @@ class Post extends React.Component {
     console.log("clicked");
     axios
       .post("http://localhost:4000/events", {
-        id: 8,
-        name: "This is a non core event",
-        date: "01/12/2020",
-        location: "Wakefield house",
-        programme: ["Accelerator", "IP"],
-        cohort: ["September 2019"],
-        noncore: ["yes"]
+        id: 10,
+        name: "New event from server",
+        // date: "01/12/2020",
+        // location: "Wakefield house",
+        // programme: ["Accelerator", "IP"],
+        // cohort: ["September 2019"],
+        // noncore: ["yes"]
       })
       .then(res => {
         console.log("this is the post response", res);

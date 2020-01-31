@@ -6,6 +6,7 @@ import Input from "../block/Input";
 import "../styles/registration.css";
 import Submit from "../block/Submit";
 import axios from "axios";
+import DropDownOption from "../block/DropDownOption";
 
 const tdpData = require("../data/tdpData.json");
 
@@ -29,7 +30,6 @@ class Registration extends React.Component {
 
   onSubmit = e => {
     e.preventDefault();
-    //const { firstName, lname, email } = this.state;
 
     axios
       .post("http://localhost:4000/users", {
@@ -47,7 +47,6 @@ class Registration extends React.Component {
   };
 
   render() {
-    //const { fname, lname, email } = this.state;
     return (
       <>
         <Header header="Registration page" />
@@ -55,6 +54,13 @@ class Registration extends React.Component {
           <div className="row">
             <div className="form-p">
               <Intro intro="Please enter the details" />
+              <button
+                onClick={() =>
+                  (window.location.href = "http://localhost:3000/eventCreation")
+                }
+              >
+                Click here if you are TDP Management
+              </button>
               <form name="Registration" onSubmit={this.onSubmit}>
                 <Input
                   type="text"

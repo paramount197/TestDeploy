@@ -2,9 +2,8 @@ import React from "react";
 import Input from "../block/Input";
 import Submit from "../block/Submit";
 import { Post } from "../Axios/Methods";
-
-//need to add event details and add them to post
-//id needs to be reviewed further
+import axios from "axios";
+import Dropdown from "../block/Dropdown";
 
 class EventCreation extends React.Component {
   state = {
@@ -12,8 +11,10 @@ class EventCreation extends React.Component {
     name: undefined,
     date: undefined,
     location: undefined,
-    programme: undefined,
-    cohort: undefined
+    intake: [],
+    programme: [],
+    intakeDetails: [],
+    programmeDetails: []
   };
 
   onChange = input => {
@@ -26,6 +27,14 @@ class EventCreation extends React.Component {
     Post("http://localhost:4000/events", this.state);
     this.setState({ response: "Event Created!" });
   };
+  componentDidMount() {
+    axios.get("http://localhost:4000/tdpDetails").then(result => {
+      this.setState({
+        intakeDetails: result.data.intake,
+        programmeDetails: result.data.programme
+      });
+    });
+  }
 
   render() {
     return (
@@ -52,14 +61,14 @@ class EventCreation extends React.Component {
             required
             onChange={this.onChange}
           ></Input>
-          {/* <label>TDP intake</label>
+          <label>TDP intake</label>
           <select name="intake" onChange={this.onChange}>
-            <Dropdown intakeProgrammeDetails={tdpData.tdpDetails.intake} />
+            <Dropdown intakeProgrammeDetails={this.state.intakeDetails} />
           </select>
           <label>TDP programme</label>
           <select name="programme" onChange={this.onChange}>
-            <Dropdown intakeProgrammeDetails={tdpData.tdpDetails.programme} />
-          </select> */}
+            <Dropdown intakeProgrammeDetails={this.state.programmeDetails} />
+          </select>
           <Submit />
         </form>
 

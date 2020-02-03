@@ -2,7 +2,6 @@ import React from "react";
 import "../styles/SignIn.css";
 import Header from "../block/Header";
 import Input from "../block/Input";
-import { NavLink } from "react-router-dom";
 import Submit from "../block/Submit";
 import axios from "axios";
 
@@ -21,11 +20,9 @@ class SignIn extends React.Component {
 
   onSubmit = e => {
     e.preventDefault();
-    console.log(this.state);
+    console.log(this.state.users.password);
     this.state.users.map(check => {
       if (
-        //need to fix this loop, should not be a map
-        //should use .includes!
         this.state.password === check.password &&
         this.state.id === check.id
       ) {

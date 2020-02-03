@@ -6,7 +6,6 @@ import Input from "../block/Input";
 import "../styles/registration.css";
 import Submit from "../block/Submit";
 import axios from "axios";
-import DropDownOption from "../block/DropDownOption";
 
 const tdpData = require("../data/tdpData.json");
 
@@ -26,7 +25,6 @@ class Registration extends React.Component {
   onChange = e => {
     this.setState({ [e.target.name]: e.target.value });
   };
-  //would need to parseInt to make the number a number
 
   onSubmit = e => {
     e.preventDefault();
@@ -97,8 +95,6 @@ class Registration extends React.Component {
                   placeholder="Enter number*"
                   onChange={this.onChange}
                   pattern="\d{10,11}"
-                  //^\+?(?:\d\s?){10,11}$ - more complicated regex but I don't
-                  //understand it fully, full explanation on teams
                 />
                 <div className="intake">
                   <label>TDP intake</label>

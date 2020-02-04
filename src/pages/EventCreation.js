@@ -4,6 +4,8 @@ import Submit from "../block/Submit";
 import { Post } from "../Axios/Methods";
 import axios from "axios";
 import Dropdown from "../block/Dropdown";
+import "../styles/eventCreation.css";
+import Header from "../block/Header";
 
 class EventCreation extends React.Component {
   state = {
@@ -11,6 +13,7 @@ class EventCreation extends React.Component {
     name: undefined,
     date: undefined,
     location: undefined,
+    attendees: undefined,
     intake: [],
     programme: [],
     intakeDetails: [],
@@ -39,40 +42,61 @@ class EventCreation extends React.Component {
   render() {
     return (
       <>
+        <Header header="Welcome Back" />
         <form name="newEvent" onSubmit={this.onSubmit}>
-          <Input
-            type="text"
-            placeholder="Enter Event Name"
-            name="name"
-            required
-            onChange={this.onChange}
-          ></Input>
-          <Input
-            type="text"
-            placeholder="Event Date"
-            name="date"
-            required
-            onChange={this.onChange}
-          ></Input>
-          <Input
-            type="text"
-            placeholder="Enter the Location"
-            name="location"
-            required
-            onChange={this.onChange}
-          ></Input>
-          <label>TDP intake</label>
-          <select name="intake" onChange={this.onChange}>
-            <Dropdown intakeProgrammeDetails={this.state.intakeDetails} />
-          </select>
-          <label>TDP programme</label>
-          <select name="programme" onChange={this.onChange}>
-            <Dropdown intakeProgrammeDetails={this.state.programmeDetails} />
-          </select>
-          <Submit />
+          <div class="main">
+            <div class="row">
+              <div class="form-p">
+                <Input
+                  type="text"
+                  placeholder="Event Name"
+                  name="name"
+                  required
+                  onChange={this.onChange}
+                ></Input>
+                <Input
+                  type="date"
+                  placeholder="Event Date"
+                  name="date"
+                  required
+                  onChange={this.onChange}
+                ></Input>
+                <Input
+                  type="text"
+                  placeholder="Location"
+                  name="location"
+                  required
+                  onChange={this.onChange}
+                ></Input>
+                <Input
+                  type="number"
+                  placeholder="Number of Attendees"
+                  name="attendees"
+                  required
+                  onChange={this.onChange}
+                ></Input>
+                <div className="intake">
+                  <label>TDP intake</label>
+                  <select name="intake" onChange={this.onChange} required>
+                    <Dropdown
+                      intakeProgrammeDetails={this.state.intakeDetails}
+                    />
+                  </select>
+                </div>
+                <div className="programme">
+                  <label>TDP programme</label>
+                  <select name="programme" onChange={this.onChange} required>
+                    <Dropdown
+                      intakeProgrammeDetails={this.state.programmeDetails}
+                    />
+                  </select>
+                </div>
+                <Submit />
+              </div>
+            </div>
+          </div>
         </form>
-
-        <p>{this.state.response}</p>
+        <p className="eventCreated">{this.state.response}</p>
       </>
     );
   }

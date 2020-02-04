@@ -42,7 +42,6 @@ class SignIn extends React.Component {
     axios.get("http://localhost:4000/users").then(res => {
       console.log("on load getting the logins", res);
       this.setState({ users: res.data });
-      //console.log(this.state.users[1].password);
     });
   }
 

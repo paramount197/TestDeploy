@@ -14,6 +14,7 @@ export const Post = (url, data) => {
       name: data.name,
       date: data.date,
       location: data.location,
+      attendees: data.attendees,
       intake: data.intake,
       programme: data.programme
     })

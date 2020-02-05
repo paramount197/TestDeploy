@@ -16,7 +16,8 @@ export const Post = (url, data) => {
       location: data.location,
       attendees: data.attendees,
       intake: data.intake,
-      programme: data.programme
+      programme: data.programme,
+      coreSelection: data.coreSelection
     })
     .then(result => {
       console.log("this is the post data", result.data);

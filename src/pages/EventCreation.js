@@ -6,6 +6,7 @@ import axios from "axios";
 import Dropdown from "../block/Dropdown";
 import "../styles/eventCreation.css";
 import Header from "../block/Header";
+import DropDownOption from "../block/DropDownOption";
 
 class EventCreation extends React.Component {
   state = {
@@ -16,6 +17,7 @@ class EventCreation extends React.Component {
     attendees: undefined,
     intake: [],
     programme: [],
+    coreSelection: "",
     intakeDetails: [],
     programmeDetails: []
   };
@@ -75,7 +77,7 @@ class EventCreation extends React.Component {
                   required
                   onChange={this.onChange}
                 ></Input>
-                <div className="intake">
+                <div className="select">
                   <label>TDP intake</label>
                   <select name="intake" onChange={this.onChange} required>
                     <Dropdown
@@ -83,12 +85,29 @@ class EventCreation extends React.Component {
                     />
                   </select>
                 </div>
-                <div className="programme">
+                <div className="select">
                   <label>TDP programme</label>
                   <select name="programme" onChange={this.onChange} required>
                     <Dropdown
                       intakeProgrammeDetails={this.state.programmeDetails}
                     />
+                  </select>
+                </div>
+                <div className="select">
+                  <label>Core/NonCore Event</label>
+                  <select
+                    name="coreSelection"
+                    onChange={this.onChange}
+                    required
+                  >
+                    <DropDownOption
+                      intakeValue="core"
+                      intakeText="Core Event"
+                    ></DropDownOption>
+                    <DropDownOption
+                      intakeValue="noncore"
+                      intakeText="Non Core Event"
+                    ></DropDownOption>
                   </select>
                 </div>
                 <Submit />

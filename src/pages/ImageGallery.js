@@ -14,22 +14,22 @@ function ImageGallery() {
                 <Image
                     src={Img1}
                     styleName="column"
-                    alt="TDP 2018 Chirstmas Meal"
+                    alt="TDP 2018 Chrirstmas Meal"
                 />
                 <Image
                     src={Img2}
                     styleName="column"
-                    alt="TDP 2018 Christmas Meal"
+                    alt="TDP 2018 Christmas Meal 2"
                 />
                 <Image
                     src={Img3}
                     styleName="column"
-                    alt="Friday learning group dinner"
+                    alt="Friday learning Group Dinner"
                 />
                 <Image
                     src={Img4}
                     styleName="column"
-                    alt="Rock climbing social"
+                    alt="Rock Climbing Social"
                 />
             </div>
         </>

@@ -11,14 +11,12 @@
   border-top: 7px solid #002979;
 }
 
-.intake,
-.programme,
-.securityQuestions{
+.selectDropdown {
   margin-left: 30px;
   padding: 20px;
 }
 
-.intake.label {
+.selectDropdown .label {
   margin-left: 1em;
   text-align: left;
 }
@@ -33,6 +31,7 @@ label {
   letter-spacing: 3px;
   text-align: center;
 }
+
 .form-p a {
   text-decoration: none;
 }

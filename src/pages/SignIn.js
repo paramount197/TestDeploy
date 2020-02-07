@@ -39,7 +39,7 @@ class SignIn extends React.Component {
     });
   };
   componentDidMount() {
-    axios.get("http://localhost:4000/users").then(res => {
+    axios.get("http://localhost:4000/users/").then(res => {
       console.log("on load getting the logins", res);
       this.setState({ users: res.data });
     });

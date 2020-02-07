@@ -7,6 +7,7 @@ import "../styles/registration.css";
 import Submit from "../block/Submit";
 
 const tdpData = require("../data/tdpData.json");
+const securityQuestions = require("../data/securityQuestions.json");
 
 const Registration = () => {
   return (
@@ -41,10 +42,24 @@ const Registration = () => {
                 required
                 placeholder="Enter number*"
                 pattern="\d{10,11}"
-                //^\+?(?:\d\s?){10,11}$ - more complicated regex but I don't
-                //understand it fully, full explanation on teams
               />
-              <div className="intake">
+              <div className="selectDropdown">
+                <label>Security Question</label>
+                <select>
+                  <Dropdown
+                    intakeProgrammeDetails={
+                      securityQuestions.securityQuestion.Questions
+                    }
+                  />
+                </select>
+              </div>
+              <Input
+                type="text"
+                placeholder="Write Answer Here"
+                name="Answer"
+                required
+              />
+              <div className="selectDropdown">
                 <label>TDP Intake</label>
                 <select>
                   <Dropdown
@@ -52,7 +67,7 @@ const Registration = () => {
                   />
                 </select>
               </div>
-              <div className="programme">
+              <div className="selectDropdown">
                 <label>TDP Programme</label>
                 <select>
                   <Dropdown

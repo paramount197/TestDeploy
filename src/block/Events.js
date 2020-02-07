@@ -13,7 +13,6 @@ const Events = props => {
 
     props.eventsDetail.map(
       event =>
-        //event.cohort.includes(props.cohortIntake) && (
         (
           <ListItem
             className="event"

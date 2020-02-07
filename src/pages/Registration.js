@@ -36,13 +36,25 @@ const Registration = () => {
                 required
               />
               <Input
+                type="password"
+                placeholder="Password*"
+                name="password"
+                required
+              />
+              <Input
+                type="password"
+                placeholder="Confirm Password*"
+                name="passwordConfirm"
+                required
+              />
+              <Input
                 type="tel"
                 name="phone"
                 required
                 placeholder="Enter number*"
                 pattern="\d{10,11}"
-                //^\+?(?:\d\s?){10,11}$ - more complicated regex but I don't
-                //understand it fully, full explanation on teams
+              //^\+?(?:\d\s?){10,11}$ - more complicated regex but I don't
+              //understand it fully, full explanation on teams
               />
               <div className="intake">
                 <label>TDP Intake</label>

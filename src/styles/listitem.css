@@ -3,3 +3,7 @@
   float: none;
   padding: .6em;
 }
+
+li:hover {
+  background-color: #eee;
+}

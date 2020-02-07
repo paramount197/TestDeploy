@@ -11,7 +11,7 @@ class SignIn extends React.Component {
     this.state = {
       id: "",
       password: "",
-      users: []
+      user: {}
     };
   }
   onChange = e => {
@@ -20,30 +20,22 @@ class SignIn extends React.Component {
 
   onSubmit = e => {
     e.preventDefault();
-    console.log(this.state.users.password);
-    this.state.users.map(check => {
-      if (
-        this.state.password === check.password &&
-        this.state.id === check.id
-      ) {
-        console.log(
-          "matched " + check.password + " with " + this.state.password,
-          "matched" + check.id + "with" + this.state.id
-        );
-        window.location.href = "http://localhost:3000/profile";
-      } else {
-        alert(
-          "Please check you have entered your email and password correctly"
-        );
-      }
+    axios.get(`http://localhost:4000/users?id=${this.state.id}`).then(res => {
+      console.log("on load getting the logins", res);
+      this.setState({ user: res.data }, function() {
+        if (
+          this.state.password === this.state.user[0].password &&
+          this.state.id === this.state.user[0].id
+        ) {
+          window.location.href = "http://localhost:3000/profile";
+        } else {
+          alert(
+            "Please check you have entered your email and password correctly"
+          );
+        }
+      });
     });
   };
-  componentDidMount() {
-    axios.get("http://localhost:4000/users/").then(res => {
-      console.log("on load getting the logins", res);
-      this.setState({ users: res.data });
-    });
-  }
 
   render() {
     return (

@@ -37,6 +37,18 @@ const Registration = () => {
                 required
               />
               <Input
+                type="password"
+                placeholder="Password*"
+                name="password"
+                required
+              />
+              <Input
+                type="password"
+                placeholder="Confirm Password*"
+                name="passwordConfirm"
+                required
+              />
+              <Input
                 type="tel"
                 name="phone"
                 required

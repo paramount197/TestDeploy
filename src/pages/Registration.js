@@ -1,13 +1,11 @@
 import React from "react";
+import axios from "axios";
+import "../styles/registration.css";
 import Header from "../block/Header";
 import Intro from "../block/Intro";
 import Dropdown from "../block/Dropdown";
 import Input from "../block/Input";
-import "../styles/registration.css";
 import Submit from "../block/Submit";
-import axios from "axios";
-
-const tdpData = require("../data/tdpData.json");
 
 class Registration extends React.Component {
   constructor() {
@@ -19,7 +17,9 @@ class Registration extends React.Component {
       password: "",
       phoneNumber: "",
       intake: "",
-      programme: ""
+      programme: "",
+      intakeDetails: [],
+      programmeDetails: []
     };
   }
   onChange = e => {
@@ -36,13 +36,24 @@ class Registration extends React.Component {
         lastName: this.state.lastName,
         password: this.state.password,
         phoneNumber: this.state.phoneNumber,
-        intake: this.state.intake
+        intake: this.state.intake,
+        programme: this.state.programme,
+        tdpManagment: "No"
       })
       .then(result => {
         console.log(result);
         window.location.href = "http://localhost:3000/signin";
       });
   };
+
+  componentDidMount() {
+    axios.get("http://localhost:4000/tdpDetails").then(result => {
+      this.setState({
+        intakeDetails: result.data.intake,
+        programmeDetails: result.data.programme
+      });
+    });
+  }
 
   render() {
     return (
@@ -51,14 +62,7 @@ class Registration extends React.Component {
         <div className="main">
           <div className="row">
             <div className="form-p">
-              <Intro intro="Please enter the details" />
-              <button
-                onClick={() =>
-                  (window.location.href = "http://localhost:3000/eventCreation")
-                }
-              >
-                Click here if you are TDP Management
-              </button>
+              <Intro intro="Please enter your details below" />
               <form name="Registration" onSubmit={this.onSubmit}>
                 <Input
                   type="text"
@@ -100,7 +104,7 @@ class Registration extends React.Component {
                   <label>TDP intake</label>
                   <select name="intake" onChange={this.onChange}>
                     <Dropdown
-                      intakeProgrammeDetails={tdpData.tdpDetails.intake}
+                      intakeProgrammeDetails={this.state.intakeDetails}
                     />
                   </select>
                 </div>
@@ -108,7 +112,7 @@ class Registration extends React.Component {
                   <label>TDP programme</label>
                   <select name="programme" onChange={this.onChange}>
                     <Dropdown
-                      intakeProgrammeDetails={tdpData.tdpDetails.programme}
+                      intakeProgrammeDetails={this.state.programmeDetails}
                     />
                   </select>
                 </div>

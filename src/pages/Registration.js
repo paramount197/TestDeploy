@@ -40,8 +40,7 @@ class Registration extends React.Component {
         programme: this.state.programme,
         tdpManagement: "No"
       })
-      .then(result => {
-        console.log(result);
+      .then(() => {
         window.location.href = "http://localhost:3000/signin";
       });
   };

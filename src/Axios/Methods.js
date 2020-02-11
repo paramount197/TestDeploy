@@ -7,7 +7,6 @@ export const Get = url => {
 };
 
 export const Post = (url, data) => {
-  console.log(data);
   axios
     .post(url, {
       id: data.id,
@@ -19,7 +18,5 @@ export const Post = (url, data) => {
       programme: data.programme,
       coreSelection: data.coreSelection
     })
-    .then(result => {
-      console.log("this is the post data", result.data);
-    });
+    .then(() => {});
 };

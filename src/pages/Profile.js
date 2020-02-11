@@ -12,7 +12,6 @@ class Profile extends React.Component {
 
   componentDidMount() {
     axios.get("http://localhost:4000/events").then(results => {
-      console.log("This is the result", results);
       this.setState({ events: results.data });
     });
   }

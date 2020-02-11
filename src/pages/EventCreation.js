@@ -55,28 +55,28 @@ class EventCreation extends React.Component {
                   name="name"
                   required
                   onChange={this.onChange}
-                ></Input>
+                />
                 <Input
                   type="date"
                   placeholder="Event Date"
                   name="date"
                   required
                   onChange={this.onChange}
-                ></Input>
+                />
                 <Input
                   type="text"
                   placeholder="Location"
                   name="location"
                   required
                   onChange={this.onChange}
-                ></Input>
+                />
                 <Input
                   type="number"
                   placeholder="Number of Attendees"
                   name="attendees"
                   required
                   onChange={this.onChange}
-                ></Input>
+                />
                 <div className="select">
                   <label>TDP intake</label>
                   <select name="intake" onChange={this.onChange} required>
@@ -103,11 +103,11 @@ class EventCreation extends React.Component {
                     <DropDownOption
                       intakeValue="core"
                       intakeText="Core Event"
-                    ></DropDownOption>
+                    />
                     <DropDownOption
                       intakeValue="noncore"
                       intakeText="Non Core Event"
-                    ></DropDownOption>
+                    />
                   </select>
                 </div>
                 <Submit />

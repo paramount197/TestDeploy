@@ -12,7 +12,6 @@ class SignIn extends React.Component {
       id: "",
       password: "",
       user: {}
-      //message: "Please check you have entered your details correctly"
     };
   }
   onChange = e => {
@@ -45,15 +44,17 @@ class SignIn extends React.Component {
 
   onSubmit = e => {
     e.preventDefault();
-    axios.get(`http://localhost:4000/users?id=${this.state.id}`).then(res => {
-      this.setState({ user: res.data }, function() {
-        if (this.state.user.length !== 0) {
-          this.checkLoginDetails();
-        } else {
-          this.handleIncorrectDetails();
-        }
+    axios
+      .get(`http://localhost:4000/users?id=${this.state.id}`)
+      .then(result => {
+        this.setState({ user: result.data }, function() {
+          if (this.state.user.length !== 0) {
+            this.checkLoginDetails();
+          } else {
+            this.handleIncorrectDetails();
+          }
+        });
       });
-    });
   };
 
   render() {

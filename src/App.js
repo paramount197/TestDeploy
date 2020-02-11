@@ -12,7 +12,6 @@ class App extends React.Component {
   };
   componentDidMount() {
     axios.get("http://localhost:4000/events").then(res => {
-      console.log("this is the events app response", res);
       this.setState({ events: res.data });
     });
   }

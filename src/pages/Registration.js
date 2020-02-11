@@ -38,7 +38,7 @@ class Registration extends React.Component {
         phoneNumber: this.state.phoneNumber,
         intake: this.state.intake,
         programme: this.state.programme,
-        tdpManagment: "No"
+        tdpManagement: "No"
       })
       .then(result => {
         console.log(result);

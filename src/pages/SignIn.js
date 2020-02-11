@@ -12,32 +12,45 @@ class SignIn extends React.Component {
       id: "",
       password: "",
       user: {}
+      //message: "Please check you have entered your details correctly"
     };
   }
   onChange = e => {
     this.setState({ [e.target.name]: e.target.value });
   };
 
+  checkLoginDetails = () => {
+    if (
+      this.state.password === this.state.user[0].password &&
+      this.state.id === this.state.user[0].id &&
+      this.state.user[0].tdpManagement === "No"
+    ) {
+      window.location.href = "http://localhost:3000/profile";
+    } else if (
+      this.state.password === this.state.user[0].password &&
+      this.state.id === this.state.user[0].id &&
+      this.state.user[0].tdpManagement === "Yes"
+    ) {
+      window.location.href = "http://localhost:3000/eventCreation";
+    } else {
+      this.handleIncorrectDetails();
+    }
+  };
+
+  handleIncorrectDetails = () => {
+    this.setState({
+      response: "Please check you have entered your details correctly"
+    });
+  };
+
   onSubmit = e => {
     e.preventDefault();
     axios.get(`http://localhost:4000/users?id=${this.state.id}`).then(res => {
       this.setState({ user: res.data }, function() {
-        if (
-          this.state.password === this.state.user[0].password &&
-          this.state.id === this.state.user[0].id &&
-          this.state.user[0].tdpManagment === "No"
-        ) {
-          window.location.href = "http://localhost:3000/profile";
-        } else if (
-          this.state.password === this.state.user[0].password &&
-          this.state.id === this.state.user[0].id &&
-          this.state.user[0].tdpManagment === "Yes"
-        ) {
-          window.location.href = "http://localhost:3000/eventCreation";
+        if (this.state.user.length !== 0) {
+          this.checkLoginDetails();
         } else {
-          alert(
-            "Please check you have entered your email and password correctly"
-          );
+          this.handleIncorrectDetails();
         }
       });
     });
@@ -68,6 +81,7 @@ class SignIn extends React.Component {
                   />
                   <Submit />
                 </form>
+                <p className="response">{this.state.response}</p>
                 <p>Forgot your password?</p>
               </div>
             </div>

@@ -22,3 +22,7 @@ h1 {
 .form-p a {
   text-decoration: none;
 }
+
+.response {
+  color: red;
+}

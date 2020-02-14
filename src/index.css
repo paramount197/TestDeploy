@@ -3,8 +3,7 @@
   src: url(https://www.findmyfont.com/fonts/font-preview?fset=JAW-Fonts&ffam=&fid=fe35f8d593c45633c6e7a41585a2b7c1&width=800&fsize=48&text=The%20quick%20brown%20fox%20jumps%20over%20the%20lazy%20dog&wrap=2);
 } */
 
-html,
-body {
+html, body {
   height: 100%;
   font-family: "Poppins", sans-serif;
   color: black;
@@ -27,8 +26,7 @@ body {
 }
 
 code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
-    monospace;
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New", monospace;
 }
 
 .header {
@@ -59,6 +57,7 @@ li a:hover {
   text-decoration: underline;
   background-color: rgba(255, 255, 255, 0.1);
 }
+
 .clock {
   width: 60px;
 }

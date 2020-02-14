@@ -13,6 +13,7 @@ const Input = props => {
         pattern={props.pattern}
         required={props.required}
         placeholder={props.placeholder}
+        onChange={props.onChange}
       />
     </label>
   );

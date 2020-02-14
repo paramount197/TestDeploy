@@ -15,6 +15,7 @@ import Image from "./block/Image";
 import Clock from "./block/Clock";
 import NewNationwideLogo from "./images/NewNationwideLogo.jpeg";
 import Footer from "../src/block/Footer";
+import EventCreation from "./pages/EventCreation";
 
 const routing = (
   <>
@@ -53,6 +54,7 @@ const routing = (
         <Route path="/registration" component={Registration} />
         <Route path="/signin" component={SignIn} />
         <Route path="/profile" component={Profile} />
+        <Route path="/eventCreation" component={EventCreation} />
         <Route path="/usersguide" component={UsersGuide} />
         <Route path="/imagegallery" component={ImageGallery} />
         <Route path="/forgotpassword" component={ForgotPassword} />

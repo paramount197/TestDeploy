@@ -21,16 +21,13 @@ class SignIn extends React.Component {
   checkLoginDetails = () => {
     if (
       this.state.password === this.state.user[0].password &&
-      this.state.id === this.state.user[0].id &&
-      this.state.user[0].tdpManagement === "No"
+      this.state.id === this.state.user[0].id
     ) {
-      window.location.href = "http://localhost:3000/profile";
-    } else if (
-      this.state.password === this.state.user[0].password &&
-      this.state.id === this.state.user[0].id &&
-      this.state.user[0].tdpManagement === "Yes"
-    ) {
-      window.location.href = "http://localhost:3000/eventCreation";
+      if (this.state.user[0].tdpManagement === "Yes") {
+        window.location.href = "http://localhost:3000/eventCreation";
+      } else {
+        window.location.href = "http://localhost:3000/profile";
+      }
     } else {
       this.handleIncorrectDetails();
     }

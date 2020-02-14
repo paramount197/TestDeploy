@@ -1,0 +1,52 @@
+.display{
+        float:left;
+        clear: both;
+        width:11cm;
+        height:11cm;
+        margin-top:2cm;
+        margin-left: 3cm;
+ }
+
+.box1 {
+    position: static;
+    max-width: 40%;
+    border: 3px solid black;
+    border-radius: 1em;
+    padding: 5em;
+    margin: auto;
+    margin-right: 3cm; 
+    margin-top:2.5cm;
+  }
+  
+.box2 {
+    max-width: 40%;
+    border: 3px solid black;
+    border-radius: 1em;
+    padding: 5em;
+    margin: auto;
+    margin-right: 3cm; 
+    margin-top:4.5cm;
+  }
+
+  .box3 {
+    max-width: 40%;
+    border: 3px solid black;
+    border-radius: 1em;
+    padding: 5em;
+    margin: auto;
+    margin-right: 3cm; 
+    margin-top:4cm;
+}
+
+.box4 {
+  max-width: 40%;
+  border: 3px solid black;
+  border-radius: 1em;
+  padding: 5em;
+  margin: auto;
+  margin-right: 3cm; 
+  margin-top:4cm;
+}
+.text {
+    text-align: center;
+ }

@@ -19,9 +19,22 @@
 .eventTitle {
   text-align: center;
 }
+
 .event {
   border: 1px solid black;
   border-radius: 0.5em;
   margin: 0 0 0.5em 0;
   padding: 0.1em;
+}
+
+.axiosTest ul {
+  height: auto;
+  list-style-type: circle;
+  float: none;
+  display: inline-block;
+}
+
+.axiosTest li {
+  display: block;
+  float: none;
 }

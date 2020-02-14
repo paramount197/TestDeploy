@@ -4,7 +4,8 @@ import "../styles/listitem.css";
 function ListItem(props) {
   return (
     <li className={props.className}>
-      {props.eventName} {props.text} {props.eventDate} {props.text2} {props.eventLocation}
+      {props.eventName} {props.text} {props.eventDate} {props.text2}
+      {props.eventLocation}
     </li>
   );
 }

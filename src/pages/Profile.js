@@ -1,7 +1,7 @@
 import React from "react";
 import Header from "../block/Header";
 import Events from "../block/Events";
-//import axios from "axios";
+import axios from "axios";
 
 class Profile extends React.Component {
 
@@ -9,14 +9,14 @@ class Profile extends React.Component {
         events: []
     };
 
-    //componentDidMount() {
-    //axios.get("http://localhost:4000/tdpEventsList").then(result => {
-    //console.log("this is the", result);
-    //this.setState({
-    //     events: result.data
-    //   })
-    // })
-    //};
+    componentDidMount() {
+        axios.get("http://localhost:4000/tdpEventsList").then(result => {
+            console.log("this is the", result);
+            this.setState({
+                events: result.data
+            })
+        })
+    };
 
     render() {
         return (

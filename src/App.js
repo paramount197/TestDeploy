@@ -2,48 +2,45 @@ import React from "react";
 import "./App.css";
 import Header from "./block/Header";
 import Intro from "./block/Intro";
-import Blurb from "./block/Blurb";
 import Events from "./block/Events";
 import Button from "./block/Button";
 import { NavLink } from "react-router-dom";
+import axios from "axios";
+class App extends React.Component {
+  state = {
+    events: []
+  };
+  componentDidMount() {
+    axios.get("http://localhost:4000/events").then(result => {
+      this.setState({ events: result.data });
+    });
+  }
 
-const events = require("./data/events.json");
-//imports all the data from a json file accessible everywhere
-//rather than objects/array that are stored and repeated
-//in various components
+  render() {
+    return (
+      <>
+        <Header header="TDP Events" />
+        <Intro intro="Welcome to our TDP Event booking" />
+        <div className="buttonDivCont">
+          <div className="buttonDiv">
+            <NavLink to="/signin">
+              <Button name="SIGN IN" className="homeButton" />
+            </NavLink>
+            <NavLink to="/registration">
+              <Button name="REGISTER" className="homeButton" />
+            </NavLink>
+            <NavLink to="/usersguide">
+              <Button name="USER GUIDE" className="homeButton userGuide" />
+            </NavLink>
+          </div>
 
-function App() {
-  return (
-    <>
-      <Header header="TDP Events" />
-      <Intro intro="Welcome to our TDP Event booking" />
-      <Blurb
-        line1="Hello and welcome to the TDP Events Webpage. Here you'll find all current and future TDP events."
-        line2="You'll be able to confirm your attendance to the events via this webpage. Are you new user? Click 'Register' to sign up."
-        line3="If you are a returning user, click 'Sign In' to continue. For further guidance, see the 'Users-Guide'."
-      />
-      <div className="buttonDivCont">
-        <div className="buttonDiv">
-          <NavLink to="/signin">
-            <Button name="SIGN IN" className="homeButton" />
-          </NavLink>
-          <NavLink to="/registration">
-            <Button name="REGISTER" className="homeButton" />
-          </NavLink>
-          <NavLink to="/usersguide">
-            <Button name="USER GUIDE" className="homeButton userGuide" />
-          </NavLink>
+          <div className="eventList">
+            <p className="eventTitle">Upcoming Events</p>
+            <Events eventsDetail={this.state.events} />
+          </div>
         </div>
-        <div className="eventList">
-          <p className="eventTitle">Upcoming Events</p>
-          <Events
-            eventsDetail={events.tdpEventsList}
-            cohortIntake={events.cohortToggle}
-          />
-        </div>
-      </div>
-    </>
-  );
+      </>
+    );
+  }
 }
-
 export default App;

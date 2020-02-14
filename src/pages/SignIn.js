@@ -4,6 +4,7 @@ import "../styles/SignIn.css";
 import Header from "../block/Header";
 import Input from "../block/Input";
 import Submit from "../block/Submit";
+import Button from "../block/Button";
 
 class SignIn extends React.Component {
   constructor() {

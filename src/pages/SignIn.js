@@ -5,6 +5,7 @@ import Header from "../block/Header";
 import Input from "../block/Input";
 import Submit from "../block/Submit";
 import Button from "../block/Button";
+import { NavLink } from "react-router-dom";
 
 class SignIn extends React.Component {
   constructor() {
@@ -45,7 +46,7 @@ class SignIn extends React.Component {
     axios
       .get(`http://localhost:4000/users?id=${this.state.id}`)
       .then(result => {
-        this.setState({ user: result.data }, function() {
+        this.setState({ user: result.data }, function () {
           if (this.state.user.length !== 0) {
             this.checkLoginDetails();
           } else {
@@ -65,7 +66,7 @@ class SignIn extends React.Component {
               <div class="form-p">
                 <form>
                   <Input
-                    type="text"
+                    type="email"
                     placeholder="Username (Your email address)"
                     name="id"
                     required
@@ -81,7 +82,10 @@ class SignIn extends React.Component {
                   <Submit />
                 </form>
                 <p className="response">{this.state.response}</p>
-                <p>Forgot your password?</p>
+                <NavLink to="/forgotpassword">
+                  <Button name="Forgot your Password?" />
+                  <p>Forgot your Password?</p>
+                </NavLink>
               </div>
             </div>
           </div>

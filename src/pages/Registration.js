@@ -19,7 +19,8 @@ class Registration extends React.Component {
       intake: "",
       programme: "",
       intakeDetails: [],
-      programmeDetails: []
+      programmeDetails: [],
+      intakeRequired: "Intake is required"
     };
   }
   onChange = e => {
@@ -28,6 +29,10 @@ class Registration extends React.Component {
 
   onSubmit = e => {
     e.preventDefault();
+
+    if (this.state.intakeDetails.length[0]) {
+      console.log("this was empty");
+    }
 
     axios
       .post("http://localhost:4000/users", {
@@ -106,6 +111,7 @@ class Registration extends React.Component {
                       intakeProgrammeDetails={this.state.intakeDetails}
                     />
                   </select>
+                  {/* <p>{this.state}</p> */}
                 </div>
                 <div className="programme">
                   <label>TDP programme</label>

@@ -10,8 +10,7 @@ class Profile extends React.Component {
     };
 
     componentDidMount() {
-        axios.get("http://localhost:4000/tdpEventsList").then(result => {
-            console.log("this is the", result);
+        axios.get("http://localhost:4000/events").then(result => {
             this.setState({
                 events: result.data
             })
@@ -27,7 +26,7 @@ class Profile extends React.Component {
                     <Events
                         eventsDetail={this.state.events.filter(
                             function (x) {
-                                if (x.type === "Core") {
+                                if (x.coreSelection === "core") {
                                     return true;
                                 }
                                 else {
@@ -43,14 +42,13 @@ class Profile extends React.Component {
                     <Events
                         eventsDetail={this.state.events.filter(
                             function (x) {
-                                if (x.type === "NonCore") {
+                                if (x.coreSelection === "noncore") {
                                     return true;
                                 }
                                 else {
                                     return false;
                                 }
                             }
-
                         )}
                     />
                 </div>

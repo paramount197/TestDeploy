@@ -83,8 +83,7 @@ class SignIn extends React.Component {
                 </form>
                 <p className="response">{this.state.response}</p>
                 <NavLink to="/forgotpassword">
-                  <Button name="Forgot your Password?" />
-                  <p>Forgot your Password?</p>
+                  <p className="underline">Forgot your Password?</p>
                 </NavLink>
               </div>
             </div>

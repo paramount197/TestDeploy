@@ -18,7 +18,6 @@ function UsersGuide() {
             <Blurb blurb="Here you'll be able to learn how to navigate the TDP Events Webpage" />
          </div>
          <UserGuideTextBox
-               Image
                src={Image1}
                alt="Test Image 1"
                text="Lorem ipsum dolor sit amet, consectetur adipiscing elit,
@@ -30,7 +29,6 @@ function UsersGuide() {
                      deserunt mollit anim id est laborum."
          />
          <UserGuideTextBox
-               Image
                src={Image2}
                alt="Test Image 2"
                text="Lorem ipsum dolor sit amet, consectetur adipiscing elit,
@@ -42,7 +40,6 @@ function UsersGuide() {
                      deserunt mollit anim id est laborum."
          />
          <UserGuideTextBox
-               Image
                src={Image3}
                alt="Test Image 3"
                text="Lorem ipsum dolor sit amet, consectetur adipiscing elit,
@@ -54,7 +51,6 @@ function UsersGuide() {
                      deserunt mollit anim id est laborum."
          />
          <UserGuideTextBox
-               Image
                src={Image4}
                alt="Test Image 4"
                text="Lorem ipsum dolor sit amet, consectetur adipiscing elit,

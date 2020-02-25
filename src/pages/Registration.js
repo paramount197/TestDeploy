@@ -18,7 +18,6 @@ class Registration extends React.Component {
       phoneNumber: "",
       intake: "",
       programme: "",
-      intakeDetails: [],
       programmeValueName: [],
       intakeValueName: []
     };
@@ -49,7 +48,6 @@ class Registration extends React.Component {
   componentDidMount() {
     axios.get("http://localhost:4000/tdpDetails").then(result => {
       this.setState({
-        intakeDetails: result.data.intake,
         programmeValueName: result.data.programmeValueName,
         intakeValueName: result.data.intakeValueName
       });

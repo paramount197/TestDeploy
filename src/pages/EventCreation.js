@@ -18,8 +18,8 @@ class EventCreation extends React.Component {
     intake: [],
     programme: [],
     coreSelection: "",
-    intakeDetails: [],
-    programmeDetails: []
+    intakeValueName: [],
+    programmeValueName: []
   };
 
   onChange = input => {
@@ -35,8 +35,8 @@ class EventCreation extends React.Component {
   componentDidMount() {
     axios.get("http://localhost:4000/tdpDetails").then(result => {
       this.setState({
-        intakeDetails: result.data.intake,
-        programmeDetails: result.data.programme
+        intakeValueName: result.data.intakeValueName,
+        programmeValueName: result.data.programmeValueName
       });
     });
   }
@@ -79,17 +79,25 @@ class EventCreation extends React.Component {
                 />
                 <div className="select">
                   <label>TDP intake</label>
-                  <select name="intake" onChange={this.onChange} required>
+                  <select
+                    name="intake"
+                    onChange={this.onChange}
+                    required={true}
+                  >
                     <Dropdown
-                      intakeProgrammeDetails={this.state.intakeDetails}
+                      intakeProgrammeDetails={this.state.intakeValueName}
                     />
                   </select>
                 </div>
                 <div className="select">
                   <label>TDP programme</label>
-                  <select name="programme" onChange={this.onChange} required>
+                  <select
+                    name="programme"
+                    onChange={this.onChange}
+                    required={true}
+                  >
                     <Dropdown
-                      intakeProgrammeDetails={this.state.programmeDetails}
+                      intakeProgrammeDetails={this.state.programmeValueName}
                     />
                   </select>
                 </div>
@@ -98,8 +106,9 @@ class EventCreation extends React.Component {
                   <select
                     name="coreSelection"
                     onChange={this.onChange}
-                    required
+                    required={true}
                   >
+                    <DropDownOption intakeValue="" intakeText="Please select" />
                     <DropDownOption
                       intakeValue="core"
                       intakeText="Core Event"

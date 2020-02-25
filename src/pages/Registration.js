@@ -19,8 +19,8 @@ class Registration extends React.Component {
       intake: "",
       programme: "",
       intakeDetails: [],
-      programmeDetails: [],
-      intakeRequired: "Intake is required"
+      programmeValueName: [],
+      intakeValueName: []
     };
   }
   onChange = e => {
@@ -29,10 +29,6 @@ class Registration extends React.Component {
 
   onSubmit = e => {
     e.preventDefault();
-
-    if (this.state.intakeDetails.length[0]) {
-      console.log("this was empty");
-    }
 
     axios
       .post("http://localhost:4000/users", {
@@ -54,7 +50,8 @@ class Registration extends React.Component {
     axios.get("http://localhost:4000/tdpDetails").then(result => {
       this.setState({
         intakeDetails: result.data.intake,
-        programmeDetails: result.data.programme
+        programmeValueName: result.data.programmeValueName,
+        intakeValueName: result.data.intakeValueName
       });
     });
   }
@@ -106,18 +103,25 @@ class Registration extends React.Component {
                 />
                 <div className="intake">
                   <label>TDP intake</label>
-                  <select name="intake" onChange={this.onChange}>
+                  <select
+                    name="intake"
+                    onChange={this.onChange}
+                    required={true}
+                  >
                     <Dropdown
-                      intakeProgrammeDetails={this.state.intakeDetails}
+                      intakeProgrammeDetails={this.state.intakeValueName}
                     />
                   </select>
-                  {/* <p>{this.state}</p> */}
                 </div>
                 <div className="programme">
                   <label>TDP programme</label>
-                  <select name="programme" onChange={this.onChange}>
+                  <select
+                    name="programme"
+                    onChange={this.onChange}
+                    required={true}
+                  >
                     <Dropdown
-                      intakeProgrammeDetails={this.state.programmeDetails}
+                      intakeProgrammeDetails={this.state.programmeValueName}
                     />
                   </select>
                 </div>

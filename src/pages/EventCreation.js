@@ -44,7 +44,7 @@ class EventCreation extends React.Component {
   render() {
     return (
       <>
-        <Header header="Welcome Back" />
+        <Header header="Create a new TDP event" />
         <form name="newEvent" onSubmit={this.onSubmit}>
           <div class="main">
             <div class="row">

@@ -66,3 +66,86 @@ This section has moved here: https://facebook.github.io/create-react-app/docs/de
 ### `npm run build` fails to minify
 
 This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
+
+{
+  "users": [
+    {
+      "id": "ross@test.com",
+      "firstName": "Ross",
+      "lastName": "Pedley",
+      "password": "1",
+      "phoneNumber": "07792279116",
+      "intake": "September 2019",
+      "tdpManagement": "No"
+    },
+    {
+      "id": "technologydevelopmentprogramme@nationwide.co.uk",
+      "firstName": "TDP",
+      "lastName": "Management",
+      "password": "Password",
+      "phoneNumber": "07789976554",
+      "intake": "September 2019",
+      "tdpManagement": "Yes"
+    }
+  ],
+  "programme": [
+    {
+      "1": "accelerator",
+      "2": "IP",
+      "3": "apprentice"
+    }
+  ],
+  "events": [
+    {
+      "id": 1,
+      "name": "Quaterly formun",
+      "date": "2020-02-22",
+      "location": "test",
+      "attendees": "3",
+      "intake": "September 2018",
+      "programme": "Degree Apprenticeship",
+      "coreSelection": "noncore"
+    },
+    {
+      "id": 2,
+      "name": "logremoved",
+      "date": "2020-02-20",
+      "location": "feaaeeaf",
+      "attendees": "1",
+      "intake": "September 2019",
+      "programme": "IP",
+      "coreSelection": "noncore"
+    },
+    {
+      "id": 3,
+      "name": "demo for PR",
+      "date": "2020-02-28",
+      "location": "Omar's house",
+      "attendees": "7",
+      "intake": "May 2019",
+      "programme": "IP",
+      "coreSelection": "noncore"
+    }
+  ],
+  "config": {
+    "cohort": "September 2019"
+  },
+  "tdpDetails": {
+    "intake": [
+      "Please select",
+      "September 2018",
+      "May 2019",
+      "September 2019",
+      "May 2020",
+      "September 2020"
+    ],
+    "programme": [
+      "Please select",
+      "Accelerator",
+      "IP",
+      "Degree Apprenticeship",
+      "All"
+    ]
+  }
+}
+

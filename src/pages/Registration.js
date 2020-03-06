@@ -21,7 +21,8 @@ class Registration extends React.Component {
       intake: "",
       programme: "",
       programmeValueName: [],
-      intakeValueName: []
+      intakeValueName: [],
+      userId: undefined
     };
   }
   onChange = e => {
@@ -40,7 +41,8 @@ class Registration extends React.Component {
         phoneNumber: this.state.phoneNumber,
         intake: this.state.intake,
         programme: this.state.programme,
-        tdpManagement: "No"
+        tdpManagement: "No",
+        userId: this.state.userId
       })
       .then(() => {
         window.location.href = "http://localhost:3000/signin";
@@ -52,6 +54,11 @@ class Registration extends React.Component {
       this.setState({
         programmeValueName: result.data.programmeValueName,
         intakeValueName: result.data.intakeValueName
+      });
+      axios.get("http://localhost:4000/users").then(result => {
+        this.setState({
+          userId: result.data.length + 1
+        });
       });
     });
   }

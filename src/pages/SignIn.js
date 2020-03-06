@@ -13,7 +13,8 @@ class SignIn extends React.Component {
     this.state = {
       id: "",
       password: "",
-      user: {}
+      user: {},
+      userId: undefined
     };
   }
   onChange = e => {
@@ -21,6 +22,7 @@ class SignIn extends React.Component {
   };
 
   checkLoginDetails = () => {
+    var url = "http://localhost:3000/profile/" + this.state.userId;
     if (
       this.state.password === this.state.user[0].password &&
       this.state.id === this.state.user[0].id
@@ -28,7 +30,7 @@ class SignIn extends React.Component {
       if (this.state.user[0].tdpManagement === "Yes") {
         window.location.href = "http://localhost:3000/eventCreation";
       } else {
-        window.location.href = "http://localhost:3000/profile";
+        window.location.href = url;
       }
     } else {
       this.handleIncorrectDetails();
@@ -46,7 +48,7 @@ class SignIn extends React.Component {
     axios
       .get(`http://localhost:4000/users?id=${this.state.id}`)
       .then(result => {
-        this.setState({ user: result.data }, function () {
+        this.setState({ user: result.data }, function() {
           if (this.state.user.length !== 0) {
             this.checkLoginDetails();
           } else {

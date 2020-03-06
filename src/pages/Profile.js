@@ -10,7 +10,7 @@ class Profile extends React.Component {
       events: [],
       eventId: "",
       currentUserId: undefined,
-      currentUser: undefined
+      currentUser: { id: null }
     };
   }
 
@@ -26,11 +26,7 @@ class Profile extends React.Component {
       this.setState({
         events: result.data
       });
-      addBookedAttendee();
     });
-    let addBookedAttendee = () => {
-      let attendees = this.state.events;
-    };
   }
 
   render() {
@@ -49,7 +45,7 @@ class Profile extends React.Component {
               }
             })}
             showButton={true}
-            testUser={this.state.user}
+            currentUserEmail={this.state.currentUser.id}
           />
         </div>
 
@@ -64,7 +60,7 @@ class Profile extends React.Component {
               }
             })}
             showButton={true}
-            testUser="ArbindIsGod1@awesome.com"
+            currentUserEmail={this.state.currentUser.id}
           />
         </div>
       </>

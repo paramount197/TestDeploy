@@ -7,18 +7,21 @@ class Profile extends React.Component {
   constructor() {
     super();
     this.state = {
-      id: 3,
-      user: "ross@test.com", //needs to be the logged in user-name
       events: [],
-      testUser: "",
       eventId: "",
-      currentUserId: undefined
+      currentUserId: undefined,
+      currentUser: undefined
     };
   }
 
   componentDidMount() {
-    this.setState({ currentUser: this.props.match.params.handle });
-
+    this.setState({ currentUserId: this.props.match.params.handle }, () => {
+      axios
+        .get(`http://localhost:4000/users/?userId=${this.state.currentUserId}`)
+        .then(result => {
+          this.setState({ currentUser: result.data[0] });
+        });
+    });
     axios.get("http://localhost:4000/events").then(result => {
       this.setState({
         events: result.data
@@ -33,8 +36,8 @@ class Profile extends React.Component {
   render() {
     return (
       <>
-        {console.log(this.state.events)}
         <Header header="Welcome back!" />
+        <p>{this.state.currentUserId}</p>
         <div className="CoreEvents">
           <h2> Core events </h2>
           <Events

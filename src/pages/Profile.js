@@ -8,12 +8,11 @@ class Profile extends React.Component {
         super();
         this.state = {
             id: 3,
-            user: "ross@test.com", //needs needs to be the logged in user-name
-
+            user: "ross@test.com", //needs to be the logged in user-name
             events: [],
             testUser: "",
             eventId: "",
-            currentUser: "arbindIsSuoerAwesome.com"
+            currentUser: "arbindIsSuperAwesome.com"
         };
     }
 

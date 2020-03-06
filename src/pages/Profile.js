@@ -4,22 +4,40 @@ import Events from "../block/Events";
 import axios from "axios";
 
 class Profile extends React.Component {
+    constructor() {
+        super();
+        this.state = {
+            id: 3,
+            user: "ross@test.com", //needs needs to be the logged in user-name
 
-    state = {
-        events: []
-    };
+            events: [],
+            testUser: "",
+            eventId: "",
+            currentUser: "arbindIsSuoerAwesome.com"
+        };
+    }
 
     componentDidMount() {
+        const { handle } = this.props.match.params;
+        this.setState({ currentUser: handle });
+
         axios.get("http://localhost:4000/events").then(result => {
             this.setState({
                 events: result.data
             })
+            addBookedAttendee();
         })
+        addBookedAttendee(){
+            let attendees = this.state.events
+        }
+
     };
+
 
     render() {
         return (
             <>
+                {console.log(this.state.events)}
                 <Header header="Welcome back!" />
                 <div className="CoreEvents">
                     <h2> Core events </h2>
@@ -34,6 +52,11 @@ class Profile extends React.Component {
                                 }
                             }
                         )}
+
+                        showButton={true}
+                        testUser={this.state.user}
+
+
                     />
                 </div>
 
@@ -50,6 +73,8 @@ class Profile extends React.Component {
                                 }
                             }
                         )}
+                        showButton={true}
+                        testUser="ArbindIsGod1@awesome.com"
                     />
                 </div>
             </>

@@ -8,8 +8,8 @@ function ListItem(props) {
       {props.eventLocation}
       {props.attendees}
       {props.showButton === true && (
-        <button type="button" onClick={props.bookEvent}>
-          Book
+        <button type="button" onClick={props.buttonClick}>
+          {props.buttonText}
         </button>
       )}
     </li>

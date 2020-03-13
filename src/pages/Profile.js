@@ -10,7 +10,7 @@ class Profile extends React.Component {
       events: [],
       eventId: "",
       currentUserId: undefined,
-      currentUser: { id: null }
+      currentUser: { id: undefined }
     };
   }
 
@@ -33,7 +33,6 @@ class Profile extends React.Component {
     return (
       <>
         <Header header="Welcome back!" />
-        <p>{this.state.currentUserId}</p>
         <div className="CoreEvents">
           <h2> Core events </h2>
           <Events

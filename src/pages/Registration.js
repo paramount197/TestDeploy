@@ -21,7 +21,8 @@ class Registration extends React.Component {
       intake: "",
       programme: "",
       intakeDetails: [],
-      programmeDetails: []
+      programmeDetails: [],
+      securityQuestions: []
     };
   }
   onChange = e => {
@@ -54,9 +55,15 @@ class Registration extends React.Component {
         programmeDetails: result.data.programme
       });
     });
+    axios.get("http://localhost:4000/securityQuestion").then(result => {
+      this.setState({
+        securityQuestions: result.data.Questions
+      });
+    });
   }
 
   render() {
+    console.log(this.state);
     return (
       <>
         <Header header="Registration page" />
@@ -100,9 +107,11 @@ class Registration extends React.Component {
                   required
                   onChange={this.onChange}
                 />
-                {this.state.password !== '' && this.state.confirmPassword !== '' && this.state.password !== this.state.confirmPassword && (
-                  <p>Passwords do not match</p>
-                )}
+                {this.state.password !== "" &&
+                  this.state.confirmPassword !== "" &&
+                  this.state.password !== this.state.confirmPassword && (
+                    <p>Passwords do not match</p>
+                  )}
                 <Input
                   type="tel"
                   name="phoneNumber"
@@ -113,7 +122,7 @@ class Registration extends React.Component {
                 <div className="selectDropdown">
                   <label>Security Question</label>
                   <select>
-                    <Dropdown intakeProgrammeDetails={securityQuestions.securityQuestion.Questions} />
+                    <Dropdown intakeProgrammeDetails={this.state.Questions} />
                   </select>
                 </div>
                 <Input
@@ -125,13 +134,17 @@ class Registration extends React.Component {
                 <div className="intake">
                   <label>TDP intake</label>
                   <select name="intake" onChange={this.onChange}>
-                    <Dropdown intakeProgrammeDetails={this.state.intakeDetails} />
+                    <Dropdown
+                      intakeProgrammeDetails={this.state.intakeDetails}
+                    />
                   </select>
                 </div>
                 <div className="programme">
                   <label>TDP programme</label>
                   <select name="programme" onChange={this.onChange}>
-                    <Dropdown intakeProgrammeDetails={this.state.programmeDetails} />
+                    <Dropdown
+                      intakeProgrammeDetails={this.state.programmeDetails}
+                    />
                   </select>
                 </div>
                 <Submit />

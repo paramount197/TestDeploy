@@ -24,7 +24,6 @@ class ForgotPassword extends React.Component {
   }
 
   onChange = e => {
-    console.log('onchange')
     this.setState({ [e.target.name]: e.target.value });
   };
 
@@ -33,16 +32,12 @@ class ForgotPassword extends React.Component {
       .get(`http://localhost:4000/users?id=${this.state.email}`)
       .then(result => {
         if (result.data.length !== 0) {
-          //if user does exist (result.data is NOT empty)
-          console.log(result.data)
           this.setState({
             emailHasBeenInput: true,
             securityQuestion: result.data[0].securityQuestion,
             securityAnswer: result.data[0].securityAnswer
           });
-        }
-        else {
-          //if user doesn't exist 
+        } else {
           this.handleIncorrectDetails();
         }
       });
@@ -55,15 +50,12 @@ class ForgotPassword extends React.Component {
   };
 
   handleSecurityQuestion() {
-    console.log(this.state)
     if (this.state.userAnswer === this.state.securityAnswer) {
-      console.log('success')
-    }
-    else {
-      console.log('fail')
+      console.log("success");
+    } else {
+      console.log("fail");
     }
   }
-
 
   render() {
     return (
@@ -75,10 +67,11 @@ class ForgotPassword extends React.Component {
               <Intro intro="Please enter your email address and answer your chosen security question below" />
               {!this.state.emailHasBeenInput && (
                 <form
-                  onSubmit={(e) => {
+                  onSubmit={e => {
                     e.preventDefault();
                     this.getUserData();
-                  }}>
+                  }}
+                >
                   <Input
                     type="email"
                     placeholder="Enter Email Address"
@@ -95,10 +88,11 @@ class ForgotPassword extends React.Component {
                   <label>Security Question</label>
                   <p>{this.state.securityQuestion}</p>
                   <form
-                    onSubmit={(e) => {
+                    onSubmit={e => {
                       e.preventDefault();
                       this.handleSecurityQuestion();
-                    }}>
+                    }}
+                  >
                     <Input
                       type="text"
                       placeholder="Write Answer Here"

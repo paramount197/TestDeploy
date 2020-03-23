@@ -29,7 +29,15 @@ class EventCreation extends React.Component {
   onSubmit = formSubmit => {
     formSubmit.preventDefault();
     this.setState({ id: this.state.id + 1 });
-    axios.post("http://localhost:4000/events", this.state).then(
+    axios.post("http://localhost:4000/events", {
+      name: this.state.name,
+      date: this.state.date,
+      location: this.state.location,
+      attendees: this.state.attendees,
+      intake: this.state.intake,
+      programme: this.state.programme,
+      coreSelection: this.state.coreSelection
+    }).then(
       this.setState({ response: "Event Created!" })
     );
   };
@@ -104,20 +112,14 @@ class EventCreation extends React.Component {
                   </select>
                 </div>
                 <div className="select">
-                  <label>Core/NonCore Event</label>
+                  <label>Core/ Event</label>
                   <select
                     name="coreSelection"
                     onChange={this.onChange}
                     required={true}
                   >
-                    <DropDownOption intakeValue="" intakeText="Please select" />
-                    <DropDownOption
-                      intakeValue="core"
-                      intakeText="Core Event"
-                    />
-                    <DropDownOption
-                      intakeValue="noncore"
-                      intakeText="Non Core Event"
+                    <Dropdown
+                      dropdownOptions={['Core', 'Non-core']}
                     />
                   </select>
                 </div>

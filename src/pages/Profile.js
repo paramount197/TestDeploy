@@ -36,8 +36,8 @@ class Profile extends React.Component {
         <div className="CoreEvents">
           <h2> Core events </h2>
           <Events
-            eventsDetail={this.state.events.filter(function(x) {
-              if (x.coreSelection === "core") {
+            eventsDetail={this.state.events.filter(function (x) {
+              if (x.coreSelection === "Core") {
                 return true;
               } else {
                 return false;
@@ -51,8 +51,8 @@ class Profile extends React.Component {
         <div className="NonCoreEvents">
           <h2> Non core events </h2>
           <Events
-            eventsDetail={this.state.events.filter(function(x) {
-              if (x.coreSelection === "noncore") {
+            eventsDetail={this.state.events.filter(function (x) {
+              if (x.coreSelection === "Non-core") {
                 return true;
               } else {
                 return false;

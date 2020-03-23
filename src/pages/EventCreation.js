@@ -1,7 +1,6 @@
 import React from "react";
 import Input from "../block/Input";
 import Submit from "../block/Submit";
-import { Post } from "../Axios/Methods";
 import axios from "axios";
 import Dropdown from "../block/Dropdown";
 import "../styles/eventCreation.css";

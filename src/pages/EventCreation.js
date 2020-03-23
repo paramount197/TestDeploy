@@ -19,7 +19,8 @@ class EventCreation extends React.Component {
     programme: [],
     coreSelection: "",
     intakeValueName: [],
-    programmeValueName: []
+    programmeValueName: [],
+    response: undefined
   };
 
   onChange = input => {

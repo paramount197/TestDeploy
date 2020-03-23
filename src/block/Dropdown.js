@@ -2,11 +2,10 @@ import React from "react";
 import DropDownOption from "./DropDownOption";
 
 const Dropdown = props => {
-  return props.intakeProgrammeDetails.map(option => (
+  return props.dropdownOptions.map(option => (
     <DropDownOption
-      intakeValue={option.value}
-      intakeText={option.name}
-      onChange={props.onChange}
+      text={option}
+      value={option}
     />
   ));
 };

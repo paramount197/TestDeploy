@@ -30,7 +30,7 @@ function ForgotPassword(props) {
               <label>Security Question</label>
               <select>
                 <Dropdown
-                  intakeProgrammeDetails={
+                  dropdownOptions={
                     securityQuestions.securityQuestion.Questions
                   }
                 />

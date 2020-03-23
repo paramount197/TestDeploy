@@ -123,7 +123,7 @@ class Registration extends React.Component {
                   <label>Security Question</label>
                   <select>
                     <Dropdown
-                      intakeProgrammeDetails={
+                      dropdownOptions={
                         securityQuestions.securityQuestion.Questions
                       }
                     />
@@ -143,7 +143,7 @@ class Registration extends React.Component {
                     required={true}
                   >
                     <Dropdown
-                      intakeProgrammeDetails={this.state.intakeValueName}
+                      dropdownOptions={this.state.intakeValueName}
                     />
                   </select>
                 </div>
@@ -155,7 +155,7 @@ class Registration extends React.Component {
                     required={true}
                   >
                     <Dropdown
-                      intakeProgrammeDetails={this.state.programmeValueName}
+                      dropdownOptions={this.state.programmeValueName}
                     />
                   </select>
                 </div>

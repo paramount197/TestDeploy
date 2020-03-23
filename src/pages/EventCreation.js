@@ -32,16 +32,18 @@ class EventCreation extends React.Component {
     Post("http://localhost:4000/events", this.state);
     this.setState({ response: "Event Created!" });
   };
+
   componentDidMount() {
     axios.get("http://localhost:4000/tdpDetails").then(result => {
       this.setState({
-        intakeValueName: result.data.intakeValueName,
-        programmeValueName: result.data.programmeValueName
+        intakeValueName: result.data.intake,
+        programmeValueName: result.data.programme
       });
     });
   }
 
   render() {
+    console.log(this.state)
     return (
       <>
         <Header header="Create a new TDP event" />
@@ -85,7 +87,7 @@ class EventCreation extends React.Component {
                     required={true}
                   >
                     <Dropdown
-                      intakeProgrammeDetails={this.state.intakeValueName}
+                      dropdownOptions={this.state.intakeValueName}
                     />
                   </select>
                 </div>
@@ -97,7 +99,7 @@ class EventCreation extends React.Component {
                     required={true}
                   >
                     <Dropdown
-                      intakeProgrammeDetails={this.state.programmeValueName}
+                      dropdownOptions={this.state.programmeValueName}
                     />
                   </select>
                 </div>

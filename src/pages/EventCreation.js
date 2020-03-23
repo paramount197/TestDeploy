@@ -30,8 +30,9 @@ class EventCreation extends React.Component {
   onSubmit = formSubmit => {
     formSubmit.preventDefault();
     this.setState({ id: this.state.id + 1 });
-    Post("http://localhost:4000/events", this.state);
-    this.setState({ response: "Event Created!" });
+    axios.post("http://localhost:4000/events", this.state).then(
+      this.setState({ response: "Event Created!" })
+    );
   };
 
   componentDidMount() {

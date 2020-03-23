@@ -44,7 +44,6 @@ class EventCreation extends React.Component {
   }
 
   render() {
-    console.log(this.state)
     return (
       <>
         <Header header="Create a new TDP event" />

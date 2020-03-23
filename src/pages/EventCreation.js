@@ -9,7 +9,6 @@ import DropDownOption from "../block/DropDownOption";
 
 class EventCreation extends React.Component {
   state = {
-    id: 0,
     name: undefined,
     date: undefined,
     location: undefined,
@@ -28,7 +27,6 @@ class EventCreation extends React.Component {
 
   onSubmit = formSubmit => {
     formSubmit.preventDefault();
-    this.setState({ id: this.state.id + 1 });
     axios.post("http://localhost:4000/events", {
       name: this.state.name,
       date: this.state.date,

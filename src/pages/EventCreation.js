@@ -110,7 +110,7 @@ class EventCreation extends React.Component {
                   </select>
                 </div>
                 <div className="select">
-                  <label>Core/ Event</label>
+                  <label>Core/Non-core Event</label>
                   <select
                     name="coreSelection"
                     onChange={this.onChange}

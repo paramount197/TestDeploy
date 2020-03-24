@@ -1,7 +1,6 @@
 import React from "react";
 import Input from "../block/Input";
 import Submit from "../block/Submit";
-import { Post } from "../Axios/Methods";
 import axios from "axios";
 import Dropdown from "../block/Dropdown";
 import "../styles/eventCreation.css";
@@ -10,7 +9,6 @@ import DropDownOption from "../block/DropDownOption";
 
 class EventCreation extends React.Component {
   state = {
-    id: 0,
     name: undefined,
     date: undefined,
     location: undefined,
@@ -19,7 +17,8 @@ class EventCreation extends React.Component {
     programme: [],
     coreSelection: "",
     intakeValueName: [],
-    programmeValueName: []
+    programmeValueName: [],
+    response: undefined
   };
 
   onChange = input => {
@@ -28,15 +27,24 @@ class EventCreation extends React.Component {
 
   onSubmit = formSubmit => {
     formSubmit.preventDefault();
-    this.setState({ id: this.state.id + 1 });
-    Post("http://localhost:4000/events", this.state);
-    this.setState({ response: "Event Created!" });
+    axios.post("http://localhost:4000/events", {
+      name: this.state.name,
+      date: this.state.date,
+      location: this.state.location,
+      attendees: this.state.attendees,
+      intake: this.state.intake,
+      programme: this.state.programme,
+      coreSelection: this.state.coreSelection
+    }).then(
+      this.setState({ response: "Event Created!" })
+    );
   };
+
   componentDidMount() {
     axios.get("http://localhost:4000/tdpDetails").then(result => {
       this.setState({
-        intakeValueName: result.data.intakeValueName,
-        programmeValueName: result.data.programmeValueName
+        intakeValueName: result.data.intake,
+        programmeValueName: result.data.programme
       });
     });
   }
@@ -85,7 +93,7 @@ class EventCreation extends React.Component {
                     required={true}
                   >
                     <Dropdown
-                      intakeProgrammeDetails={this.state.intakeValueName}
+                      dropdownOptions={this.state.intakeValueName}
                     />
                   </select>
                 </div>
@@ -97,25 +105,19 @@ class EventCreation extends React.Component {
                     required={true}
                   >
                     <Dropdown
-                      intakeProgrammeDetails={this.state.programmeValueName}
+                      dropdownOptions={this.state.programmeValueName}
                     />
                   </select>
                 </div>
                 <div className="select">
-                  <label>Core/NonCore Event</label>
+                  <label>Core/Non-core Event</label>
                   <select
                     name="coreSelection"
                     onChange={this.onChange}
                     required={true}
                   >
-                    <DropDownOption intakeValue="" intakeText="Please select" />
-                    <DropDownOption
-                      intakeValue="core"
-                      intakeText="Core Event"
-                    />
-                    <DropDownOption
-                      intakeValue="noncore"
-                      intakeText="Non Core Event"
+                    <Dropdown
+                      dropdownOptions={['Core', 'Non-core']}
                     />
                   </select>
                 </div>

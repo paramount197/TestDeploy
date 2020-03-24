@@ -1,14 +1,19 @@
 import React from "react";
 import DropDownOption from "./DropDownOption";
+import DefaultDropDownOption from "./DefaultDropDownOption";
 
 const Dropdown = props => {
-  return props.intakeProgrammeDetails.map(option => (
-    <DropDownOption
-      intakeValue={option.value}
-      intakeText={option.name}
-      onChange={props.onChange}
-    />
-  ));
+  return (
+    <>
+      <DefaultDropDownOption />
+      {props.dropdownOptions.map(option => (
+        <DropDownOption
+          text={option}
+          value={option}
+        />
+      ))}
+    </>
+  );
 };
 
 export default Dropdown;

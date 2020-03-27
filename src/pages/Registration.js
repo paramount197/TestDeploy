@@ -6,7 +6,6 @@ import Intro from "../block/Intro";
 import Dropdown from "../block/Dropdown";
 import Input from "../block/Input";
 import Submit from "../block/Submit";
-const securityQuestions = require("../data/securityQuestions.json");
 
 class Registration extends React.Component {
   constructor() {
@@ -144,9 +143,7 @@ class Registration extends React.Component {
                     onChange={this.onChange}
                     required={true}
                   >
-                    <Dropdown
-                      dropdownOptions={this.state.intakeValueName}
-                    />
+                    <Dropdown dropdownOptions={this.state.intakeValueName} />
                   </select>
                 </div>
                 <div className="programme">
@@ -156,9 +153,7 @@ class Registration extends React.Component {
                     onChange={this.onChange}
                     required={true}
                   >
-                    <Dropdown
-                      dropdownOptions={this.state.programmeValueName}
-                    />
+                    <Dropdown dropdownOptions={this.state.programmeValueName} />
                   </select>
                 </div>
                 <Submit />

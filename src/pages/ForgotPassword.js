@@ -4,11 +4,8 @@ import Header from "../block/Header";
 import Intro from "../block/Intro";
 import Input from "../block/Input";
 import Submit from "../block/Submit";
-import { NavLink } from "react-router-dom";
 import "../styles/forgotpassword.css";
 import "../styles/input.css";
-
-const securityQuestions = require("../data/securityQuestions.json");
 
 class ForgotPassword extends React.Component {
   constructor() {
@@ -19,7 +16,9 @@ class ForgotPassword extends React.Component {
       securityQuestion: "",
       securityAnswer: "",
       userAnswer: "",
-      response: ""
+      securityAnswerPassed: false,
+      updatedPassword: "",
+      message: ""
     };
   }
 
@@ -35,26 +34,38 @@ class ForgotPassword extends React.Component {
           this.setState({
             emailHasBeenInput: true,
             securityQuestion: result.data[0].securityQuestion,
-            securityAnswer: result.data[0].securityAnswer
+            securityAnswer: result.data[0].securityAnswer,
+            message: ""
           });
         } else {
-          this.handleIncorrectDetails();
+          this.setState({
+            message: "Please check you have entered your details correctly"
+          });
         }
       });
   }
 
-  handleIncorrectDetails = () => {
-    this.setState({
-      response: "Please check you have entered your details correctly"
-    });
-  };
-
   handleSecurityQuestion() {
     if (this.state.userAnswer === this.state.securityAnswer) {
-      console.log("success");
+      this.setState({ securityAnswerPassed: true, message: "" });
     } else {
-      console.log("fail");
+      this.setState({
+        message: "Please check you have entered your security answer correctly"
+      });
     }
+  }
+
+  handleUpdatedPassword() {
+    axios
+      .patch(`http://localhost:4000/users/${this.state.email}`, {
+        password: this.state.updatedPassword
+      })
+      .then(
+        this.setState({
+          message:
+            "Your password has been successfully changed, you are now able to sign in"
+        })
+      );
   }
 
   render() {
@@ -81,31 +92,53 @@ class ForgotPassword extends React.Component {
                       onChange={this.onChange}
                     />
                     <Submit />
-                    <p className="response">{this.state.response}</p>
                   </form>
                 </>
               )}
-              {this.state.emailHasBeenInput && (
-                <div className="securityQuestions">
-                  <label>Security Question</label>
-                  <p>{this.state.securityQuestion}</p>
+              {this.state.emailHasBeenInput &&
+                !this.state.securityAnswerPassed && (
+                  <div className="securityQuestions">
+                    <label>Security Question</label>
+                    <p>{this.state.securityQuestion}</p>
+                    <form
+                      onSubmit={e => {
+                        e.preventDefault();
+                        this.handleSecurityQuestion();
+                      }}
+                    >
+                      <Input
+                        type="text"
+                        placeholder="Write Answer Here"
+                        name="userAnswer"
+                        required
+                        onChange={this.onChange}
+                      />
+                      <Submit />
+                    </form>
+                  </div>
+                )}
+              {this.state.securityAnswerPassed && (
+                <>
                   <form
+                    form
                     onSubmit={e => {
                       e.preventDefault();
-                      this.handleSecurityQuestion();
+                      this.handleUpdatedPassword();
                     }}
                   >
+                    <Intro intro="Thank you, please enter a new password" />
                     <Input
-                      type="text"
-                      placeholder="Write Answer Here"
-                      name="userAnswer"
+                      type="password"
+                      placeholder="Enter new password"
+                      name="updatedPassword"
                       required
                       onChange={this.onChange}
                     />
                     <Submit />
                   </form>
-                </div>
+                </>
               )}
+              <p>{this.state.message}</p>
             </div>
           </div>
         </div>

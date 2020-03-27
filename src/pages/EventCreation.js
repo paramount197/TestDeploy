@@ -1,7 +1,6 @@
 import React from "react";
 import Input from "../block/Input";
 import Submit from "../block/Submit";
-import { Post } from "../Axios/Methods";
 import axios from "axios";
 import Dropdown from "../block/Dropdown";
 import "../styles/eventCreation.css";
@@ -10,7 +9,6 @@ import DropDownOption from "../block/DropDownOption";
 
 class EventCreation extends React.Component {
   state = {
-    id: 0,
     name: undefined,
     date: undefined,
     location: undefined,
@@ -18,8 +16,9 @@ class EventCreation extends React.Component {
     intake: [],
     programme: [],
     coreSelection: "",
-    intakeDetails: [],
-    programmeDetails: []
+    intakeValueName: [],
+    programmeValueName: [],
+    response: undefined
   };
 
   onChange = input => {
@@ -28,15 +27,24 @@ class EventCreation extends React.Component {
 
   onSubmit = formSubmit => {
     formSubmit.preventDefault();
-    this.setState({ id: this.state.id + 1 });
-    Post("http://localhost:4000/events", this.state);
-    this.setState({ response: "Event Created!" });
+    axios.post("http://localhost:4000/events", {
+      name: this.state.name,
+      date: this.state.date,
+      location: this.state.location,
+      attendees: this.state.attendees,
+      intake: this.state.intake,
+      programme: this.state.programme,
+      coreSelection: this.state.coreSelection
+    }).then(
+      this.setState({ response: "Event Created!" })
+    );
   };
+
   componentDidMount() {
     axios.get("http://localhost:4000/tdpDetails").then(result => {
       this.setState({
-        intakeDetails: result.data.intake,
-        programmeDetails: result.data.programme
+        intakeValueName: result.data.intake,
+        programmeValueName: result.data.programme
       });
     });
   }
@@ -44,7 +52,7 @@ class EventCreation extends React.Component {
   render() {
     return (
       <>
-        <Header header="Welcome Back" />
+        <Header header="Create a new TDP event" />
         <form name="newEvent" onSubmit={this.onSubmit}>
           <div class="main">
             <div class="row">
@@ -79,34 +87,37 @@ class EventCreation extends React.Component {
                 />
                 <div className="select">
                   <label>TDP intake</label>
-                  <select name="intake" onChange={this.onChange} required>
+                  <select
+                    name="intake"
+                    onChange={this.onChange}
+                    required={true}
+                  >
                     <Dropdown
-                      intakeProgrammeDetails={this.state.intakeDetails}
+                      dropdownOptions={this.state.intakeValueName}
                     />
                   </select>
                 </div>
                 <div className="select">
                   <label>TDP programme</label>
-                  <select name="programme" onChange={this.onChange} required>
+                  <select
+                    name="programme"
+                    onChange={this.onChange}
+                    required={true}
+                  >
                     <Dropdown
-                      intakeProgrammeDetails={this.state.programmeDetails}
+                      dropdownOptions={this.state.programmeValueName}
                     />
                   </select>
                 </div>
                 <div className="select">
-                  <label>Core/NonCore Event</label>
+                  <label>Core/Non-core Event</label>
                   <select
                     name="coreSelection"
                     onChange={this.onChange}
-                    required
+                    required={true}
                   >
-                    <DropDownOption
-                      intakeValue="core"
-                      intakeText="Core Event"
-                    />
-                    <DropDownOption
-                      intakeValue="noncore"
-                      intakeText="Non Core Event"
+                    <Dropdown
+                      dropdownOptions={['Core', 'Non-core']}
                     />
                   </select>
                 </div>

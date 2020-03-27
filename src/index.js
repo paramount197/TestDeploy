@@ -53,7 +53,7 @@ const routing = (
         <Route exact path="/" component={App} />
         <Route path="/registration" component={Registration} />
         <Route path="/signin" component={SignIn} />
-        <Route path="/profile" component={Profile} />
+        <Route path="/profile/:handle" component={Profile} />
         <Route path="/eventCreation" component={EventCreation} />
         <Route path="/usersguide" component={UsersGuide} />
         <Route path="/imagegallery" component={ImageGallery} />

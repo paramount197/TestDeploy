@@ -6,6 +6,12 @@ function ListItem(props) {
     <li className={props.className}>
       {props.eventName} {props.text} {props.eventDate} {props.text2}
       {props.eventLocation}
+      {props.attendees}
+      {props.showButton === true && (
+        <button type="button" onClick={props.buttonClick}>
+          {props.buttonText}
+        </button>
+      )}
     </li>
   );
 }

@@ -68,7 +68,6 @@ class Registration extends React.Component {
   }
 
   render() {
-    console.log(this.state);
     return (
       <>
         <Header header="Registration page" />

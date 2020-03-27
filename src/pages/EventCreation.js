@@ -5,7 +5,6 @@ import axios from "axios";
 import Dropdown from "../block/Dropdown";
 import "../styles/eventCreation.css";
 import Header from "../block/Header";
-import DropDownOption from "../block/DropDownOption";
 
 class EventCreation extends React.Component {
   state = {
@@ -27,17 +26,17 @@ class EventCreation extends React.Component {
 
   onSubmit = formSubmit => {
     formSubmit.preventDefault();
-    axios.post("http://localhost:4000/events", {
-      name: this.state.name,
-      date: this.state.date,
-      location: this.state.location,
-      attendees: this.state.attendees,
-      intake: this.state.intake,
-      programme: this.state.programme,
-      coreSelection: this.state.coreSelection
-    }).then(
-      this.setState({ response: "Event Created!" })
-    );
+    axios
+      .post("http://localhost:4000/events", {
+        name: this.state.name,
+        date: this.state.date,
+        location: this.state.location,
+        attendees: this.state.attendees,
+        intake: this.state.intake,
+        programme: this.state.programme,
+        coreSelection: this.state.coreSelection
+      })
+      .then(this.setState({ response: "Event Created!" }));
   };
 
   componentDidMount() {
@@ -92,9 +91,7 @@ class EventCreation extends React.Component {
                     onChange={this.onChange}
                     required={true}
                   >
-                    <Dropdown
-                      dropdownOptions={this.state.intakeValueName}
-                    />
+                    <Dropdown dropdownOptions={this.state.intakeValueName} />
                   </select>
                 </div>
                 <div className="select">
@@ -104,9 +101,7 @@ class EventCreation extends React.Component {
                     onChange={this.onChange}
                     required={true}
                   >
-                    <Dropdown
-                      dropdownOptions={this.state.programmeValueName}
-                    />
+                    <Dropdown dropdownOptions={this.state.programmeValueName} />
                   </select>
                 </div>
                 <div className="select">
@@ -116,9 +111,7 @@ class EventCreation extends React.Component {
                     onChange={this.onChange}
                     required={true}
                   >
-                    <Dropdown
-                      dropdownOptions={['Core', 'Non-core']}
-                    />
+                    <Dropdown dropdownOptions={["Core", "Non-core"]} />
                   </select>
                 </div>
                 <Submit />

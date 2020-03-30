@@ -18,11 +18,11 @@ class Registration extends React.Component {
             confirmPassword: "",
             phoneNumber: "",
             intake: "",
+            listOfIntakes: [],
             programme: "",
-            programmeValueName: [],
-            intakeValueName: [],
+            listOfProgrammes: [],
             userId: undefined,
-            securityQuestions: [],
+            listOfSecurityQuestions: [],
             securityQuestion: "",
             securityAnswer: ""
         };
@@ -56,8 +56,8 @@ class Registration extends React.Component {
     componentDidMount() {
         axios.get("http://localhost:4000/tdpDetails").then(result => {
             this.setState({
-                intakeValueName: result.data.intake,
-                programmeValueName: result.data.programme
+                listOfIntakes: result.data.intake,
+                listOfProgrammes: result.data.programme
 
             });
         });
@@ -68,7 +68,7 @@ class Registration extends React.Component {
         });
         axios.get("http://localhost:4000/securityQuestions").then(result => {
             this.setState({
-                securityQuestions: result.data
+                listOfSecurityQuestions: result.data
             });
         });
 
@@ -135,7 +135,7 @@ class Registration extends React.Component {
                                     name="securityQuestion"
                                     onChange={this.onChange}
                                     required={true}>
-                                    <Dropdown dropdownOptions={this.state.securityQuestions} />
+                                    <Dropdown dropdownOptions={this.state.listOfSecurityQuestions} />
                                 </select>
                             </div>
                             <Input
@@ -152,7 +152,7 @@ class Registration extends React.Component {
                                     onChange={this.onChange}
                                     required={true}
                                 >
-                                    <Dropdown dropdownOptions={this.state.intakeValueName} />
+                                    <Dropdown dropdownOptions={this.state.listOfIntakes} />
                                 </select>
                             </div>
                             <div className="selectDropdown">
@@ -162,7 +162,7 @@ class Registration extends React.Component {
                                     onChange={this.onChange}
                                     required={true}
                                 >
-                                    <Dropdown dropdownOptions={this.state.programmeValueName} />
+                                    <Dropdown dropdownOptions={this.state.listOfProgrammes} />
                                 </select>
                             </div>
                             <Submit />

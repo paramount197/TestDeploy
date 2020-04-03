@@ -12,6 +12,7 @@ class Profile extends React.Component {
       currentUserId: undefined,
       currentUser: { id: undefined }
     };
+    this.getEvents = this.getEvents.bind(this)
   }
 
   componentDidMount() {
@@ -42,7 +43,7 @@ class Profile extends React.Component {
         <div className="CoreEvents">
           <h2> Core events </h2>
           <Events
-            eventsDetail={this.state.events.filter(function(x) {
+            eventsDetail={this.state.events.filter(function (x) {
               if (x.coreSelection === "Core") {
                 return true;
               } else {
@@ -51,13 +52,14 @@ class Profile extends React.Component {
             })}
             showButton={true}
             currentUserEmail={this.state.currentUser.id}
+            handleClick={this.getEvents}
           />
         </div>
 
         <div className="NonCoreEvents">
           <h2> Non core events </h2>
           <Events
-            eventsDetail={this.state.events.filter(function(x) {
+            eventsDetail={this.state.events.filter(function (x) {
               if (x.coreSelection === "Non-core") {
                 return true;
               } else {
@@ -66,6 +68,7 @@ class Profile extends React.Component {
             })}
             showButton={true}
             currentUserEmail={this.state.currentUser.id}
+            handleClick={this.getEvents}
           />
         </div>
         <div className="bookedEvents">

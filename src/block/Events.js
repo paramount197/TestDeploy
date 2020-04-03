@@ -3,6 +3,7 @@ import ListItem from "./ListItem";
 import axios from "axios";
 
 const Events = props => {
+
   return props.eventsDetail.map(event => (
     <ListItem
       className="event"
@@ -17,12 +18,18 @@ const Events = props => {
         event.booked.push(props.currentUserEmail);
         axios.patch(`http://localhost:4000/events/${event.id}`, {
           booked: event.booked
-        });
-        window.location.reload();
-      }}
+        }).then(function (response) {
+          props.handleClick()
+        }
+        );
+
+      }
+      }
       buttonText="Book"
     />
   ));
 };
+
+
 
 export default Events;

@@ -20,16 +20,11 @@ const Events = props => {
           booked: event.booked
         }).then(function (response) {
           props.handleClick()
-        }
-        );
-
-      }
-      }
+        });
+      }}
       buttonText="Book"
     />
   ));
 };
-
-
 
 export default Events;

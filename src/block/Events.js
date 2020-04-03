@@ -18,6 +18,7 @@ const Events = props => {
         axios.patch(`http://localhost:4000/events/${event.id}`, {
           booked: event.booked
         });
+        window.location.reload();
       }}
       buttonText="Book"
     />

@@ -22,6 +22,10 @@ class Profile extends React.Component {
           this.setState({ currentUser: result.data[0] });
         });
     });
+    this.getEvents();
+  }
+
+  getEvents() {
     axios.get("http://localhost:4000/events").then(result => {
       this.setState({
         events: result.data
@@ -30,19 +34,11 @@ class Profile extends React.Component {
   }
 
   render() {
-    console.log(this.state.currentUser);
     return (
       <>
         <Header
-          header={
-            "Welcome Back" +
-            " " +
-            this.state.currentUser.firstName +
-            " " +
-            this.state.currentUser.lastName +
-            "!"
-          }
-        ></Header>
+          header={`Welcome Back ${this.state.currentUser.firstName} ${this.state.currentUser.lastName}!`}
+        />
         <div className="CoreEvents">
           <h2> Core events </h2>
           <Events
@@ -74,6 +70,11 @@ class Profile extends React.Component {
         </div>
         <div className="bookedEvents">
           <h2>My booked events</h2>
+          <Events
+            eventsDetail={this.state.events.filter(event => {
+              return event.booked.includes(this.state.currentUser.id);
+            })}
+          />
         </div>
       </>
     );

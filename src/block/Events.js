@@ -14,12 +14,14 @@ const Events = props => {
       attendees={event.attendees}
       showButton={props.showButton}
       buttonClick={() => {
-        event.booked.push(props.currentUserEmail);
-        axios.patch(`http://localhost:4000/events/${event.id}`, {
-          booked: event.booked
-        }).then(function (response) {
-          props.handleClick()
-        });
+        if (!event.booked.includes(props.currentUserEmail)) {
+          event.booked.push(props.currentUserEmail);
+          axios.patch(`http://localhost:4000/events/${event.id}`, {
+            booked: event.booked
+          }).then(function (response) {
+            props.handleClick()
+          });
+        }
       }}
       buttonText="Book"
     />

@@ -34,7 +34,8 @@ class EventCreation extends React.Component {
         attendees: this.state.attendees,
         intake: this.state.intake,
         programme: this.state.programme,
-        coreSelection: this.state.coreSelection
+        coreSelection: this.state.coreSelection,
+        booked: []
       })
       .then(this.setState({ response: "Event Created!" }));
   };

@@ -22,6 +22,10 @@ class Profile extends React.Component {
           this.setState({ currentUser: result.data[0] });
         });
     });
+    this.getEvents();
+  }
+
+  getEvents() {
     axios.get("http://localhost:4000/events").then(result => {
       this.setState({
         events: result.data
@@ -32,11 +36,13 @@ class Profile extends React.Component {
   render() {
     return (
       <>
-        <Header header="Welcome back!" />
+        <Header
+          header={`Welcome Back ${this.state.currentUser.firstName} ${this.state.currentUser.lastName}!`}
+        />
         <div className="CoreEvents">
           <h2> Core events </h2>
           <Events
-            eventsDetail={this.state.events.filter(function (x) {
+            eventsDetail={this.state.events.filter(function(x) {
               if (x.coreSelection === "Core") {
                 return true;
               } else {
@@ -51,7 +57,7 @@ class Profile extends React.Component {
         <div className="NonCoreEvents">
           <h2> Non core events </h2>
           <Events
-            eventsDetail={this.state.events.filter(function (x) {
+            eventsDetail={this.state.events.filter(function(x) {
               if (x.coreSelection === "Non-core") {
                 return true;
               } else {
@@ -60,6 +66,14 @@ class Profile extends React.Component {
             })}
             showButton={true}
             currentUserEmail={this.state.currentUser.id}
+          />
+        </div>
+        <div className="bookedEvents">
+          <h2>My booked events</h2>
+          <Events
+            eventsDetail={this.state.events.filter(event => {
+              return event.booked.includes(this.state.currentUser.id);
+            })}
           />
         </div>
       </>

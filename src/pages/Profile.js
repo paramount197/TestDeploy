@@ -12,7 +12,6 @@ class Profile extends React.Component {
       currentUserId: undefined,
       currentUser: { id: undefined }
     };
-    this.getEvents = this.getEvents.bind(this)
   }
 
   componentDidMount() {
@@ -52,7 +51,7 @@ class Profile extends React.Component {
             })}
             showButton={true}
             currentUserEmail={this.state.currentUser.id}
-            handleClick={this.getEvents}
+            handleClick={() => this.getEvents()}
           />
         </div>
 
@@ -68,7 +67,7 @@ class Profile extends React.Component {
             })}
             showButton={true}
             currentUserEmail={this.state.currentUser.id}
-            handleClick={this.getEvents}
+            handleClick={() => this.getEvents()}
           />
         </div>
         <div className="bookedEvents">

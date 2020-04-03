@@ -3,7 +3,6 @@ import ListItem from "./ListItem";
 import axios from "axios";
 
 const Events = props => {
-
   return props.eventsDetail.map(event => (
     <ListItem
       className="event"

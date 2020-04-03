@@ -30,13 +30,23 @@ class Profile extends React.Component {
   }
 
   render() {
+    console.log(this.state.currentUser);
     return (
       <>
-        <Header header="Welcome back!" />
+        <Header
+          header={
+            "Welcome Back" +
+            " " +
+            this.state.currentUser.firstName +
+            " " +
+            this.state.currentUser.lastName +
+            "!"
+          }
+        ></Header>
         <div className="CoreEvents">
           <h2> Core events </h2>
           <Events
-            eventsDetail={this.state.events.filter(function (x) {
+            eventsDetail={this.state.events.filter(function(x) {
               if (x.coreSelection === "Core") {
                 return true;
               } else {
@@ -51,7 +61,7 @@ class Profile extends React.Component {
         <div className="NonCoreEvents">
           <h2> Non core events </h2>
           <Events
-            eventsDetail={this.state.events.filter(function (x) {
+            eventsDetail={this.state.events.filter(function(x) {
               if (x.coreSelection === "Non-core") {
                 return true;
               } else {
@@ -61,6 +71,9 @@ class Profile extends React.Component {
             showButton={true}
             currentUserEmail={this.state.currentUser.id}
           />
+        </div>
+        <div className="bookedEvents">
+          <h2>My booked events</h2>
         </div>
       </>
     );

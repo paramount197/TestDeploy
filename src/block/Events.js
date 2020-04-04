@@ -14,18 +14,29 @@ const Events = props => {
       attendees={event.attendees}
       showButton={props.showButton}
       buttonClick={() => {
-        if (!event.booked.includes(props.currentUserEmail)) {
-          event.booked.push(props.currentUserEmail);
-          axios.patch(`http://localhost:4000/events/${event.id}`, {
-            booked: event.booked
-          }).then(function (response) {
-            props.handleClick()
-          });
+        if (props.task === 'Book') {
+          bookEvent(event, props.currentUserEmail, props.handleClick);
+        }
+        else if (props.task === 'Delete') {
+          deleteEvent(event, props.handleClick);
         }
       }}
-      buttonText="Book"
+      buttonText={props.task}
     />
   ));
 };
+
+function bookEvent(event, currentUserEmail, handleClick) {
+  if (!event.booked.includes(currentUserEmail)) {
+    event.booked.push(currentUserEmail);
+    axios.patch(`http://localhost:4000/events/${event.id}`, {
+      booked: event.booked
+    }).then(response => handleClick());
+  }
+}
+
+function deleteEvent(event, handleClick) {
+  axios.delete(`http://localhost:4000/events/${event.id}`).then(response => handleClick())
+}
 
 export default Events;

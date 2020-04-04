@@ -52,6 +52,7 @@ class Profile extends React.Component {
             showButton={true}
             currentUserEmail={this.state.currentUser.id}
             handleClick={() => this.getEvents()}
+            task="Book"
           />
         </div>
 
@@ -68,6 +69,7 @@ class Profile extends React.Component {
             showButton={true}
             currentUserEmail={this.state.currentUser.id}
             handleClick={() => this.getEvents()}
+            task="Book"
           />
         </div>
         <div className="bookedEvents">

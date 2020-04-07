@@ -26,7 +26,7 @@ function TdpManagerHub() {
                 <p>Current events:</p>
                 <Events
                     eventsDetail={events}
-                    showButton={false}
+                    showButton={true}
                     /* 
                         Delete causes all useres to be removed because of the attribute 'userId'
                         until this is resolve we can't show the delete button to managers

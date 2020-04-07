@@ -21,7 +21,6 @@ class Registration extends React.Component {
             listOfIntakes: [],
             programme: "",
             listOfProgrammes: [],
-            userId: undefined,
             listOfSecurityQuestions: [],
             securityQuestion: "",
             securityAnswer: ""
@@ -45,8 +44,7 @@ class Registration extends React.Component {
                 programme: this.state.programme,
                 tdpManagement: "No",
                 securityQuestion: this.state.securityQuestion,
-                securityAnswer: this.state.securityAnswer,
-                userId: this.state.userId
+                securityAnswer: this.state.securityAnswer
             })
             .then(() => {
                 window.location.href = "http://localhost:3000/signin";
@@ -59,11 +57,6 @@ class Registration extends React.Component {
                 listOfIntakes: result.data.intake,
                 listOfProgrammes: result.data.programme
 
-            });
-        });
-        axios.get("http://localhost:4000/users").then(result => {
-            this.setState({
-                userId: result.data.length + 1
             });
         });
         axios.get("http://localhost:4000/securityQuestions").then(result => {

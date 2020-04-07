@@ -2,8 +2,29 @@ import React from "react";
 import ListItem from "./ListItem";
 import axios from "axios";
 
-const Events = props => {
-  return props.eventsDetail.map(event => (
+// will need to change no. of attendees to an integer!!
+
+const Events = (props) => {
+  const fullEventCheck = () => {
+    console.log("done");
+    console.log(props);
+    if (props.eventsDetail.booked.length >= props.eventsDetail.attendees) {
+      return true;
+    } else return false;
+  };
+
+  const buttonClicked = (event) => {
+    console.log("bacaejpa");
+    if (fullEventCheck === false) {
+      event.booked.push(props.currentUserEmail);
+      axios.patch(`http://localhost:4000/events/${event.id}`, {
+        booked: event.booked,
+      });
+    } else {
+      console.log("This event is full");
+    }
+  };
+  return props.eventsDetail.map((event) => (
     <ListItem
       className="event"
       eventName={event.name}
@@ -13,14 +34,19 @@ const Events = props => {
       eventLocation={event.location}
       attendees={event.attendees}
       showButton={props.showButton}
-      buttonClick={() => {
-        event.booked.push(props.currentUserEmail);
-        axios.patch(`http://localhost:4000/events/${event.id}`, {
-          booked: event.booked
-        });
-        window.location.reload();
-      }}
-      buttonText="Book"
+      buttonClick={buttonClicked(event)}
+      // fullEventCheck();
+      //   if (fullEventCheck === true) {
+      //     event.booked.push(props.currentUserEmail);
+      //     axios.patch(`http://localhost:4000/events/${event.id}`, {
+      //       booked: event.booked,
+      //     });
+      //     window.location.reload();
+      //   } else {
+      //     console.log("This event is full");
+      //   }
+      // }}
+      buttonText={fullEventCheck ? "Full" : "Book"}
     />
   ));
 };

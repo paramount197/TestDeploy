@@ -28,10 +28,11 @@ const Events = props => {
           window.location.reload();
         }
         else if (props.task === 'Unbook') {
-          // event.booked.push(props.currentUserEmail);
-          // axios.patch(`http://localhost:4000/events/${event.id}`, {
-          //   booked: event.booked
-          // });
+          const index = event.booked.indexOf(props.currentUserEmail);
+          event.booked.splice(index, 1);
+          axios.patch(`http://localhost:4000/events/${event.id}`, {
+            booked: event.booked
+          });
           window.location.reload();
         }
       }}

@@ -51,7 +51,7 @@ class Profile extends React.Component {
             })}
             showButton={true}
             currentUserEmail={this.state.currentUser.id}
-            buttonText={'Book'}
+            task="Book"
           />
         </div>
 
@@ -67,7 +67,7 @@ class Profile extends React.Component {
             })}
             showButton={true}
             currentUserEmail={this.state.currentUser.id}
-            buttonText={'Book'}
+            task="Book"
           />
         </div>
         <div className="bookedEvents">
@@ -78,7 +78,7 @@ class Profile extends React.Component {
             })}
             showButton={true}
             currentUserEmail={this.state.currentUser.id}
-            buttonText={'Unbook'}
+            task="Unbook"
 
           />
         </div>

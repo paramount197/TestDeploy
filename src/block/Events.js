@@ -14,13 +14,28 @@ const Events = props => {
       attendees={event.attendees}
       showButton={props.showButton}
       buttonClick={() => {
-        event.booked.push(props.currentUserEmail);
-        axios.patch(`http://localhost:4000/events/${event.id}`, {
-          booked: event.booked
-        });
-        window.location.reload();
+        // event.booked.push(props.currentUserEmail);
+        // axios.patch(`http://localhost:4000/events/${event.id}`, {
+        //   booked: event.booked
+        // });
+        // window.location.reload();
+
+        if (props.task === 'Book') {
+          event.booked.push(props.currentUserEmail);
+          axios.patch(`http://localhost:4000/events/${event.id}`, {
+            booked: event.booked
+          });
+          window.location.reload();
+        }
+        else if (props.task === 'Unbook') {
+          // event.booked.push(props.currentUserEmail);
+          // axios.patch(`http://localhost:4000/events/${event.id}`, {
+          //   booked: event.booked
+          // });
+          window.location.reload();
+        }
       }}
-      buttonText="Book"
+      buttonText={props.task}
     />
   ));
 };

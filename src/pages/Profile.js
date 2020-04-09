@@ -42,7 +42,7 @@ class Profile extends React.Component {
         <div className="CoreEvents">
           <h2> Core events </h2>
           <Events
-            eventsDetail={this.state.events.filter(function(x) {
+            eventsDetail={this.state.events.filter(function (x) {
               if (x.coreSelection === "Core") {
                 return true;
               } else {
@@ -51,13 +51,14 @@ class Profile extends React.Component {
             })}
             showButton={true}
             currentUserEmail={this.state.currentUser.id}
+            buttonText={'Book'}
           />
         </div>
 
         <div className="NonCoreEvents">
           <h2> Non core events </h2>
           <Events
-            eventsDetail={this.state.events.filter(function(x) {
+            eventsDetail={this.state.events.filter(function (x) {
               if (x.coreSelection === "Non-core") {
                 return true;
               } else {
@@ -66,6 +67,7 @@ class Profile extends React.Component {
             })}
             showButton={true}
             currentUserEmail={this.state.currentUser.id}
+            buttonText={'Book'}
           />
         </div>
         <div className="bookedEvents">
@@ -74,6 +76,10 @@ class Profile extends React.Component {
             eventsDetail={this.state.events.filter(event => {
               return event.booked.includes(this.state.currentUser.id);
             })}
+            showButton={true}
+            currentUserEmail={this.state.currentUser.id}
+            buttonText={'Unbook'}
+
           />
         </div>
       </>

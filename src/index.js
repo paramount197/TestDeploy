@@ -16,6 +16,7 @@ import Clock from "./block/Clock";
 import NewNationwideLogo from "./images/NewNationwideLogo.jpeg";
 import Footer from "../src/block/Footer";
 import EventCreation from "./pages/EventCreation";
+import ManagementHomePage from "./pages/ManagementHomepage";
 
 const routing = (
   <>
@@ -55,6 +56,7 @@ const routing = (
         <Route path="/signin" component={SignIn} />
         <Route path="/profile/:handle" component={Profile} />
         <Route path="/eventCreation" component={EventCreation} />
+        <Route path="/managementhomepage" component={ManagementHomePage} /> //Routing path for management Home Page 
         <Route path="/usersguide" component={UsersGuide} />
         <Route path="/imagegallery" component={ImageGallery} />
         <Route path="/forgotpassword" component={ForgotPassword} />

@@ -7,6 +7,7 @@ function ListItem(props) {
       {props.eventName} {props.text} {props.eventDate} {props.text2}
       {props.eventLocation}
       {props.attendees}
+      {props.booked}
       {props.showButton === true && (
         <button type="button" onClick={props.buttonClick}>
           {props.buttonText}

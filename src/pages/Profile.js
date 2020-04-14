@@ -34,6 +34,7 @@ class Profile extends React.Component {
   }
 
   render() {
+    console.log("This is " + this.state.events[0])
     return (
       <>
         <Header

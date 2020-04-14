@@ -80,8 +80,8 @@ class Profile extends React.Component {
             showButton={true}
             currentUserEmail={this.state.currentUser.id}
             task="Unbook"
-
           />
+
         </div>
       </>
     );

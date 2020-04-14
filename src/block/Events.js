@@ -5,21 +5,21 @@ import axios from "axios";
 // will need to change no. of attendees to an integer!!
 
 const Events = (props) => {
-  const fullEventCheck = () => {
-    console.log("done");
-    console.log(props);
-    if (props.eventsDetail.booked.length >= props.eventsDetail.attendees) {
-      return true;
+  const fullEventCheck = (event) => {
+    if (event.booked.length >= event.attendees) {
+      return true; //+ console.log("this is full", event.booked.length, event.attendees)
     } else return false;
+    // false +
+    // console.log("there is space", event.booked.length, event.attendees)
   };
 
   const buttonClicked = (event) => {
-    console.log("bacaejpa");
-    if (fullEventCheck === false) {
+    if (fullEventCheck(event) === false) {
       event.booked.push(props.currentUserEmail);
       axios.patch(`http://localhost:4000/events/${event.id}`, {
         booked: event.booked,
       });
+      window.location.reload();
     } else {
       console.log("This event is full");
     }
@@ -34,7 +34,9 @@ const Events = (props) => {
       eventLocation={event.location}
       attendees={event.attendees}
       showButton={props.showButton}
-      buttonClick={buttonClicked(event)}
+      buttonClick={buttonClicked.bind(null, event)}
+      //{fullEventCheck.bind(null, event)}
+      //{buttonClicked.bind(null, event)}
       // fullEventCheck();
       //   if (fullEventCheck === true) {
       //     event.booked.push(props.currentUserEmail);
@@ -46,7 +48,7 @@ const Events = (props) => {
       //     console.log("This event is full");
       //   }
       // }}
-      buttonText={fullEventCheck ? "Full" : "Book"}
+      buttonText={fullEventCheck(event) ? "Full" : "Book"}
     />
   ));
 };

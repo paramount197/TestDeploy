@@ -81,7 +81,6 @@ class Profile extends React.Component {
             currentUserEmail={this.state.currentUser.id}
             task="Unbook"
           />
-
         </div>
       </>
     );

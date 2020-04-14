@@ -56,7 +56,7 @@ const routing = (
         <Route path="/signin" component={SignIn} />
         <Route path="/profile/:handle" component={Profile} />
         <Route path="/eventCreation" component={EventCreation} />
-        <Route path="/managementhomepage" component={ManagementHomePage} /> //Routing path for management Home Page 
+        <Route path="/managementhomepage" component={ManagementHomePage} />
         <Route path="/usersguide" component={UsersGuide} />
         <Route path="/imagegallery" component={ImageGallery} />
         <Route path="/forgotpassword" component={ForgotPassword} />

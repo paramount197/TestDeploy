@@ -11,6 +11,7 @@ const Events = (props) => {
       eventDate={event.date}
       text2="at "
       eventLocation={event.location}
+      text3="  "
       attendees={event.attendees}
       booked={event.booked}
       showButton={props.showButton}

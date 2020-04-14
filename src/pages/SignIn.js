@@ -27,7 +27,6 @@ class SignIn extends React.Component {
     ) {
       if (this.state.user[0].tdpManagement === "Yes") {
         window.location.href = "http://localhost:3000/managementhomepage";
-        window.location.href = url;
       }
     } else {
       this.handleIncorrectDetails();

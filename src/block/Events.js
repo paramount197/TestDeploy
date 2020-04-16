@@ -2,9 +2,7 @@ import React from "react";
 import ListItem from "./ListItem";
 import axios from "axios";
 
-// will need to change no. of attendees to an integer!!
-// Do something so they can't book when full!
-// remove console log
+// will need to change no. of attendees to an integer!
 
 const Events = (props) => {
   const fullEventCheck = (event) => {
@@ -21,7 +19,7 @@ const Events = (props) => {
       });
       window.location.reload();
     } else {
-      console.log("This event is full");
+      window.alert("This event is full");
     }
   };
   return props.eventsDetail.map((event) => (

@@ -17,8 +17,9 @@ const Events = props => {
         event.booked.push(props.currentUserEmail);
         axios.patch(`http://localhost:4000/events/${event.id}`, {
           booked: event.booked
+        }).then(function (response) {
+          props.handleClick()
         });
-        window.location.reload();
       }}
       buttonText="Book"
     />

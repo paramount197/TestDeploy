@@ -4,7 +4,7 @@ import Header from "../block/Header";
 import axios from "axios";
 import "../styles/managementHomePage.css";
 import { NavLink } from "react-router-dom";
-import Event from "../block/Events";
+import ManagementEvents from "../block/ManagementEvents";
 
 class ManagementHomePage extends React.Component {
     state = {
@@ -28,24 +28,27 @@ class ManagementHomePage extends React.Component {
                 lastname: result.data,
             });
         });
+    }
 
 
-        render() {
-            console.log(this.setState)
-            return (
-                <>
-                    <Header header="Management HomePage" />
-                    <div class="main" />
-                    <div class="form-p" />
-                    <Intro intro="See who is attending TDP Events or click the link to create a new event" />
-                    <div>
-                        <NavLink to="/eventcreation">
-                            <p className="underline">Create a new TDP event, click here:</p>
-                        </NavLink>
-                    </div>
-                    <Event eventsDetail={this.state.events} />
-                </>
-            );
-        }
-
-        export default ManagementHomePage;
+    render() {
+        console.log(this.setState)
+        return (
+            <>
+                <Header header="Management HomePage" />
+                <div class="main" />
+                <div class="form-p" />
+                <Intro intro="See who is attending TDP Events or click the link to create a new event" />
+                <div>
+                    <NavLink to="/eventcreation">
+                        <p className="underline">Create a new TDP event, click here:</p>
+                    </NavLink>
+                </div>
+                <div>
+                    <ManagementEvents eventsDetail={this.state.events} />
+                </div>
+            </>
+        );
+    }
+}
+export default ManagementHomePage;

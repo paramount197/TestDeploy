@@ -6,6 +6,7 @@ import Events from "./block/Events";
 import Button from "./block/Button";
 import { NavLink } from "react-router-dom";
 import axios from "axios";
+
 class App extends React.Component {
   state = {
     events: []
@@ -16,7 +17,10 @@ class App extends React.Component {
     });
   }
 
+
+
   render() {
+    console.log(this.state.events);
     return (
       <>
         <Header header="TDP Events" />

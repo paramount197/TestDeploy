@@ -11,8 +11,9 @@ const Events = (props) => {
       eventDate={event.date}
       text2="at "
       eventLocation={event.location}
+      text3=" "
       attendees={event.attendees}
-      booked={event.booked}
+      //booked={event.booked}
       showButton={props.showButton}
       buttonClick={() => {
         event.booked.push(props.currentUserEmail);

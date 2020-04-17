@@ -4,9 +4,7 @@ import axios from "axios";
 
 const Events = (props) => {
   const fullEventCheck = (event) => {
-    if (event.booked.length >= event.attendees) {
-      return true;
-    } else return false;
+    return event.booked.length >= event.attendees;
   };
 
   const buttonClicked = (event) => {

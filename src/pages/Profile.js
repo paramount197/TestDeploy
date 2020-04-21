@@ -10,7 +10,9 @@ class Profile extends React.Component {
       events: [],
       eventId: "",
       currentUserId: undefined,
-      currentUser: { id: undefined }
+      currentUser: { id: undefined },
+      eventFullMessage: "",
+      eventFullMessage2: "",
     };
   }
 
@@ -18,7 +20,7 @@ class Profile extends React.Component {
     this.setState({ currentUserId: this.props.match.params.handle }, () => {
       axios
         .get(`http://localhost:4000/users/?userId=${this.state.currentUserId}`)
-        .then(result => {
+        .then((result) => {
           this.setState({ currentUser: result.data[0] });
         });
     });
@@ -26,10 +28,21 @@ class Profile extends React.Component {
   }
 
   getEvents() {
-    axios.get("http://localhost:4000/events").then(result => {
+    axios.get("http://localhost:4000/events").then((result) => {
       this.setState({
-        events: result.data
+        events: result.data,
       });
+    });
+  }
+
+  eventBookedMessageCore() {
+    this.setState({
+      eventFullMessage: "Sorry this event is fully booked",
+    });
+  }
+  eventBookedMessage() {
+    this.setState({
+      eventFullMessage2: "Sorry this event is fully booked",
     });
   }
 
@@ -53,7 +66,9 @@ class Profile extends React.Component {
             currentUserEmail={this.state.currentUser.id}
             handleClick={() => this.getEvents()}
             task="Book"
+            eventFullMessage={() => this.eventBookedMessageCore()}
           />
+          <p>{this.state.eventFullMessage}</p>
         </div>
 
         <div className="NonCoreEvents">
@@ -70,12 +85,14 @@ class Profile extends React.Component {
             currentUserEmail={this.state.currentUser.id}
             handleClick={() => this.getEvents()}
             task="Book"
+            eventFullMessage={() => this.eventBookedMessage()}
           />
+          <p>{this.state.eventFullMessage2}</p>
         </div>
         <div className="bookedEvents">
           <h2>My booked events</h2>
           <Events
-            eventsDetail={this.state.events.filter(event => {
+            eventsDetail={this.state.events.filter((event) => {
               return event.booked.includes(this.state.currentUser.id);
             })}
           />

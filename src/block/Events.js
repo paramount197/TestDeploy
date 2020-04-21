@@ -2,8 +2,9 @@ import React from "react";
 import ListItem from "./ListItem";
 import axios from "axios";
 
-const Events = props => {
-  return props.eventsDetail.map(event => (
+const Events = (props) => {
+
+  return props.eventsDetail.map((event) => (
     <ListItem
       className="event"
       eventName={event.name}
@@ -15,23 +16,30 @@ const Events = props => {
       showButton={props.showButton}
       buttonClick={() => {
         if (props.task === 'Book') {
-          bookEvent(event, props.currentUserEmail, props.handleClick);
+          bookEvent(event, props.currentUserEmail, props.handleClick, props.eventFullMessage);
         }
         else if (props.task === 'Delete') {
           deleteEvent(event, props.handleClick);
         }
       }}
-      buttonText={props.task}
+      buttonText={fullEventCheck(event) ? "Full" : props.task}
     />
   ));
 };
 
-function bookEvent(event, currentUserEmail, handleClick) {
-  if (!event.booked.includes(currentUserEmail)) {
+const fullEventCheck = (event) => {
+  return event.booked.length >= event.attendees;
+};
+
+function bookEvent(event, currentUserEmail, handleClick, eventFullMessage) {
+  if (!event.booked.includes(currentUserEmail) && fullEventCheck(event) === false) {
     event.booked.push(currentUserEmail);
     axios.patch(`http://localhost:4000/events/${event.id}`, {
       booked: event.booked
     }).then(response => handleClick());
+  }
+  else if (fullEventCheck(event)) {
+    eventFullMessage();
   }
 }
 

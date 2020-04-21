@@ -36,7 +36,8 @@ function bookEvent(event, currentUserEmail, handleClick) {
 }
 
 function deleteEvent(event, handleClick) {
-  axios.delete(`http://localhost:4000/events/${event.id}`).then(response => handleClick())
+  console.log('Delete functionality not fully implemented.')
+  // axios.delete(`http://localhost:4000/events/${event.id}`).then(response => handleClick())
 }
 
 export default Events;

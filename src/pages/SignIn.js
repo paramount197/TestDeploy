@@ -20,7 +20,7 @@ class SignIn extends React.Component {
   };
 
   checkLoginDetails = () => {
-    var url = "http://localhost:3000/profile/" + this.state.user[0].id;
+    var url = "http://localhost:3000/profile/" + this.state.user[0].userId;
     if (
       this.state.password === this.state.user[0].password &&
       this.state.id === this.state.user[0].id

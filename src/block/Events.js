@@ -22,7 +22,7 @@ const Events = (props) => {
           deleteEvent(event, props.handleClick);
         }
       }}
-      buttonText={fullEventCheck(event) ? "Full" : props.task}
+      buttonText={showButtonText(event, props.task)}
     />
   ));
 };
@@ -30,6 +30,15 @@ const Events = (props) => {
 const fullEventCheck = (event) => {
   return event.booked.length >= event.attendees;
 };
+
+function showButtonText(event, task) {
+  if (task === 'Book' && fullEventCheck(event) === true) {
+    return 'Full'
+  }
+  else {
+    return task;
+  }
+}
 
 function bookEvent(event, currentUserEmail, handleClick, eventFullMessage) {
   if (!event.booked.includes(currentUserEmail) && fullEventCheck(event) === false) {

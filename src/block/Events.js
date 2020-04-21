@@ -21,6 +21,10 @@ const Events = (props) => {
         else if (props.task === 'Delete') {
           deleteEvent(event, props.handleClick);
         }
+        else if (props.task === 'Unbook') {
+          unBookFromEvent(event, props.currentUserEmail, props.handleClick)
+
+        }
       }}
       buttonText={showButtonText(event, props.task)}
     />
@@ -50,6 +54,14 @@ function bookEvent(event, currentUserEmail, handleClick, eventFullMessage) {
   else if (fullEventCheck(event)) {
     eventFullMessage();
   }
+}
+
+function unBookFromEvent(event, currentUserEmail, handleClick) {
+  const index = event.booked.indexOf(currentUserEmail);
+  event.booked.splice(index, 1);
+  axios.patch(`http://localhost:4000/events/${event.id}`, {
+    booked: event.booked
+  }).then(response => handleClick());
 }
 
 function deleteEvent(event, handleClick) {

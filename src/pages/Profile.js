@@ -10,7 +10,7 @@ class Profile extends React.Component {
       events: [],
       eventId: "",
       currentUserId: undefined,
-      currentUser: { id: undefined }
+      currentUser: { id: undefined },
     };
   }
 
@@ -18,7 +18,7 @@ class Profile extends React.Component {
     this.setState({ currentUserId: this.props.match.params.handle }, () => {
       axios
         .get(`http://localhost:4000/users/?userId=${this.state.currentUserId}`)
-        .then(result => {
+        .then((result) => {
           this.setState({ currentUser: result.data[0] });
         });
     });
@@ -26,14 +26,21 @@ class Profile extends React.Component {
   }
 
   getEvents() {
-    axios.get("http://localhost:4000/events").then(result => {
+    axios.get("http://localhost:4000/events").then((result) => {
+      let intakeProgrammeCheck = result.data.filter((e) => {
+        return e.intake === "September 2018" && e.programme === "Accelerator";
+      });
+      console.log(intakeProgrammeCheck);
+
       this.setState({
-        events: result.data
+        events: result.data,
       });
     });
+    //console.log("The current user is" + this.state.currentUser.id);
   }
 
   render() {
+    //console.log("The current user is" + this.state.currentUser);
     return (
       <>
         <Header
@@ -73,7 +80,7 @@ class Profile extends React.Component {
         <div className="bookedEvents">
           <h2>My booked events</h2>
           <Events
-            eventsDetail={this.state.events.filter(event => {
+            eventsDetail={this.state.events.filter((event) => {
               return event.booked.includes(this.state.currentUser.id);
             })}
           />

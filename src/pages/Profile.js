@@ -19,10 +19,11 @@ class Profile extends React.Component {
       axios
         .get(`http://localhost:4000/users/?userId=${this.state.currentUserId}`)
         .then((result) => {
-          this.setState({ currentUser: result.data[0] });
+          this.setState({ currentUser: result.data[0] }, () => {
+            this.getEvents();
+          });
         });
     });
-    this.getEvents();
   }
 
   getEvents() {
@@ -33,10 +34,10 @@ class Profile extends React.Component {
       console.log(intakeProgrammeCheck);
 
       this.setState({
-        events: result.data,
+        events: intakeProgrammeCheck,
       });
     });
-    //console.log("The current user is" + this.state.currentUser.id);
+    console.log("The current user is" + this.state.currentUser.id);
   }
 
   render() {

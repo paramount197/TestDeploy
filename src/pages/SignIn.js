@@ -26,7 +26,7 @@ class SignIn extends React.Component {
       this.state.id === this.state.user[0].id
     ) {
       if (this.state.user[0].tdpManagement === "Yes") {
-        window.location.href = "http://localhost:3000/eventCreation";
+        window.location.href = "http://localhost:3000/tdpmanagerhub";
       } else {
         window.location.href = url;
       }
@@ -46,7 +46,7 @@ class SignIn extends React.Component {
     axios
       .get(`http://localhost:4000/users?id=${this.state.id}`)
       .then(result => {
-        this.setState({ user: result.data }, function() {
+        this.setState({ user: result.data }, function () {
           if (this.state.user.length !== 0) {
             this.checkLoginDetails();
           } else {

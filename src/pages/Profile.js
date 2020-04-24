@@ -11,6 +11,8 @@ class Profile extends React.Component {
       eventId: "",
       currentUserId: undefined,
       currentUser: { id: undefined },
+      eventFullMessage: "",
+      eventFullMessage2: "",
     };
   }
 
@@ -45,6 +47,17 @@ class Profile extends React.Component {
     });
   }
 
+  eventBookedMessageCore() {
+    this.setState({
+      eventFullMessage: "Sorry this event is fully booked",
+    });
+  }
+  eventBookedMessage() {
+    this.setState({
+      eventFullMessage2: "Sorry this event is fully booked",
+    });
+  }
+
   render() {
     return (
       <>
@@ -64,7 +77,10 @@ class Profile extends React.Component {
             showButton={true}
             currentUserEmail={this.state.currentUser.id}
             handleClick={() => this.getEvents()}
+            task="Book"
+            eventFullMessage={() => this.eventBookedMessageCore()}
           />
+          <p>{this.state.eventFullMessage}</p>
         </div>
 
         <div className="NonCoreEvents">
@@ -80,7 +96,10 @@ class Profile extends React.Component {
             showButton={true}
             currentUserEmail={this.state.currentUser.id}
             handleClick={() => this.getEvents()}
+            task="Book"
+            eventFullMessage={() => this.eventBookedMessage()}
           />
+          <p>{this.state.eventFullMessage2}</p>
         </div>
         <div className="bookedEvents">
           <h2>My booked events</h2>
@@ -88,6 +107,10 @@ class Profile extends React.Component {
             eventsDetail={this.state.events.filter((event) => {
               return event.booked.includes(this.state.currentUser.id);
             })}
+            showButton={true}
+            currentUserEmail={this.state.currentUser.id}
+            task="Unbook"
+            handleClick={() => this.getEvents()}
           />
         </div>
       </>

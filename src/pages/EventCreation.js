@@ -18,14 +18,19 @@ class EventCreation extends React.Component {
     coreSelection: "",
     intakeValueName: [],
     programmeValueName: [],
-    response: undefined
+    response: undefined,
   };
 
-  onChange = input => {
-    this.setState({ [input.target.name]: input.target.value });
+  onChange = (input) => {
+    this.setState({
+      [input.target.name]:
+        input.target.type === "number"
+          ? parseInt(input.target.value)
+          : input.target.value,
+    });
   };
 
-  onSubmit = formSubmit => {
+  onSubmit = (formSubmit) => {
     formSubmit.preventDefault();
     axios
       .post("http://localhost:4000/events", {
@@ -36,16 +41,16 @@ class EventCreation extends React.Component {
         intake: this.state.intake,
         programme: this.state.programme,
         coreSelection: this.state.coreSelection,
-        booked: []
+        booked: [],
       })
       .then(this.setState({ response: "Event Created!" }));
   };
 
   componentDidMount() {
-    axios.get("http://localhost:4000/tdpDetails").then(result => {
+    axios.get("http://localhost:4000/tdpDetails").then((result) => {
       this.setState({
         intakeValueName: result.data.intake,
-        programmeValueName: result.data.programme
+        programmeValueName: result.data.programme,
       });
     });
   }

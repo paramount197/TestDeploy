@@ -29,19 +29,18 @@ class Profile extends React.Component {
   getEvents() {
     axios.get("http://localhost:4000/events").then((result) => {
       let intakeProgrammeCheck = result.data.filter((e) => {
-        return e.intake === "September 2018" && e.programme === "Accelerator";
+        return (
+          e.intake === this.state.currentUser.intake &&
+          e.programme === this.state.currentUser.programme
+        );
       });
-      console.log(intakeProgrammeCheck);
-
       this.setState({
         events: intakeProgrammeCheck,
       });
     });
-    console.log("The current user is" + this.state.currentUser.id);
   }
 
   render() {
-    //console.log("The current user is" + this.state.currentUser);
     return (
       <>
         <Header

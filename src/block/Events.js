@@ -6,20 +6,22 @@ const Events = (props) => {
   return props.eventsDetail.map((event) => (
     <ListItem
       className="event"
-      text={`${event.name} on the ${event.date} at ${event.location === true ? " TDP'ers Attending " + event.booked : null} Currenly Attending ${event.attendees}`}
+      text={`${event.name} on the ${event.date} at ${event.location}. Max capacity - ${event.attendees}`}
       showButton={props.showButton}
       buttonClick={() => {
         event.booked.push(props.currentUserEmail);
-        axios.patch(`http://localhost:4000/events/${event.id}`, {
-          booked: event.booked
-        }).then(function (response) {
-          props.handleClick()
-        });
+        axios
+          .patch(`http://localhost:4000/events/${event.id}`, {
+            booked: event.booked,
+          })
+          .then(function (response) {
+            props.handleClick();
+          });
         window.location.reload();
       }}
       buttonText="Book"
     />
-  ))
+  ));
 };
 
 export default Events;

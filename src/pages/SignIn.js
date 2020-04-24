@@ -12,15 +12,15 @@ class SignIn extends React.Component {
     this.state = {
       id: "",
       password: "",
-      user: {}
+      user: {},
     };
   }
-  onChange = e => {
+  onChange = (e) => {
     this.setState({ [e.target.name]: e.target.value });
   };
 
   checkLoginDetails = () => {
-    var url = "http://localhost:3000/profile" + this.state.user[0].userId;
+    var url = "http://localhost:3000/profile/" + this.state.user[0].userId;
     if (
       this.state.password === this.state.user[0].password &&
       this.state.id === this.state.user[0].id
@@ -28,31 +28,34 @@ class SignIn extends React.Component {
       if (this.state.user[0].tdpManagement === "Yes") {
         window.location.href = "http://localhost:3000/managementhomepage";
       } else {
-        this.handleIncorrectDetails();
+        window.location.href = url;
       }
-    };
-    handleIncorrectDetails = () => {
-      this.setState({
-        response: "Please check you have entered your details correctly"
-      });
-    };
+    } else {
+      this.handleIncorrectDetails();
+    }
+  };
+  handleIncorrectDetails = () => {
+    this.setState({
+      response: "Please check you have entered your details correctly",
+    });
+  };
 
-    onSubmit = e => {
-      e.preventDefault();
-      axios
-        .get(`http://localhost:4000/users?id=${this.state.id}`)
-        .then(result => {
-          this.setState({ user: result.data }, function () {
-            if (this.state.user.length !== 0) {
-              this.checkLoginDetails();
-            } else {
-              this.handleIncorrectDetails();
-            }
-          });
+  onSubmit = (e) => {
+    e.preventDefault();
+    axios
+      .get(`http://localhost:4000/users?id=${this.state.id}`)
+      .then((result) => {
+        this.setState({ user: result.data }, function () {
+          if (this.state.user.length !== 0) {
+            this.checkLoginDetails();
+          } else {
+            this.handleIncorrectDetails();
+          }
         });
-    };
+      });
+  };
 
-    render()
+  render() {
     return (
       <>
         <Header header="Welcome Back" />
@@ -87,7 +90,7 @@ class SignIn extends React.Component {
         </form>
       </>
     );
-  };
+  }
+}
 
-
-  export default SignIn;
+export default SignIn;

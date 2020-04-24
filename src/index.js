@@ -55,7 +55,6 @@ const routing = (
         <Route path="/registration" component={Registration} />
         <Route path="/signin" component={SignIn} />
         <Route path="/profile/:handle" component={Profile} />
-        <Route path="/tdpmanagerhub" component={TdpManagerHub} />
         <Route path="/eventCreation" component={EventCreation} />
         <Route path="/managementhomepage" component={ManagementHomePage} />
         <Route path="/usersguide" component={UsersGuide} />

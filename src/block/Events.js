@@ -6,7 +6,9 @@ const Events = (props) => {
   return props.eventsDetail.map((event) => (
     <ListItem
       className="event"
-      text={`${event.name} on the ${event.date} at ${event.location}. Max capacity - ${event.attendees}`}
+      text={`${event.name} on the ${event.date} at ${
+        event.location
+      }. Spaces remaining - ${event.attendees - event.booked.length} `}
       showButton={props.showButton}
       buttonClick={() => {
         event.booked.push(props.currentUserEmail);

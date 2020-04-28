@@ -12,15 +12,15 @@ class SignIn extends React.Component {
     this.state = {
       id: "",
       password: "",
-      user: {},
+      user: {}
     };
   }
-  onChange = (e) => {
+  onChange = e => {
     this.setState({ [e.target.name]: e.target.value });
   };
 
   checkLoginDetails = () => {
-    var url = "http://localhost:3000/profile/" + this.state.user[0].userId;
+    var url = "http://localhost:3000/profile" + this.state.user[0].userId;
     if (
       this.state.password === this.state.user[0].password &&
       this.state.id === this.state.user[0].id
@@ -34,17 +34,18 @@ class SignIn extends React.Component {
       this.handleIncorrectDetails();
     }
   };
+
   handleIncorrectDetails = () => {
     this.setState({
-      response: "Please check you have entered your details correctly",
+      response: "Please check you have entered your details correctly"
     });
   };
 
-  onSubmit = (e) => {
+  onSubmit = e => {
     e.preventDefault();
     axios
       .get(`http://localhost:4000/users?id=${this.state.id}`)
-      .then((result) => {
+      .then(result => {
         this.setState({ user: result.data }, function () {
           if (this.state.user.length !== 0) {
             this.checkLoginDetails();
@@ -55,42 +56,42 @@ class SignIn extends React.Component {
       });
   };
 
-  render() {
-    return (
+  render()
+  return(
       <>
-        <Header header="Welcome Back" />
-        <form onSubmit={this.onSubmit}>
-          <div class="main">
-            <div class="row">
-              <div class="form-p">
-                <form>
-                  <Input
-                    type="email"
-                    placeholder="Username (Your email address)"
-                    name="id"
-                    required
-                    onChange={this.onChange}
-                  />
-                  <Input
-                    type="password"
-                    placeholder="Password"
-                    name="password"
-                    required
-                    onChange={this.onChange}
-                  />
-                  <Submit />
-                </form>
-                <p className="response">{this.state.response}</p>
-                <NavLink to="/forgotpassword">
-                  <p className="underline">Forgot your Password?</p>
-                </NavLink>
-              </div>
-            </div>
-          </div>
-        </form>
+  <Header header="Welcome Back" />
+  <form onSubmit={this.onSubmit}>
+    <div class="main">
+      <div class="row">
+        <div class="form-p">
+          <form>
+            <Input
+              type="email"
+              placeholder="Username (Your email address)"
+              name="id"
+              required
+              onChange={this.onChange}
+            />
+            <Input
+              type="password"
+              placeholder="Password"
+              name="password"
+              required
+              onChange={this.onChange}
+            />
+            <Submit />
+          </form>
+          <p className="response">{this.state.response}</p>
+          <NavLink to="/forgotpassword">
+            <p className="underline">Forgot your Password?</p>
+          </NavLink>
+        </div>
+      </div>
+    </div>
+  </form>
       </>
-    );
-  }
-}
+    )
+  };
+
 
 export default SignIn;

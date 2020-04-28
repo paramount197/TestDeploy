@@ -56,42 +56,43 @@ class SignIn extends React.Component {
       });
   };
 
-  render()
-  return(
+  render() {
+    return (
       <>
-  <Header header="Welcome Back" />
-  <form onSubmit={this.onSubmit}>
-    <div class="main">
-      <div class="row">
-        <div class="form-p">
-          <form>
-            <Input
-              type="email"
-              placeholder="Username (Your email address)"
-              name="id"
-              required
-              onChange={this.onChange}
-            />
-            <Input
-              type="password"
-              placeholder="Password"
-              name="password"
-              required
-              onChange={this.onChange}
-            />
-            <Submit />
-          </form>
-          <p className="response">{this.state.response}</p>
-          <NavLink to="/forgotpassword">
-            <p className="underline">Forgot your Password?</p>
-          </NavLink>
-        </div>
-      </div>
-    </div>
-  </form>
+        <Header header="Welcome Back" />
+        <form onSubmit={this.onSubmit}>
+          <div class="main">
+            <div class="row">
+              <div class="form-p">
+                <form>
+                  <Input
+                    type="email"
+                    placeholder="Username (Your email address)"
+                    name="id"
+                    required
+                    onChange={this.onChange}
+                  />
+                  <Input
+                    type="password"
+                    placeholder="Password"
+                    name="password"
+                    required
+                    onChange={this.onChange}
+                  />
+                  <Submit />
+                </form>
+                <p className="response">{this.state.response}</p>
+                <NavLink to="/forgotpassword">
+                  <p className="underline">Forgot your Password?</p>
+                </NavLink>
+              </div>
+            </div>
+          </div>
+        </form>
       </>
     )
   };
+};
 
 
 export default SignIn;

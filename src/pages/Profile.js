@@ -21,16 +21,28 @@ class Profile extends React.Component {
       axios
         .get(`http://localhost:4000/users/?userId=${this.state.currentUserId}`)
         .then((result) => {
-          this.setState({ currentUser: result.data[0] });
+          this.setState({ currentUser: result.data[0] }, () => {
+            this.getEvents();
+          });
         });
     });
-    this.getEvents();
   }
 
   getEvents() {
     axios.get("http://localhost:4000/events").then((result) => {
+      let intakeProgrammeCheck = result.data.filter((e) => {
+        return (
+          (e.intake === this.state.currentUser.intake &&
+            e.programme === this.state.currentUser.programme) ||
+          (e.intake === this.state.currentUser.intake &&
+            e.programme === "All") ||
+          (e.intake === "All" &&
+            e.programme === this.state.currentUser.programme) ||
+          (e.intake === "All" && e.programme === "All")
+        );
+      });
       this.setState({
-        events: result.data,
+        events: intakeProgrammeCheck,
       });
     });
   }

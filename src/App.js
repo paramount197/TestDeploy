@@ -11,12 +11,30 @@ class App extends React.Component {
     events: []
   };
   componentDidMount() {
-    axios.get("http://localhost:4000/events").then(result => {
-      this.setState({ events: result.data });
+    axios.get("http://localhost:4000/events").then((result) => {
+      let eventDateType = result.data.filter((e) => {
+        if (Date.parse(e.date) > Date.now()) {
+          if (Date.parse(e.date) <= Date.now() + 1.296e+9) {
+            return true;
+          }
+          else if (Date.parse(e.data) <= Date.now() + 2.592e+9) {
+            return true;
+          }
+          else {
+            return "No upcoming events: log in to see more";
+          }
+        }
+        else {
+          return "No upcoming events: log in to see more";
+        }
+      }
+      )
+      this.setState({ events: eventDateType });
     });
   }
 
   render() {
+    console.log(this.state.events);
     return (
       <>
         <Header header="TDP Events" />

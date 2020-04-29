@@ -13,28 +13,25 @@ class App extends React.Component {
   componentDidMount() {
     axios.get("http://localhost:4000/events").then((result) => {
       let eventDateType = result.data.filter((e) => {
+        let twoWeeks = 1.296e+9;
+        let fourWeeks = 2.592e+9;
         if (Date.parse(e.date) > Date.now()) {
-          if (Date.parse(e.date) <= Date.now() + 1.296e+9) {
+          if (Date.parse(e.date) <= Date.now() + twoWeeks) {
             return true;
           }
-          else if (Date.parse(e.data) <= Date.now() + 2.592e+9) {
+          else if (Date.parse(e.data) <= Date.now() + fourWeeks) {
             return true;
-          }
-          else {
-            return "No upcoming events: log in to see more";
           }
         }
         else {
-          return "No upcoming events: log in to see more";
+          return false;
         }
-      }
-      )
+      })
       this.setState({ events: eventDateType });
     });
   }
 
   render() {
-    console.log(this.state.events);
     return (
       <>
         <Header header="TDP Events" />
@@ -54,7 +51,9 @@ class App extends React.Component {
 
           <div className="eventList">
             <p className="eventTitle">Upcoming Events</p>
-            <Events eventsDetail={this.state.events} />
+            {(this.state.events.length > 0) ?
+              (<Events eventsDetail={this.state.events} />) :
+              ("No upcoming events: log in to see more")}
           </div>
         </div>
       </>

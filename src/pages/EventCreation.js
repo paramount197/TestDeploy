@@ -21,11 +21,28 @@ class EventCreation extends React.Component {
   };
 
   onChange = (input) => {
+    // this.setState({
+    //   [input.target.name]:
+    //     input.target.type === "number"
+    //       ? parseInt(input.target.value)
+    //       : input.target.value,
+    // });
     this.setState({
-      [input.target.name]:
-        input.target.type === "number"
-          ? parseInt(input.target.value)
-          : input.target.value,
+      [input.target.name]: () => {
+      switch(input.target.type) {
+        case input.target.type === "number":
+          parseInt(input.target.value)
+          break;
+        case input.target.type === "select":
+          
+
+      }
+
+      }
+
+        // input.target.type === "number"
+        //   ? parseInt(input.target.value)
+        //   : input.target.value,
     });
   };
 
@@ -55,6 +72,8 @@ class EventCreation extends React.Component {
   }
 
   render() {
+    console.log("this is the intake " + this.state.intake);
+    console.log("this is the programme " + this.state.programme);
     return (
       <>
         <Header header="Create a new TDP event" />
@@ -96,6 +115,7 @@ class EventCreation extends React.Component {
                     name="intake"
                     onChange={this.onChange}
                     required={true}
+                    multiple
                   >
                     <Dropdown dropdownOptions={this.state.intakeValueName} />
                   </select>
@@ -106,6 +126,7 @@ class EventCreation extends React.Component {
                     name="programme"
                     onChange={this.onChange}
                     required={true}
+                    multiple
                   >
                     <Dropdown dropdownOptions={this.state.programmeValueName} />
                   </select>

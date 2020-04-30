@@ -9,18 +9,15 @@ import axios from "axios";
 
 class App extends React.Component {
   state = {
-    events: []
+    events: [],
   };
   componentDidMount() {
-    axios.get("http://localhost:4000/events").then(result => {
+    axios.get("http://localhost:4000/events").then((result) => {
       this.setState({ events: result.data });
     });
   }
 
-
-
   render() {
-    console.log(this.state.events);
     return (
       <>
         <Header header="TDP Events" />

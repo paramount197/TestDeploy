@@ -3,12 +3,7 @@
 }
 
 .table {
-  border-collapse: collapse;
   display: inline-block;
-}
-
-.th {
-  height: 70px;
 }
 
 .table, th, td {
@@ -17,5 +12,6 @@
 }
 
 .th {
+  height: 70px;
   font-weight: bold;
 }

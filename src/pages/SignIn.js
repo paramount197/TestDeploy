@@ -12,15 +12,15 @@ class SignIn extends React.Component {
     this.state = {
       id: "",
       password: "",
-      user: {}
+      user: {},
     };
   }
-  onChange = e => {
+  onChange = (e) => {
     this.setState({ [e.target.name]: e.target.value });
   };
 
   checkLoginDetails = () => {
-    var url = "http://localhost:3000/profile" + this.state.user[0].userId;
+    var url = "http://localhost:3000/profile/" + this.state.user[0].userId;
     if (
       this.state.password === this.state.user[0].password &&
       this.state.id === this.state.user[0].id
@@ -37,15 +37,15 @@ class SignIn extends React.Component {
 
   handleIncorrectDetails = () => {
     this.setState({
-      response: "Please check you have entered your details correctly"
+      response: "Please check you have entered your details correctly",
     });
   };
 
-  onSubmit = e => {
+  onSubmit = (e) => {
     e.preventDefault();
     axios
       .get(`http://localhost:4000/users?id=${this.state.id}`)
-      .then(result => {
+      .then((result) => {
         this.setState({ user: result.data }, function () {
           if (this.state.user.length !== 0) {
             this.checkLoginDetails();
@@ -90,9 +90,8 @@ class SignIn extends React.Component {
           </div>
         </form>
       </>
-    )
-  };
-};
-
+    );
+  }
+}
 
 export default SignIn;

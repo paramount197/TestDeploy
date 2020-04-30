@@ -8,29 +8,17 @@ import ManagementTable from "../block/managementTable";
 class ManagementHomePage extends React.Component {
   state = {
     events: [],
-    eventName: "",
-    booked: [],
-    firstname: [],
-    lastname: [],
   };
 
   componentDidMount() {
     axios.get("http://localhost:4000/events").then((result) => {
       this.setState({
         events: result.data,
-        booked: result.data,
-      });
-    });
-    axios.get("http://localhost:4000/users").then((result) => {
-      this.setState({
-        firstname: result.data,
-        lastname: result.data,
       });
     });
   }
 
   render() {
-    console.log(this.setState);
     return (
       <>
         <Header header="Management Home Page" />

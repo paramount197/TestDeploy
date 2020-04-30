@@ -6,7 +6,6 @@ import Dropdown from "../block/Dropdown";
 import "../styles/eventCreation.css";
 import Header from "../block/Header";
 
-
 class EventCreation extends React.Component {
   state = {
     name: undefined,

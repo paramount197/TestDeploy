@@ -12,10 +12,10 @@ class SignIn extends React.Component {
     this.state = {
       id: "",
       password: "",
-      user: {}
+      user: {},
     };
   }
-  onChange = e => {
+  onChange = (e) => {
     this.setState({ [e.target.name]: e.target.value });
   };
 
@@ -26,7 +26,7 @@ class SignIn extends React.Component {
       this.state.id === this.state.user[0].id
     ) {
       if (this.state.user[0].tdpManagement === "Yes") {
-        window.location.href = "http://localhost:3000/tdpmanagerhub";
+        window.location.href = "http://localhost:3000/managementhomepage";
       } else {
         window.location.href = url;
       }
@@ -37,15 +37,15 @@ class SignIn extends React.Component {
 
   handleIncorrectDetails = () => {
     this.setState({
-      response: "Please check you have entered your details correctly"
+      response: "Please check you have entered your details correctly",
     });
   };
 
-  onSubmit = e => {
+  onSubmit = (e) => {
     e.preventDefault();
     axios
       .get(`http://localhost:4000/users?id=${this.state.id}`)
-      .then(result => {
+      .then((result) => {
         this.setState({ user: result.data }, function () {
           if (this.state.user.length !== 0) {
             this.checkLoginDetails();

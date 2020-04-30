@@ -6,12 +6,13 @@ import Events from "./block/Events";
 import Button from "./block/Button";
 import { NavLink } from "react-router-dom";
 import axios from "axios";
+
 class App extends React.Component {
   state = {
-    events: []
+    events: [],
   };
   componentDidMount() {
-    axios.get("http://localhost:4000/events").then(result => {
+    axios.get("http://localhost:4000/events").then((result) => {
       this.setState({ events: result.data });
     });
   }

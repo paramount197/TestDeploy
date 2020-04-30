@@ -3,7 +3,7 @@ import "../styles/managementTable.css";
 
 
 const ManagementTable = (props) => {
-  return (props.eventsDetails.map((event) =>
+  return (
     <table >
       <div className="table">
         <thead>
@@ -16,17 +16,19 @@ const ManagementTable = (props) => {
           </tr>
         </thead>
         <tbody>
-          <tr>
-            <td>{event.id}</td>
-            <td>{event.name}</td>
-            <td>{event.date}</td>
-            <td>{event.location}</td>
-            <td>{event.booked}</td>
-          </tr>
+          {props.eventsDetails.map((event) =>
+            <tr>
+              <td>{event.id}</td>
+              <td>{event.name}</td>
+              <td>{event.date}</td>
+              <td>{event.location}</td>
+              <td>{event.booked}</td>
+            </tr>
+          )}
         </tbody>
       </div>
     </table>
-  ))
+  )
 };
 
 export default ManagementTable;

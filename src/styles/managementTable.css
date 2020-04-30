@@ -1,18 +1,21 @@
+.container {
+  text-align: center;
+}
+
 .table {
   border-collapse: collapse;
-
+  display: inline-block;
 }
 
 .th {
   height: 70px;
 }
 
-.table, th, td { 
+.table, th, td {
   border: 2px solid black;
-
+  padding: 10px;
 }
 
-.ManagementTable {
-text-align: center;
+.th {
+  font-weight: bold;
 }
-

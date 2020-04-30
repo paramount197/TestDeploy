@@ -8,26 +8,21 @@ import { NavLink } from "react-router-dom";
 import axios from "axios";
 class App extends React.Component {
   state = {
-    events: []
+    events: [],
   };
   componentDidMount() {
     axios.get("http://localhost:4000/events").then((result) => {
-      let eventDateType = result.data.filter((e) => {
-        let twoWeeks = 1.296e+9;
-        let fourWeeks = 2.592e+9;
-        if (Date.parse(e.date) > Date.now()) {
-          if (Date.parse(e.date) <= Date.now() + twoWeeks) {
-            return true;
-          }
-          else if (Date.parse(e.data) <= Date.now() + fourWeeks) {
-            return true;
-          }
+      let upcomingEvents = result.data.filter((event) => {
+        let fourWeeks = 2.592e9;
+        let todaysDate = Date.now();
+        let eventDate = Date.parse(event.date);
+
+        if (eventDate > todaysDate && eventDate <= todaysDate + fourWeeks) {
+          return true;
         }
-        else {
-          return false;
-        }
-      })
-      this.setState({ events: eventDateType });
+        return false;
+      });
+      this.setState({ events: upcomingEvents });
     });
   }
 
@@ -51,9 +46,11 @@ class App extends React.Component {
 
           <div className="eventList">
             <p className="eventTitle">Upcoming Events</p>
-            {(this.state.events.length > 0) ?
-              (<Events eventsDetail={this.state.events} />) :
-              ("No upcoming events: log in to see more")}
+            {this.state.events.length > 0 ? (
+              <Events eventsDetail={this.state.events} />
+            ) : (
+              "No upcoming events: log in to see more"
+            )}
           </div>
         </div>
       </>

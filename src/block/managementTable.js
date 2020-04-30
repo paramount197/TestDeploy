@@ -1,10 +1,10 @@
 import React from "react";
-import Table from "react-bootstrap/Table";
-import "bootstrap/dist/css/bootstrap.min.css";
+import "../styles/managementTable.css";
+
 
 const ManagementTable = (props) => {
-  return props.eventsDetails.map((event) => (
-    <Table responsive="sm">
+  return (props.eventsDetails.map((event) =>
+    <table >
       <div className="table">
         <thead>
           <tr>
@@ -25,8 +25,8 @@ const ManagementTable = (props) => {
           </tr>
         </tbody>
       </div>
-    </Table>
-  ));
+    </table>
+  ))
 };
 
 export default ManagementTable;

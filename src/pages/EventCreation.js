@@ -5,6 +5,7 @@ import axios from "axios";
 import Dropdown from "../block/Dropdown";
 import "../styles/eventCreation.css";
 import Header from "../block/Header";
+import Checkbox from "../block/Checkbox";
 
 class EventCreation extends React.Component {
   state = {
@@ -21,30 +22,38 @@ class EventCreation extends React.Component {
   };
 
   onChange = (input) => {
-    // this.setState({
-    //   [input.target.name]:
-    //     input.target.type === "number"
-    //       ? parseInt(input.target.value)
-    //       : input.target.value,
-    // });
     this.setState({
-      [input.target.name]: () => {
-      switch(input.target.type) {
-        case input.target.type === "number":
-          parseInt(input.target.value)
-          break;
-        case input.target.type === "select":
-          
-
-      }
-
-      }
-
-        // input.target.type === "number"
-        //   ? parseInt(input.target.value)
-        //   : input.target.value,
+      [input.target.name]:
+        input.target.type === "number"
+          ? parseInt(input.target.value)
+          : input.target.value,
     });
   };
+
+  handleCheckboxChange = (event) => {
+    console.log("handle");
+    //this.setState({ intake: event.target.value });
+    this.setState((prevState, event) => ({
+      intake: [...prevState.intake, event.target],
+    }));
+    console.log(event);
+  };
+  // this.setState({
+  //   [input.target.name]: () => {
+  //   switch(input.target.type) {
+  //     case input.target.type === "number":
+  //       parseInt(input.target.value)
+  //       break;
+  //     case input.target.type === "select":
+
+  //   }
+
+  //   }
+
+  // input.target.type === "number"
+  //   ? parseInt(input.target.value)
+  //   : input.target.value,
+  // });
 
   onSubmit = (formSubmit) => {
     formSubmit.preventDefault();
@@ -73,7 +82,6 @@ class EventCreation extends React.Component {
 
   render() {
     console.log("this is the intake " + this.state.intake);
-    console.log("this is the programme " + this.state.programme);
     return (
       <>
         <Header header="Create a new TDP event" />
@@ -109,7 +117,20 @@ class EventCreation extends React.Component {
                   required
                   onChange={this.onChange}
                 />
-                <div className="select">
+
+                <div className="checkbox">
+                  <label>
+                    TDP Intake to Invite
+                    <Checkbox
+                      checkboxOptions={this.state.intakeValueName}
+                      name="intake"
+                      required
+                      onChange={this.handleCheckboxChange}
+                    />
+                  </label>
+                </div>
+
+                {/* <div className="select">
                   <label>TDP intake</label>
                   <select
                     name="intake"
@@ -119,7 +140,7 @@ class EventCreation extends React.Component {
                   >
                     <Dropdown dropdownOptions={this.state.intakeValueName} />
                   </select>
-                </div>
+                </div> */}
                 <div className="select">
                   <label>TDP programme</label>
                   <select

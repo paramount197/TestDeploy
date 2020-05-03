@@ -6,7 +6,7 @@ const Events = (props) => {
   return props.eventsDetail.map((event) => (
     <ListItem
       className="event"
-      text={`${event.name} on the ${event.date} at ${event.location}. Spaces remaining - ${event.attendees - event.booked.length} `}
+      text={`${event.name} on ${event.date} at ${event.location}. Spaces remaining - ${event.capacity - event.attendees.length} `}
       showButton={props.showButton}
       buttonClick={() => {
         if (props.task === 'Book') {
@@ -26,7 +26,7 @@ const Events = (props) => {
 };
 
 const fullEventCheck = (event) => {
-  return event.booked.length >= event.attendees;
+  return event.attendees.length >= event.capacity;
 };
 
 function showButtonText(event, task) {
@@ -39,10 +39,10 @@ function showButtonText(event, task) {
 }
 
 function bookEvent(event, currentUserEmail, handleClick, eventFullMessage) {
-  if (!event.booked.includes(currentUserEmail) && fullEventCheck(event) === false) {
-    event.booked.push(currentUserEmail);
+  if (!event.attendees.includes(currentUserEmail) && fullEventCheck(event) === false) {
+    event.attendees.push(currentUserEmail);
     axios.patch(`http://localhost:4000/events/${event.id}`, {
-      booked: event.booked
+      attendees: event.attendees
     }).then(response => handleClick());
   }
   else if (fullEventCheck(event)) {
@@ -51,10 +51,10 @@ function bookEvent(event, currentUserEmail, handleClick, eventFullMessage) {
 }
 
 function unBookFromEvent(event, currentUserEmail, handleClick) {
-  const index = event.booked.indexOf(currentUserEmail);
-  event.booked.splice(index, 1);
+  const index = event.attendees.indexOf(currentUserEmail);
+  event.attendees.splice(index, 1);
   axios.patch(`http://localhost:4000/events/${event.id}`, {
-    booked: event.booked
+    attendees: event.attendees
   }).then(response => handleClick());
 }
 

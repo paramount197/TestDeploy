@@ -11,7 +11,7 @@ const Events = (props) => {
       eventDate={event.date}
       text2="at "
       eventLocation={event.location}
-      capacity={event.capacity}
+      attendees={event.attendees}
       showButton={props.showButton}
       buttonClick={() => {
         if (props.task === 'Book') {
@@ -31,7 +31,7 @@ const Events = (props) => {
 };
 
 const fullEventCheck = (event) => {
-  return event.attendees.length >= event.capacity;
+  return event.booked.length >= event.attendees;
 };
 
 function showButtonText(event, task) {
@@ -44,10 +44,10 @@ function showButtonText(event, task) {
 }
 
 function bookEvent(event, currentUserEmail, handleClick, eventFullMessage) {
-  if (!event.attendees.includes(currentUserEmail) && fullEventCheck(event) === false) {
-    event.attendees.push(currentUserEmail);
+  if (!event.booked.includes(currentUserEmail) && fullEventCheck(event) === false) {
+    event.booked.push(currentUserEmail);
     axios.patch(`http://localhost:4000/events/${event.id}`, {
-      booked: event.attendees
+      booked: event.booked
     }).then(response => handleClick());
   }
   else if (fullEventCheck(event)) {
@@ -56,10 +56,10 @@ function bookEvent(event, currentUserEmail, handleClick, eventFullMessage) {
 }
 
 function unBookFromEvent(event, currentUserEmail, handleClick) {
-  const index = event.attendees.indexOf(currentUserEmail);
-  event.attendees.splice(index, 1);
+  const index = event.booked.indexOf(currentUserEmail);
+  event.booked.splice(index, 1);
   axios.patch(`http://localhost:4000/events/${event.id}`, {
-    booked: event.attendees
+    booked: event.booked
   }).then(response => handleClick());
 }
 

@@ -31,12 +31,8 @@ class EventCreation extends React.Component {
   };
 
   handleCheckboxChange = (event) => {
-    console.log("handle");
-    //this.setState({ intake: event.target.value });
-    this.setState((prevState, event) => ({
-      intake: [...prevState.intake, event.target],
-    }));
-    console.log(event);
+    this.setState({ intake: [...this.state.intake, event.target.value] });
+    console.log(typeof this.state.name);
   };
   // this.setState({
   //   [input.target.name]: () => {

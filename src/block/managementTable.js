@@ -24,17 +24,14 @@ const ManagementTable = (props) => {
                 <td>{event.date}</td>
                 <td>{event.location}</td>
                 <td>
-                  {event.booked.map((attendee) => (
+                  {event.attendees.map((attendee) => (
                     <p>
                       <a href={`mailto:${attendee}`}>{attendee}</a>
                     </p>
                   ))}
                 </td>
                 <td>
-                  {event.attendees -
-                    event.booked.length +
-                    "/" +
-                    event.attendees}
+                  {`${event.capacity - event.attendees.length}/${event.capacity}`}
                 </td>
               </tr>
             ))}

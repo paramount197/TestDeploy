@@ -11,7 +11,7 @@ class EventCreation extends React.Component {
     name: undefined,
     date: undefined,
     location: undefined,
-    attendees: undefined,
+    capacity: undefined,
     intake: [],
     programme: [],
     coreSelection: "",
@@ -34,13 +34,13 @@ class EventCreation extends React.Component {
     axios
       .post("http://localhost:4000/events", {
         name: this.state.name,
-        date: this.state.date,
+        date: new Date(this.state.date).toDateString(),
         location: this.state.location,
-        attendees: this.state.attendees,
+        capacity: this.state.capacity,
         intake: this.state.intake,
         programme: this.state.programme,
         coreSelection: this.state.coreSelection,
-        booked: [],
+        attendees: [],
       })
       .then(this.setState({ response: "Event Created!" }));
   };
@@ -85,8 +85,8 @@ class EventCreation extends React.Component {
                 />
                 <Input
                   type="number"
-                  placeholder="Number of Attendees"
-                  name="attendees"
+                  placeholder="Event Capacity"
+                  name="capacity"
                   required
                   onChange={this.onChange}
                 />

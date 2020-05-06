@@ -1,22 +1,24 @@
 import React from "react";
+import "../styles/checkbox.css";
 
 const Checkbox = (props) => {
-  return props.checkboxOptions.map((intakeName) => (
-    <div>
-      <label for={intakeName}>
-        {" "}
-        {intakeName}
-        {/* {(onchange = props.onChange)} */}
-        <input
-          type="checkbox"
-          //id={props.name}
-          name={intakeName}
-          value={intakeName}
-          onChange={props.onChange}
-        />
-      </label>
+  return (
+    <div className={props.className}>
+      {props.checkboxOptions.map((intakeName) => (
+        <label for={intakeName}>
+          <br />
+          {intakeName}
+          <input
+            type="checkbox"
+            id={props.name}
+            name={intakeName}
+            value={intakeName}
+            onChange={props.onChange}
+          />
+        </label>
+      ))}
     </div>
-  ));
+  );
 };
 
 export default Checkbox;

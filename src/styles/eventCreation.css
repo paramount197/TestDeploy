@@ -37,3 +37,14 @@ label {
 .form-p a {
     text-decoration: none;
 }
+
+.checkboxDiv {
+    padding-top: 10px;
+    margin-bottom: 10px;
+    margin: auto;
+    float: left;
+}
+
+/* .checkboxTitle {
+    float: left;
+} */

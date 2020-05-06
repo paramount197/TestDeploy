@@ -105,7 +105,7 @@ class Profile extends React.Component {
           <h2>My booked events</h2>
           <Events
             eventsDetail={this.state.events.filter((event) => {
-              return event.booked.includes(this.state.currentUser.id);
+              return event.attendees.includes(this.state.currentUser.id);
             })}
             showButton={true}
             currentUserEmail={this.state.currentUser.id}

@@ -1,9 +1,10 @@
-/* .checkbox {
-    border: 2px solid black
-} */
-
 .checkbox label, .checkbox input {
     display: inline;
     width: 10px;
     margin: auto;
+}
+
+.checkbox input {
+    margin-left: 5px;
+    background: green;
 }

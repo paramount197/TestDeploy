@@ -119,9 +119,8 @@ class EventCreation extends React.Component {
                   required
                   onChange={this.onChange}
                 />
-
                 <div className="checkboxDiv">
-                  <label class="checkboxTitle">
+                  <label className="checkboxTitle">
                     TDP Intake(s) for this event.
                     <Checkbox
                       checkboxOptions={this.state.intakeValueName}
@@ -133,8 +132,8 @@ class EventCreation extends React.Component {
                   </label>
                 </div>
                 <div className="checkboxDiv">
-                  <label class="checkboxTitle">
-                    TDP Intake(s) for this event.
+                  <label>
+                    TDP programme(s) for this event.
                     <Checkbox
                       checkboxOptions={this.state.programmeValueName}
                       name="intake"
@@ -144,17 +143,6 @@ class EventCreation extends React.Component {
                     />
                   </label>
                 </div>
-                {/* <div className="select">
-                  <label>TDP programme</label>
-                  <select
-                    name="programme"
-                    onChange={this.onChange}
-                    required={true}
-                    multiple
-                  >
-                    <Dropdown dropdownOptions={this.state.programmeValueName} />
-                  </select>
-                </div> */}
                 <div className="select">
                   <label>Core/Non-core Event</label>
                   <select

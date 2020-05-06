@@ -39,12 +39,6 @@ label {
 }
 
 .checkboxDiv {
-    padding-top: 10px;
-    margin-bottom: 10px;
-    margin: auto;
+    padding-top: 15px;
     float: left;
 }
-
-/* .checkboxTitle {
-    float: left;
-} */

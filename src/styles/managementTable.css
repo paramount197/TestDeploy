@@ -1,0 +1,17 @@
+.container {
+  text-align: center;
+}
+
+.table {
+  display: inline-block;
+}
+
+.table, th, td {
+  border: 2px solid black;
+  padding: 10px;
+}
+
+.th {
+  height: 70px;
+  font-weight: bold;
+}

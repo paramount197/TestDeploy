@@ -1,44 +1,43 @@
 .row {
-    background-size: cover;
-    width: 420px;
-    height: 450px;
-    padding: 10px;
-    margin: auto;
-    border-top: 7px solid #002979;
+  background-size: cover;
+  width: 420px;
+  height: 450px;
+  padding: 10px;
+  margin: auto;
+  border-top: 7px solid #002979;
 }
 
 .select {
-    margin-left: 30px;
-    padding: 20px;
+  margin-left: 30px;
+  padding: 20px;
 }
 
 .select.label {
-    margin-left: 1em;
-    text-align: left;
+  margin-left: 1em;
+  text-align: left;
 }
 
 label {
-    text-align: left;
+  text-align: left;
 }
 
 .form-p {
-    padding: 5px;
-    margin-top: 5px;
-    letter-spacing: 3px;
-    text-align: center;
+  padding: 5px;
+  margin-top: 5px;
+  letter-spacing: 3px;
+  text-align: center;
 }
 
 .eventCreated {
-    margin-top: 110px;
-    color: green;
-    font-weight: bold;
+  margin-top: 110px;
+  color: green;
+  font-weight: bold;
 }
 
 .form-p a {
-    text-decoration: none;
+  text-decoration: none;
 }
 
 .checkboxDiv {
-    padding-top: 15px;
-    float: left;
+  padding-top: 15px;
 }

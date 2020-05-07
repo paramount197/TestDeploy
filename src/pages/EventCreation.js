@@ -36,6 +36,7 @@ class EventCreation extends React.Component {
     } else {
       this.setState({ intake: [this.state.intake - event.target.value] });
       console.log("Event unchecked" + " " + this.state.intake);
+      //find the index and then array method to remove with index - splice - on Events.js
     }
     console.log("this is the intake checked" + this.state.intake);
     console.log(event.target.value);

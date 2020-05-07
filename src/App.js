@@ -23,19 +23,22 @@ class App extends React.Component {
         }
         return false;
       });
-      this.setState({ events: upcomingEvents });
+      this.setState({ events: upcomingEvents }, () => {
+        console.log(this.state.events[4].date);
+      });
     });
   }
 
   eventDateAsc(eventDateA, eventDateB) {
-    return (eventDateA > eventDateB) ? 1 : -1;
+    return eventDateA > eventDateB ? 1 : -1;
   }
 
   render() {
     console.log("--------");
-    console.log(this.state.events[1]);
+    //console.log(this.state.events[0].name);
     console.log("--------");
-    console.log(this.state.events)
+    console.log(this.state.events);
+
     return (
       <>
         <Header header="TDP Events" />
@@ -58,8 +61,8 @@ class App extends React.Component {
             {this.state.events.length > 0 ? (
               <Events eventsDetail={this.state.events} />
             ) : (
-                <p>No upcoming events: log in to see more</p>
-              )}
+              <p>No upcoming events: log in to see more</p>
+            )}
           </div>
         </div>
       </>

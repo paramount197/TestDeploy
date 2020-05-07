@@ -27,7 +27,15 @@ class App extends React.Component {
     });
   }
 
+  eventDateAsc(eventDateA, eventDateB) {
+    return (eventDateA > eventDateB) ? 1 : -1;
+  }
+
   render() {
+    console.log("--------");
+    console.log(this.state.events[1]);
+    console.log("--------");
+    console.log(this.state.events)
     return (
       <>
         <Header header="TDP Events" />
@@ -50,8 +58,8 @@ class App extends React.Component {
             {this.state.events.length > 0 ? (
               <Events eventsDetail={this.state.events} />
             ) : (
-              "No upcoming events: log in to see more"
-            )}
+                <p>No upcoming events: log in to see more</p>
+              )}
           </div>
         </div>
       </>

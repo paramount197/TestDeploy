@@ -20,8 +20,8 @@ function UsersGuide() {
                   <UserGuideTextBox
                         src={Image1}
                         alt="Landing Page"
-                        text="Here is the landing page, from this page you can navigate the rest of the websight.
-                              This page will also allow you to see the upcoming events which are taylored to your 
+                        text="Here is the landing page, from this page you can navigate the rest of the website.
+                              This page will also allow you to see the upcoming events which are tailored to your 
                               TDP cohort."
                   />
                   <UserGuideTextBox
@@ -34,7 +34,7 @@ function UsersGuide() {
                         src={Image3}
                         alt="Sign In"
                         text="When your visit this site, you'll need to sign in, you can do this by
-                              using the Navagation Bar or via a button found on the Home Page."
+                              using the Navigation Bar or via a button found on the Home Page."
                   />
                   <UserGuideTextBox
                         src={Image4}

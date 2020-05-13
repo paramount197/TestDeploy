@@ -32,31 +32,41 @@ class EventCreation extends React.Component {
 
   handleCheckboxChange = (event) => {
     if (event.target.checked) {
-      this.setState({ intake: [...this.state.intake, event.target.value] });
-    } else {
-      this.setState({ intake: [this.state.intake - event.target.value] });
-      console.log("Event unchecked" + " " + this.state.intake);
-      //find the index and then array method to remove with index - splice - on Events.js
+      if (event.target.id === "intake") {
+        this.setState({ intake: [...this.state.intake, event.target.value] });
+      } else {
+        this.setState({
+          programme: [...this.state.programme, event.target.value],
+        });
+      }
+    } else if (event.target.checked === false) {
+      if (event.target.id === "intake") {
+        let index = this.state.intake.indexOf(event.target.value);
+        console.log(index);
+        let removeUnchecked = this.state.intake;
+        console.log("removeUnchecked before " + removeUnchecked);
+        removeUnchecked.splice(index, 1);
+        console.log("removeUnchecked after " + removeUnchecked);
+        this.setState({ intake: [removeUnchecked] });
+        console.log("State after unchecked" + " " + this.state.intake);
+      } else {
+        let indexOfProgramme = this.state.programme.indexOf(event.target.value);
+        let removeUncheckedProgramme = this.state.programme;
+        console.log(
+          "removeUnchecked programme before " + removeUncheckedProgramme
+        );
+        removeUncheckedProgramme.splice(indexOfProgramme, 1);
+        console.log(
+          "removeUnchecked programme after " + removeUncheckedProgramme
+        );
+        this.setState({ programme: [removeUncheckedProgramme] });
+        console.log(
+          "Programme State after unchecked" + " " + this.state.programme
+        );
+      }
+      console.log("clicked " + event.target.value);
     }
-    console.log("this is the intake checked" + this.state.intake);
-    console.log(event.target.value);
   };
-  // this.setState({
-  //   [input.target.name]: () => {
-  //   switch(input.target.type) {
-  //     case input.target.type === "number":
-  //       parseInt(input.target.value)
-  //       break;
-  //     case input.target.type === "select":
-
-  //   }
-
-  //   }
-
-  // input.target.type === "number"
-  //   ? parseInt(input.target.value)
-  //   : input.target.value,
-  // });
 
   onSubmit = (formSubmit) => {
     formSubmit.preventDefault();
@@ -84,7 +94,8 @@ class EventCreation extends React.Component {
   }
 
   render() {
-    console.log("this is the intake " + this.state.intake);
+    console.log("This is the updated intake " + this.state.intake);
+    console.log("This is the updated programme " + this.state.programme);
     return (
       <>
         <Header header="Create a new TDP event" />
@@ -137,7 +148,7 @@ class EventCreation extends React.Component {
                     TDP programme(s) for this event.
                     <Checkbox
                       checkboxOptions={this.state.programmeValueName}
-                      name="intake"
+                      name="programme"
                       required
                       onChange={this.handleCheckboxChange}
                       className="checkbox"

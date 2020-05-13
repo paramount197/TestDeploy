@@ -47,7 +47,7 @@ class EventCreation extends React.Component {
         console.log("removeUnchecked before " + removeUnchecked);
         removeUnchecked.splice(index, 1);
         console.log("removeUnchecked after " + removeUnchecked);
-        this.setState({ intake: [removeUnchecked] });
+        this.setState({ intake: removeUnchecked });
         console.log("State after unchecked" + " " + this.state.intake);
       } else {
         let indexOfProgramme = this.state.programme.indexOf(event.target.value);
@@ -59,12 +59,11 @@ class EventCreation extends React.Component {
         console.log(
           "removeUnchecked programme after " + removeUncheckedProgramme
         );
-        this.setState({ programme: [removeUncheckedProgramme] });
+        this.setState({ programme: removeUncheckedProgramme });
         console.log(
           "Programme State after unchecked" + " " + this.state.programme
         );
       }
-      console.log("clicked " + event.target.value);
     }
   };
 
@@ -94,8 +93,8 @@ class EventCreation extends React.Component {
   }
 
   render() {
-    console.log("This is the updated intake " + this.state.intake);
-    console.log("This is the updated programme " + this.state.programme);
+    //console.log("This is the updated intake " + this.state.intake);
+    //console.log("This is the updated programme " + this.state.programme);
     return (
       <>
         <Header header="Create a new TDP event" />

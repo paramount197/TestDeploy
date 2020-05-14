@@ -23,22 +23,14 @@ class App extends React.Component {
         }
         return false;
       });
-      this.setState({ events: upcomingEvents }, () => {
-        console.log(this.state.events[4].date);
-      });
+      const sortedDates = upcomingEvents.sort(
+        (a, b) => Date.parse(a.date) - Date.parse(b.date)
+      );
+      this.setState({ events: sortedDates });
     });
   }
 
-  eventDateAsc(eventDateA, eventDateB) {
-    return eventDateA > eventDateB ? 1 : -1;
-  }
-
   render() {
-    console.log("--------");
-    //console.log(this.state.events[0].name);
-    console.log("--------");
-    console.log(this.state.events);
-
     return (
       <>
         <Header header="TDP Events" />

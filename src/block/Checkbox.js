@@ -5,9 +5,7 @@ const Checkbox = (props) => {
   return (
     <div className={props.className}>
       {props.checkboxOptions.map((intakeName) => (
-        <label for={intakeName}>
-          <br />
-          {intakeName}
+        <label for={intakeName} className="checkboxLabel">
           <input
             type="checkbox"
             id={props.name}
@@ -15,6 +13,7 @@ const Checkbox = (props) => {
             value={intakeName}
             onChange={props.onChange}
           />
+          {intakeName}
         </label>
       ))}
     </div>

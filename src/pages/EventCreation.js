@@ -42,27 +42,14 @@ class EventCreation extends React.Component {
     } else if (event.target.checked === false) {
       if (event.target.id === "intake") {
         let index = this.state.intake.indexOf(event.target.value);
-        console.log(index);
         let removeUnchecked = this.state.intake;
-        console.log("removeUnchecked before " + removeUnchecked);
         removeUnchecked.splice(index, 1);
-        console.log("removeUnchecked after " + removeUnchecked);
         this.setState({ intake: removeUnchecked });
-        console.log("State after unchecked" + " " + this.state.intake);
       } else {
         let indexOfProgramme = this.state.programme.indexOf(event.target.value);
         let removeUncheckedProgramme = this.state.programme;
-        console.log(
-          "removeUnchecked programme before " + removeUncheckedProgramme
-        );
         removeUncheckedProgramme.splice(indexOfProgramme, 1);
-        console.log(
-          "removeUnchecked programme after " + removeUncheckedProgramme
-        );
         this.setState({ programme: removeUncheckedProgramme });
-        console.log(
-          "Programme State after unchecked" + " " + this.state.programme
-        );
       }
     }
   };

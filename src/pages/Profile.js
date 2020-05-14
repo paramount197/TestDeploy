@@ -30,15 +30,15 @@ class Profile extends React.Component {
 
   getEvents() {
     axios.get("http://localhost:4000/events").then((result) => {
+      const userIntake = this.state.currentUser.intake;
+      const userProgramme = this.state.currentUser.programme;
       let intakeProgrammeCheck = result.data.filter((e) => {
         return (
-          (e.intake === this.state.currentUser.intake &&
-            e.programme === this.state.currentUser.programme) ||
-          (e.intake === this.state.currentUser.intake &&
-            e.programme === "All") ||
-          (e.intake === "All" &&
-            e.programme === this.state.currentUser.programme) ||
-          (e.intake === "All" && e.programme === "All")
+          (e.intake.includes(userIntake) &&
+            e.programme.includes(userProgramme)) ||
+          (e.intake.includes(userIntake) && e.programme.includes("All")) ||
+          (e.intake.includes("All") && e.programme.includes(userProgramme)) ||
+          (e.intake.includes("All") && e.programme.includes("All"))
         );
       });
       this.setState({

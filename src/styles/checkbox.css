@@ -1,9 +1,5 @@
-.checkbox label, .checkbox input {
-    display: inline;
-    width: 10px;
-    margin: auto;
-}
-
-.checkboxLabel {
+/* .checkbox label, .checkbox input {
+    appearance: none;
+    border: 2px black solid;
     display: block;
-}
+} */

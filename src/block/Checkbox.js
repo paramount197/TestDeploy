@@ -4,16 +4,16 @@ import "../styles/checkbox.css";
 const Checkbox = (props) => {
   return (
     <div className={props.className}>
-      {props.checkboxOptions.map((intakeName) => (
-        <label for={intakeName} className="checkboxLabel">
+      {props.checkboxOptions.map((checkboxValueName) => (
+        <label for={checkboxValueName} className={props.className}>
           <input
             type="checkbox"
             id={props.name}
-            name={intakeName}
-            value={intakeName}
+            name={checkboxValueName}
+            value={checkboxValueName}
             onChange={props.onChange}
           />
-          {intakeName}
+          {checkboxValueName}
         </label>
       ))}
     </div>

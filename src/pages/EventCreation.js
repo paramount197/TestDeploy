@@ -118,7 +118,7 @@ class EventCreation extends React.Component {
                   onChange={this.onChange}
                 />
                 <div className="checkboxDiv">
-                  <label className="checkboxTitle">
+                  <label>
                     TDP Intake(s) for this event.
                     <Checkbox
                       checkboxOptions={this.state.intakeValueName}

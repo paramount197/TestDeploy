@@ -4,11 +4,6 @@
     margin: auto;
 }
 
-.checkbox input {
-    margin-left: 5px;
-    background: green;
-}
-
 .checkboxLabel {
     display: block;
 }

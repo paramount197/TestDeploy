@@ -10,59 +10,39 @@ import UserGuideTextBox from "../block/UserGuideTextBox";
 
 
 function UsersGuide() {
-   return (
-      <>
-         <div>
-            <Header header="Users Guide Page" />
-            <Intro intro="Welcome to the UserGuide Page." />
-            <Blurb blurb="Here you'll be able to learn how to navigate the TDP Events Webpage" />
-         </div>
-         <UserGuideTextBox
-               src={Image1}
-               alt="Test Image 1"
-               text="Lorem ipsum dolor sit amet, consectetur adipiscing elit,
-                     used do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-                     Ut enim ad minim veniam, quis nostrud exercitation ullamco laborin
-                     nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in
-                     reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
-                     Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia 
-                     deserunt mollit anim id est laborum."
-         />
-         <UserGuideTextBox
-               src={Image2}
-               alt="Test Image 2"
-               text="Lorem ipsum dolor sit amet, consectetur adipiscing elit,
-                     used do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-                     Ut enim ad minim veniam, quis nostrud exercitation ullamco laborin
-                     nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in
-                     reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
-                     Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia 
-                     deserunt mollit anim id est laborum."
-         />
-         <UserGuideTextBox
-               src={Image3}
-               alt="Test Image 3"
-               text="Lorem ipsum dolor sit amet, consectetur adipiscing elit,
-                     used do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-                     Ut enim ad minim veniam, quis nostrud exercitation ullamco laborin
-                     nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in
-                     reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
-                     Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia 
-                     deserunt mollit anim id est laborum."
-         />
-         <UserGuideTextBox
-               src={Image4}
-               alt="Test Image 4"
-               text="Lorem ipsum dolor sit amet, consectetur adipiscing elit,
-                     used do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-                     Ut enim ad minim veniam, quis nostrud exercitation ullamco laborin
-                     nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in
-                     reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
-                     Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia 
-                     deserunt mollit anim id est laborum."
-         />
-      </>
-   );
+      return (
+            <>
+                  <div>
+                        <Header header="Users Guide Page" />
+                        <Intro intro="Welcome to the UserGuide Page." />
+                        <Blurb blurb="Here you'll be able to learn how to navigate the TDP Events Webpage" />
+                  </div>
+                  <UserGuideTextBox
+                        src={Image1}
+                        alt="Landing Page"
+                        text="Here is the landing page, from this page you can navigate the rest of the website.
+                              This page will also allow you to see the upcoming events which are tailored to your 
+                              TDP cohort."
+                  />
+                  <UserGuideTextBox
+                        src={Image2}
+                        alt="Registration Page"
+                        text="Welcome to the Registration page. Fill out or details and then submit.
+                              Once this is done, you'll be re-directed to your personal Homepage."
+                  />
+                  <UserGuideTextBox
+                        src={Image3}
+                        alt="Sign In"
+                        text="When your visit this site, you'll need to sign in, you can do this by
+                              using the Navigation Bar or via a button found on the Home Page."
+                  />
+                  <UserGuideTextBox
+                        src={Image4}
+                        alt="Support"
+                        text="If you are in need of any help or assistance, please contact TDP Management."
+                  />
+            </>
+      );
 }
 
 export default UsersGuide;

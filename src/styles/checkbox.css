@@ -1,5 +1,21 @@
-/* .checkbox label, .checkbox input {
-    appearance: none;
-    border: 2px black solid;
+.checkboxDiv {
+    display: inline-block;
+    font-size: 16px;
+}
+
+.checkboxDiv input {
+    display: inline-block;
+    width: 10px;
+    cursor: pointer;
+    margin-right: 10px;
+    margin-top: 5px;
+}
+
+.checkboxDiv label {
     display: block;
-} */
+    font-size: 12px;
+}
+
+.labelText {
+    font-weight: bold;
+}

@@ -80,8 +80,6 @@ class EventCreation extends React.Component {
   }
 
   render() {
-    //console.log("This is the updated intake " + this.state.intake);
-    //console.log("This is the updated programme " + this.state.programme);
     return (
       <>
         <Header header="Create a new TDP event" />
@@ -119,7 +117,9 @@ class EventCreation extends React.Component {
                 />
                 <div className="checkboxDiv">
                   <label>
-                    TDP Intake(s) for this event.
+                    <span className="labelText">
+                      TDP Intake(s) for this event.
+                    </span>
                     <Checkbox
                       checkboxOptions={this.state.intakeValueName}
                       name="intake"
@@ -131,7 +131,9 @@ class EventCreation extends React.Component {
                 </div>
                 <div className="checkboxDiv">
                   <label>
-                    TDP programme(s) for this event.
+                    <span className="labelText">
+                      TDP programme(s) for this event.
+                    </span>
                     <Checkbox
                       checkboxOptions={this.state.programmeValueName}
                       name="programme"
@@ -147,6 +149,7 @@ class EventCreation extends React.Component {
                     name="coreSelection"
                     onChange={this.onChange}
                     required={true}
+                    className="selectBox"
                   >
                     <Dropdown dropdownOptions={["Core", "Non-core"]} />
                   </select>

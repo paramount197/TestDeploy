@@ -3,7 +3,7 @@ import "../styles/checkbox.css";
 
 const Checkbox = (props) => {
   return (
-    <div className={props.className}>
+    <div className="checkboxDiv">
       {props.checkboxOptions.map((checkboxValueName) => (
         <label for={checkboxValueName} className={props.className}>
           <input
@@ -13,7 +13,7 @@ const Checkbox = (props) => {
             value={checkboxValueName}
             onChange={props.onChange}
           />
-          {checkboxValueName}
+          <span>{checkboxValueName}</span>
         </label>
       ))}
     </div>

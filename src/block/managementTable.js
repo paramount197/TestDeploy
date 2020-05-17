@@ -36,7 +36,7 @@ const ManagementTable = (props) => {
                   {`${event.capacity - event.attendees.length}/${event.capacity}`}
                 </td>
                 <td>
-                  <button onClick={() => axios.delete(`http://localhost:4000/events/${event.id}`).then(response => console.log(response))}>
+                  <button onClick={() => axios.delete(`http://localhost:4000/events/${event.id}`).then(response => props.handleClick())}>
                     Delete
                     </button>
                 </td>

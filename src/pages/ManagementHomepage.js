@@ -11,6 +11,10 @@ class ManagementHomePage extends React.Component {
   };
 
   componentDidMount() {
+    this.getEvents()
+  }
+
+  getEvents() {
     axios.get("http://localhost:4000/events").then((result) => {
       this.setState({
         events: result.data,
@@ -32,7 +36,7 @@ class ManagementHomePage extends React.Component {
           </NavLink>
         </div>
         <div>
-          <ManagementTable eventsDetails={this.state.events} />
+          <ManagementTable eventsDetails={this.state.events} handleClick={() => this.getEvents()} />
         </div>
       </>
     );

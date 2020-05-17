@@ -38,7 +38,7 @@ const ManagementTable = (props) => {
                 <td>
                   <button onClick={() => axios.delete(`http://localhost:4000/events/${event.id}`).then(response => props.handleClick())}>
                     Delete
-                    </button>
+                  </button>
                 </td>
               </tr>
             ))}

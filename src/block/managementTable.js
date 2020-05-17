@@ -1,4 +1,5 @@
 import React from "react";
+import axios from 'axios';
 import "../styles/managementTable.css";
 
 const ManagementTable = (props) => {
@@ -14,6 +15,7 @@ const ManagementTable = (props) => {
               <th>Location</th>
               <th>Currently Attending</th>
               <th>Remaining Spaces</th>
+              <th>Delete event</th>
             </tr>
           </thead>
           <tbody>
@@ -32,6 +34,11 @@ const ManagementTable = (props) => {
                 </td>
                 <td>
                   {`${event.capacity - event.attendees.length}/${event.capacity}`}
+                </td>
+                <td>
+                  <button onClick={() => axios.delete(`http://localhost:4000/events/${event.id}`).then(response => console.log(response))}>
+                    Delete
+                    </button>
                 </td>
               </tr>
             ))}

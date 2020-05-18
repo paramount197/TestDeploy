@@ -12,6 +12,7 @@ class App extends React.Component {
     events: [],
   };
   componentDidMount() {
+    // ONLY TO STORE THE EVENTS WITH THE NEXT FORTNIGHT AND STORE THEM IN ORDER OF DATE
     axios.get("http://localhost:4000/events").then((result) => {
       let upcomingEvents = result.data.filter((event) => {
         let fourWeeks = 2.592e9;
@@ -50,11 +51,14 @@ class App extends React.Component {
 
           <div className="eventList">
             <p className="eventTitle">Upcoming Events</p>
-            {this.state.events.length > 0 ? (
+            {/* TERNARY TO ONLY DISPLAY UPCOMING TOP 5 EVENTS */}
+            {this.state.events.length > 0  && this.state.events.length < 6 ? 
               <Events eventsDetail={this.state.events} />
-            ) : (
+              : this.state.events.length > 6 ? 
+              <Events eventsDetail={this.state.events.splice(0,5)} />
+              :
               <p>No upcoming events: log in to see more</p>
-            )}
+            }
           </div>
         </div>
       </>

@@ -31,22 +31,23 @@ class EventCreation extends React.Component {
   };
 
   handleCheckboxChange = (event) => {
+    let optionChecked = event.target.value;
     if (event.target.checked) {
       if (event.target.id === "intake") {
-        this.setState({ intake: [...this.state.intake, event.target.value] });
+        this.setState({ intake: [...this.state.intake, optionChecked] });
       } else {
         this.setState({
-          programme: [...this.state.programme, event.target.value],
+          programme: [...this.state.programme, optionChecked],
         });
       }
-    } else if (event.target.checked === false) {
+    } else if (!event.target.checked) {
       if (event.target.id === "intake") {
-        let index = this.state.intake.indexOf(event.target.value);
+        let index = this.state.intake.indexOf(optionChecked);
         let removeUnchecked = this.state.intake;
         removeUnchecked.splice(index, 1);
         this.setState({ intake: removeUnchecked });
       } else {
-        let indexOfProgramme = this.state.programme.indexOf(event.target.value);
+        let indexOfProgramme = this.state.programme.indexOf(optionChecked);
         let removeUncheckedProgramme = this.state.programme;
         removeUncheckedProgramme.splice(indexOfProgramme, 1);
         this.setState({ programme: removeUncheckedProgramme });

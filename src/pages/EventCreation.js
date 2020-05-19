@@ -3,8 +3,9 @@ import Input from "../block/Input";
 import Submit from "../block/Submit";
 import axios from "axios";
 import Dropdown from "../block/Dropdown";
-import "../styles/eventCreation.css";
 import Header from "../block/Header";
+import Checkbox from "../block/Checkbox";
+import "../styles/eventCreation.css";
 
 class EventCreation extends React.Component {
   state = {
@@ -27,6 +28,31 @@ class EventCreation extends React.Component {
           ? parseInt(input.target.value)
           : input.target.value,
     });
+  };
+
+  handleCheckboxChange = (event) => {
+    let optionChecked = event.target.value;
+    if (event.target.checked) {
+      if (event.target.id === "intake") {
+        this.setState({ intake: [...this.state.intake, optionChecked] });
+      } else {
+        this.setState({
+          programme: [...this.state.programme, optionChecked],
+        });
+      }
+    } else if (!event.target.checked) {
+      if (event.target.id === "intake") {
+        let index = this.state.intake.indexOf(optionChecked);
+        let removeUnchecked = this.state.intake;
+        removeUnchecked.splice(index, 1);
+        this.setState({ intake: removeUnchecked });
+      } else {
+        let indexOfProgramme = this.state.programme.indexOf(optionChecked);
+        let removeUncheckedProgramme = this.state.programme;
+        removeUncheckedProgramme.splice(indexOfProgramme, 1);
+        this.setState({ programme: removeUncheckedProgramme });
+      }
+    }
   };
 
   onSubmit = (formSubmit) => {
@@ -90,25 +116,33 @@ class EventCreation extends React.Component {
                   required
                   onChange={this.onChange}
                 />
-                <div className="select">
-                  <label>TDP intake</label>
-                  <select
-                    name="intake"
-                    onChange={this.onChange}
-                    required={true}
-                  >
-                    <Dropdown dropdownOptions={this.state.intakeValueName} />
-                  </select>
+                <div className="checkboxDiv">
+                  <label>
+                    <span className="labelText">
+                      TDP Intake(s) for this event.
+                    </span>
+                    <Checkbox
+                      checkboxOptions={this.state.intakeValueName}
+                      name="intake"
+                      required
+                      onChange={this.handleCheckboxChange}
+                      className="checkbox"
+                    />
+                  </label>
                 </div>
-                <div className="select">
-                  <label>TDP programme</label>
-                  <select
-                    name="programme"
-                    onChange={this.onChange}
-                    required={true}
-                  >
-                    <Dropdown dropdownOptions={this.state.programmeValueName} />
-                  </select>
+                <div className="checkboxDiv">
+                  <label>
+                    <span className="labelText">
+                      TDP programme(s) for this event.
+                    </span>
+                    <Checkbox
+                      checkboxOptions={this.state.programmeValueName}
+                      name="programme"
+                      required
+                      onChange={this.handleCheckboxChange}
+                      className="checkbox"
+                    />
+                  </label>
                 </div>
                 <div className="select">
                   <label>Core/Non-core Event</label>
@@ -116,6 +150,7 @@ class EventCreation extends React.Component {
                     name="coreSelection"
                     onChange={this.onChange}
                     required={true}
+                    className="selectBox"
                   >
                     <Dropdown dropdownOptions={["Core", "Non-core"]} />
                   </select>

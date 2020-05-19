@@ -19,7 +19,7 @@ class Profile extends React.Component {
   componentDidMount() {
     this.setState({ currentUserId: this.props.match.params.handle }, () => {
       axios
-        .get(`http://localhost:4000/users/?userId=${this.state.currentUserId}`)
+        .get(`http://localhost:4000/users/?id=${this.state.currentUserId}`)
         .then((result) => {
           this.setState({ currentUser: result.data[0] }, () => {
             this.getEvents();

@@ -12,12 +12,8 @@ const Events = (props) => {
         if (props.task === 'Book') {
           bookEvent(event, props.currentUserEmail, props.handleClick, props.eventFullMessage);
         }
-        else if (props.task === 'Delete') {
-          deleteEvent(event, props.handleClick);
-        }
         else if (props.task === 'Unbook') {
           unBookFromEvent(event, props.currentUserEmail, props.handleClick)
-
         }
       }}
       buttonText={showButtonText(event, props.task)}
@@ -56,11 +52,6 @@ function unBookFromEvent(event, currentUserEmail, handleClick) {
   axios.patch(`http://localhost:4000/events/${event.id}`, {
     attendees: event.attendees
   }).then(response => handleClick());
-}
-
-function deleteEvent(event, handleClick) {
-  console.log('Delete functionality not fully implemented.')
-  // axios.delete(`http://localhost:4000/events/${event.id}`).then(response => handleClick())
 }
 
 export default Events;
